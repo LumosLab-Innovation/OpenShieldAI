@@ -5,6 +5,7 @@ All capabilities are proposed unless explicitly backed by implementation and acc
 | Start here | Purpose |
 |---|---|
 | [Project README](../README.md) | Mission, current stage, research choices and delivery path |
+| [Public landing](WEBSITE.md) | GitHub Pages showcase, shared visual system and diagram authoring |
 | [Context](../CONTEXT.md) | Decisions, assumptions and open pilot inputs |
 | [Agent rules](../AGENTS.md) | Mandatory read order, scope and definition of done |
 | [PRD](PRD.md) | Users, problem, staged capability and first workflow |

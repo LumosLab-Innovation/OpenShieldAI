@@ -1,0 +1,44 @@
+---
+config:
+  theme: base
+  securityLevel: strict
+  themeVariables:
+    background: '#071211'
+    primaryColor: '#0d211b'
+    primaryTextColor: '#e2efe7'
+    primaryBorderColor: '#365c49'
+    lineColor: '#527b68'
+    secondaryColor: '#10291f'
+    tertiaryColor: '#0b1b16'
+    edgeLabelBackground: '#071211'
+    fontFamily: 'Segoe UI, Arial, sans-serif'
+    fontSize: '14px'
+  flowchart:
+    htmlLabels: false
+    curve: basis
+    nodeSpacing: 26
+    rankSpacing: 27
+    padding: 13
+---
+flowchart TD
+  accTitle: Proposed OpenShieldAI defense architecture
+  accDescr: Authorized inputs flow through evidence validation, bounded investigation and a typed proposal. Policy and exact human approval precede the future S3 action adapter. Independent verification determines outcomes. Denied proposals are revised; inconclusive checks return for evidence. This is a proposed design, not a live system.
+  INPUT["AUTHORIZED INPUTS<br/>Enrolled assets · telemetry · backup metadata"]
+  EVIDENCE["EVIDENCE + PROVENANCE<br/>Validate · sanitize · preserve source refs"]
+  REASON["BOUNDED INVESTIGATION<br/>Deterministic rules + optional AI"]
+  PROPOSAL["TYPED RESPONSE PROPOSAL<br/>Exact action · impact · preconditions"]
+  GATE{"POLICY + HUMAN<br/>APPROVAL"}
+  ACTION["SCOPED ACTION · S3 ONLY<br/>One allowlisted adapter · exact grant"]
+  VERIFY["INDEPENDENT VERIFICATION<br/>Intended effect + service health"]
+  OUTCOME["OUTCOME + RESIDUAL RISK<br/>Verified effects · gaps · next owner action"]
+  INPUT --> EVIDENCE
+  EVIDENCE --> REASON
+  REASON --> PROPOSAL
+  PROPOSAL --> GATE
+  GATE -->|approved| ACTION
+  GATE -.->|denied / revise| PROPOSAL
+  ACTION --> VERIFY
+  VERIFY -->|observed result| OUTCOME
+  VERIFY -.->|inconclusive / more evidence| EVIDENCE
+  classDef future fill:#0b1b16,stroke:#5b8070,stroke-dasharray:5 4,color:#c2d7ca
+  class ACTION future

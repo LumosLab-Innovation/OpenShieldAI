@@ -9,6 +9,7 @@ node_modules/
 Thumbs.db
 .playwright-cli/
 artifacts/
+output/
 incident-data/
 evidence/
 *.pem

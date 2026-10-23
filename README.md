@@ -1,15 +1,29 @@
 <p align="center">
-  <img src="docs/assets/openshield-banner.svg" alt="OpenShieldAI — evidence to action, defense to recovery" width="100%">
+  <a href="https://lumoslab-innovation.github.io/OpenShieldAI/"><img src="site/assets/openshield-guardian.png" alt="OpenShieldAI — AI defense, incident response and recovery" width="100%"></a>
 </p>
 
 <h1 align="center">OpenShieldAI</h1>
 <p align="center"><strong>Evidence-grounded AI defense, incident response and recovery.</strong></p>
-<p align="center">Phòng ngừa · Điều tra · Ứng phó · Phục hồi có kiểm chứng</p>
+<p align="center">Prepare · Investigate · Respond · Verify recovery</p>
+
+<p align="center">
+  <a href="https://lumoslab-innovation.github.io/OpenShieldAI/">Vision &amp; architecture</a> ·
+  <a href="docs/research/AI_DEFENSE_EVIDENCE.md">Research</a> ·
+  <a href="docs/ROADMAP.md">Roadmap</a> ·
+  <a href="CONTRIBUTING.md">Contribute</a>
+</p>
 
 <p align="center">
   <a href="docs/ROADMAP.md"><img alt="Stage: research and specification" src="https://img.shields.io/badge/stage-research_%26_specification-0f766e"></a>
   <a href="LICENSE"><img alt="License: PolyForm Noncommercial 1.0.0" src="https://img.shields.io/badge/license-PolyForm_Noncommercial_1.0.0-334155"></a>
   <a href="docs/SECURITY_GUARDRAILS.md"><img alt="Control: human approved" src="https://img.shields.io/badge/control-human_approved-334155"></a>
+  <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/actions/workflows/docs.yml"><img alt="Documentation checks" src="https://github.com/LumosLab-Innovation/OpenShieldAI/actions/workflows/docs.yml/badge.svg"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/LumosLab-Innovation/OpenShieldAI?style=flat&color=36d9c7"></a>
+  <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/LumosLab-Innovation/OpenShieldAI?style=flat&color=36d9c7"></a>
+  <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/LumosLab-Innovation/OpenShieldAI?style=flat&color=36d9c7"></a>
 </p>
 
 > **Current status — S0: research and specification.** This repository contains the product foundation, source-backed research and engineering rules. It has no deployable runtime, supported live integrations or measured protection capability yet. Diagrams, playbooks and adapters describe proposed behavior. There is no install command that starts a working defense product.
@@ -109,6 +123,29 @@ python -m unittest discover -s scripts -p "test_*.py"
 ```
 
 These checks validate documentation links and research-registry invariants. They do not test incident detection, response, restore or AI efficacy. Follow [contributing guidance](CONTRIBUTING.md); use GitHub Issues for sanitized proposals and reproducible defects.
+
+## Community
+
+Help turn the research into defensive capabilities that earn operator trust. Useful contributions include reproducible replay scenarios, primary-source research, carefully scoped playbooks, evaluation design and documentation improvements. Start with the [contribution guide](CONTRIBUTING.md) and [open issues](https://github.com/LumosLab-Innovation/OpenShieldAI/issues); discuss scope before submitting a new integration.
+
+- [Propose research or report a defect](https://github.com/LumosLab-Innovation/OpenShieldAI/issues/new/choose)
+- [Review pull requests](https://github.com/LumosLab-Innovation/OpenShieldAI/pulls)
+- [Explore contributors](https://github.com/LumosLab-Innovation/OpenShieldAI/graphs/contributors)
+- [Star the project](https://github.com/LumosLab-Innovation/OpenShieldAI/stargazers) to follow its progress
+
+### Contributors
+
+<a href="https://github.com/LumosLab-Innovation/OpenShieldAI/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=LumosLab-Innovation/OpenShieldAI" alt="OpenShieldAI contributors">
+</a>
+
+Contributor avatars are generated from this repository's GitHub contribution history by [contrib.rocks](https://contrib.rocks).
+
+### Star history
+
+The chart will populate as the project receives its first stars.
+
+[![OpenShieldAI star history](https://api.star-history.com/svg?repos=LumosLab-Innovation/OpenShieldAI&type=Date)](https://star-history.com/#LumosLab-Innovation/OpenShieldAI&Date)
 
 ## Security and license
 
