@@ -1,0 +1,35 @@
+name: Defensive capability or research proposal
+description: Propose a measurable defensive capability with evidence and safety boundaries.
+title: "[Proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: "Use synthetic examples. Never publish real incident evidence, credentials or private target details. Security vulnerabilities belong in private reporting."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Failure mode and user
+      description: Who owns the affected asset, what harm occurs, and what is the current workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Observations and authority
+      description: Available telemetry, permissions, sensitivity, coverage gaps and proposed capability stage.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources, baseline and measurable value
+      description: Primary URLs/exact refs/licenses, fair baseline, ground truth, utility metric and limits.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Action and failure envelope
+      description: Scope, approval, least privilege, blast radius, timeout, compensation, independent verification and degraded path.
+    validations:
+      required: true

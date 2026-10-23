@@ -1,0 +1,31 @@
+name: Reproducible defect
+description: Report a sanitized documentation or implementation defect.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Potential vulnerabilities and sensitive evidence must use GitHub private vulnerability reporting. No production target details or secrets here."
+  - type: input
+    id: revision
+    attributes:
+      label: Affected revision and environment
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal safe reproduction
+      description: Synthetic inputs, exact steps and relevant document/component.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected versus observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and validation limits
+      description: Sanitized output only; state what was and was not tested.
