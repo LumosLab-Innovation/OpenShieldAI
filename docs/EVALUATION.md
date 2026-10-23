@@ -1,6 +1,6 @@
 # Evaluation and evidence of value
 
-Status: experimental plan. No OpenShieldAI efficacy scores or successful incident responses exist yet. External papers are evidence about their own setups, not results for this product.
+Status: experimental protocol with narrowly scoped [first-lab measurements](lab/RESULTS.md) and a frozen functional replay. No production incident-response or incremental AI-value claim is established. External papers are evidence about their own setups, not results for this product.
 
 Evaluate the [four core questions](CORE_QUESTIONS.md) separately using T1–T6 in [operating architecture](OPERATING_ARCHITECTURE.md). Report design plausibility, replay correctness, deployed control effect and real pilot outcome as different evidence levels. The existence of a document is not the first row of a successful protection benchmark.
 

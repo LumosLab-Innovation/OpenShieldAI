@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="docs/ROADMAP.md"><img alt="Stage: research and specification" src="https://img.shields.io/badge/stage-research_%26_specification-0f766e"></a>
+  <a href="docs/ROADMAP.md"><img alt="Stage: experimental synthetic runtime" src="https://img.shields.io/badge/stage-experimental_synthetic_runtime-0f766e"></a>
   <a href="LICENSE"><img alt="License: PolyForm Noncommercial 1.0.0" src="https://img.shields.io/badge/license-PolyForm_Noncommercial_1.0.0-334155"></a>
   <a href="docs/SECURITY_GUARDRAILS.md"><img alt="Control: human approved" src="https://img.shields.io/badge/control-human_approved-334155"></a>
   <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/actions/workflows/docs.yml"><img alt="Documentation checks" src="https://github.com/LumosLab-Innovation/OpenShieldAI/actions/workflows/docs.yml/badge.svg"></a>
@@ -26,7 +26,7 @@
   <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/LumosLab-Innovation/OpenShieldAI?style=flat&color=36d9c7"></a>
 </p>
 
-> **Current status — S0: research and specification.** This repository contains the product foundation, source-backed research and engineering rules. It has no deployable runtime, supported live integrations or measured protection capability yet. Diagrams, playbooks and adapters describe proposed behavior. There is no install command that starts a working defense product.
+> **Current status — experimental synthetic runtime and isolated lab.** Python/SQLite investigation, exact lab approvals and a CLIProxyAPI/Codex adapter now exist. Caddy/Coraza and restic run in an isolated synthetic fixture. This is not production protection or an accepted S2/S3 pilot. The real AI comparison is unmeasured because no provider endpoint is configured. See [runtime instructions](docs/RUNTIME.md), [measured lab results](docs/lab/RESULTS.md) and [independent review](docs/lab/EFFICACY_REVIEW.md).
 
 ## The four engineering questions
 
@@ -39,7 +39,19 @@
 
 [Full question checklist](docs/CORE_QUESTIONS.md) · [Concrete operating architecture](docs/OPERATING_ARCHITECTURE.md) · [Adversarial architecture review](docs/research/ARCHITECTURE_CHALLENGE.md)
 
-The selected design separates immediate execution of approved controls from AI supervision. The first lab pairs Caddy + Coraza/CRS ingress with a private origin, an independent effect observer and an isolated restic/application recovery drill. The first response actuator stops new ingress for an accepted low-impact site; it does not prove host, identity or egress containment. None of this runtime exists yet.
+The selected design separates immediate execution of approved controls from AI supervision. The first lab pairs Caddy + Coraza with a pinned request-rule subset of CRS, a private origin, an independent effect observer and an isolated restic/application recovery drill. Its response actuator stops new ingress for an accepted low-impact fixture; it does not prove host, identity or egress containment. The full pinned CRS response bundle failed provisioning; that compatibility limit is recorded in the lab evidence.
+
+## Run the experimental slice
+
+Python 3.11+ is enough for local synthetic investigation and tests:
+
+```text
+python -m openshield --help
+python -m openshield benchmark --output output/comparison.json
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+
+The real isolated control/recovery lab additionally requires Docker and Go; follow [lab setup](lab/README.md). Connect an operator-owned CLIProxyAPI/Codex route through the [gateway module](docs/RUNTIME.md#cliproxyapi--codex-adapter). No direct OpenAI API key is used, no proxy credentials are copied, and a missing provider stays explicitly unmeasured.
 
 ## Why OpenShieldAI
 
@@ -102,10 +114,10 @@ We do not claim that another project's paper scores belong to OpenShieldAI, that
 
 | Stage | Scope | Status |
 |---|---|---|
-| S0 | Research, architecture, strict rules and evaluation design | This repository |
-| S1 | Offline replay, resident AI investigation, deterministic ablation and typed proposals | Planned |
+| S0 | Research, architecture, strict rules and evaluation design | Foundation retained |
+| S1 | Offline replay, resident scheduling, deterministic ablation and typed proposals | Experimental implementation; real AI benefit unmeasured |
 | S2 | One read-only telemetry adapter and operator shadow pilot | Planned |
-| S3 | One approved response adapter and isolated restore drill | Gated |
+| S3 | One approved response adapter and isolated restore drill | Isolated fixture experiments; full production gates open |
 | S4 | Expand independently proven prevention, incident and AI-agent defense capabilities | Research roadmap |
 | S5 | Optional sanitized Hunter report / manual retest exchange | Deferred until standalone gates |
 
@@ -128,7 +140,7 @@ The complete rules are in [AGENTS.md](AGENTS.md) and [security guardrails](docs/
 
 Start with the [documentation map](docs/README.md). Product and engineering decisions live in versioned documents and [ADRs](docs/adr/0001-evidence-first-defense.md); research sources are refreshed only through [manual reviewed enrichment](docs/MANUAL_UPSTREAM_ENRICHMENT_POLICY.md).
 
-For the documentation-only foundation, Python 3.11+ runs the local checks with no third-party packages:
+Python 3.11+ also runs the documentation checks with no third-party packages:
 
 ```text
 python scripts/check_docs.py

@@ -1,0 +1,91 @@
+{
+  "schema": "isolated_lab_build_v1",
+  "connector_commit": "e268cf0f44e95d64da81c641aabebd21364be6f1",
+  "caddy_image_id": "sha256:e3d37a01ab50c5f4db99a64a4b7a1d475c3ee5fa122e2c5317be29ddce99a784",
+  "binary_sha256": "e3ed3ae4c931694e07d07d5b639ad2c8708f82c562a6d7791802eead9198d928",
+  "caddy_version": "v2.11.4 h1:XKxkMTgNSizEvKG6QHue6cAsFOteU2qA61w2tKkCWi0=",
+  "restic_image": "restic/restic@sha256:136600b6ff6843d61d355f7f71f460a166429f35de6fd11b568fece3c9a4d510",
+  "restic_version": "restic 0.19.1 compiled with go1.26.4 on linux/amd64",
+  "source_logging_patch": null,
+  "logging_policy": "waf/http.error/admin.api excluded; access/audit/debug disabled; seeded marker tested",
+  "normalized_module_graph_sha256": "f0927b2a015ffc822b3ccaff1988f6a21bf37f95b23ba97fa7c7cf2659576d0d",
+  "core_modules": [
+    {
+      "Path": "github.com/caddyserver/caddy/v2",
+      "Version": "v2.11.4",
+      "Sum": "h1:XKxkMTgNSizEvKG6QHue6cAsFOteU2qA61w2tKkCWi0=",
+      "GoModSum": "h1:zXCl032uTaF5/TpgU38axqFD41jqzxomTDNqK7BzMeI=",
+      "GoVersion": "1.25.1"
+    },
+    {
+      "Path": "github.com/corazawaf/coraza-caddy/v2",
+      "Version": "v2.6.3-0.20261015122811-e268cf0f44e9",
+      "Sum": "h1:hHamHK5VJdvX6zJ/3oXzU3zTm7bZlKwIPCBa8LTRiQ0=",
+      "GoModSum": "h1:hh5W/tB2U27gWa9RSWaMpbuuFPUQ1vFJrXWZaYlA+KQ=",
+      "GoVersion": "1.26.0"
+    },
+    {
+      "Path": "github.com/corazawaf/coraza-coreruleset",
+      "Version": "v0.0.0-20240226094324-415b1017abdc",
+      "Sum": "h1:OlJhrgI3I+FLUCTI3JJW8MoqyM78WbqJjecqMnqG+wc=",
+      "GoModSum": "h1:7rsocqNDkTCira5T0M7buoKR2ehh7YZiPkzxRuAgvVU=",
+      "GoVersion": "1.18"
+    },
+    {
+      "Path": "github.com/corazawaf/coraza-coreruleset/coraza/v3",
+      "Version": "v3.8.1",
+      "Sum": "h1:Cd5JFZKRA22dh5coq5cBK/0mMEBvAkYjSvaxy+nkXYA=",
+      "GoModSum": "h1:NJ9zTdyOf9Cfmlerw1IGz4fiigwrrxuHMepWruwUKd0=",
+      "GoVersion": "1.23"
+    },
+    {
+      "Path": "github.com/corazawaf/coraza-coreruleset/crs/v4",
+      "Version": "v4.30.0",
+      "Sum": "h1:XMYT7VOFM2VrpIKMUn4vFWyoFNYg1ZaYiexs76AmxzQ=",
+      "GoModSum": "h1:1yaQUjecpEJ/cWXhJaFto+vRuezJCCfVxGQlaQxAGt0=",
+      "GoVersion": "1.23"
+    },
+    {
+      "Path": "github.com/corazawaf/coraza/v3",
+      "Version": "v3.8.1",
+      "Sum": "h1:dMV55FbMR2vOks/acrT43RShR+VkzU6jwp+XPdxay8o=",
+      "GoModSum": "h1:nPVk2JqADYBcKLYvo9cRsr+z4JhanU0WniGhZZBZD6c=",
+      "GoVersion": "1.25.0"
+    },
+    {
+      "Path": "github.com/corazawaf/libinjection-go",
+      "Version": "v0.3.3",
+      "Sum": "h1:NhbXKRfRpqKzBMzv8zpCcnjyEw7BCVhBOv9IPuBl7Fc=",
+      "GoModSum": "h1:Ik/+w3UmTWH9yn366RgS9D95K3y7Atb5m/H/gXzzPCk=",
+      "GoVersion": "1.24.6"
+    }
+  ],
+  "source_sha256": {
+    "openshield/actions.py": "9e6e6e3e1fcdab7a62a59de88a85a6f55a4d8fadd61998298d49316379497948",
+    "openshield/cli.py": "d5b9c65300cac0fcdafb4db7c52206b0e7523e353a3f3019cf1468beb9504e56",
+    "openshield/core.py": "a7f5117ae6ba1ff83da1e747357af00f775a76ac05bf931d14089b54503b80f5",
+    "openshield/evaluation.py": "202ab526dd7b38baedf10b3f7838268fb4fff6a1e8db97cdd81181d7b04ec0d6",
+    "openshield/gateway.py": "1ef0b170b454f9edb6131493362118b45a5dff0ae70c03565a681d6f14d0b095",
+    "openshield/lab_trial.py": "1d9225921e19917ff08afb2ba57736f35cc78eeead9b915135c2859bf2c8dcde",
+    "openshield/__init__.py": "1c3d47bbf75cef52bd47e029f929c00f726c48dd6a906223ce4ddd65e19fa273",
+    "openshield/__main__.py": "3c82483a895ec731a7ace273df25d6419e9e08a0fd8762cb01aa3eaad43c1d81",
+    "lab/admin.py": "83a8a229dfc4f15db9538aa151a7e2e737bf584ec23db533e8624ce7e6aa64b6",
+    "lab/app.py": "b4150cca9a96dd2ebcbaeebbd1503cd6a810d10f6e627c91f83c2d81a526b20b",
+    "lab/control.py": "18e6f349061671acfebd252dc0cd9d2a04dcd7a2d09ad3b9735e06f7d68c443b",
+    "lab/observer.py": "bda06f67c723fcc008fe18def25b25e8646f13809d338f425cc452c77b9ddaba",
+    "lab/stimulus.py": "0dad8cb77b973164623d58e086e2a55b93230b9b6d725d62123cc50f565f44d6",
+    "lab/verify_restore.py": "0b7d6c6976f5168d5ac7d8ddd997a18aabc41b20e69c41bfcf1d9e2391d78ef1",
+    "lab/__init__.py": "04c4c0b1aaa0ae7bc712601d1a7b5c8cd7f64072758d6fc99b12658b63f7c2d4",
+    "lab/go.mod": "78a38dfbb0fc33b622ba64384c6f806002fec4b4cc1422dfc483b3ff1b986a95",
+    "lab/go.sum": "04875c3f670fdcb1b7a4f15d8de7ea3598588f0db61633d38c778d9fc410e74e"
+  },
+  "recordedAt": "2026-10-23T19:20:35.807148+00:00",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "policyProfile": "REQUEST-*.conf only; response rules excluded after actual provisioning failure",
+  "cliproxyapi": {
+    "reviewedCommit": "8289ec4c71ad914d0612c2776352b76ba3d355a6",
+    "status": "HTTP contract tested; real provider unconfigured"
+  },
+  "sourceHashFormat": "SHA-256 of UTF-8 text with LF newlines"
+}

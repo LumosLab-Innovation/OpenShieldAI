@@ -1,0 +1,11 @@
+# Reviewed CLIProxyAPI v8 layout at 8289ec4c71ad914d0612c2776352b76ba3d355a6.
+# Copy outside version control, set a unique local client key, and enroll Codex
+# through CLIProxyAPI's own OAuth flow. Shield never reads its auth directory.
+config-version: 8
+server:
+  host: "127.0.0.1"
+  port: 8317
+  max-request-body-bytes: 65536
+access:
+  api-keys:
+    - "replace-with-your-local-proxy-client-key"

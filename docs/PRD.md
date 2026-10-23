@@ -1,12 +1,12 @@
 # Product requirements
 
-Status: proposed specification, not implemented. Research cut-off: 2026-10-24.
+Status: product requirements with an experimental synthetic implementation and isolated lab; full pilot/production gates remain open. See [runtime](RUNTIME.md) and [measured results](lab/RESULTS.md). Research cut-off: 2026-10-24.
 
 ## Problem and mission
 
 An operator needs protection before impact, a relevant response while harm is occurring, and a trustworthy path back to usable systems afterward. OpenShieldAI's proposed contribution is continuous AI investigation and planning tied to real defensive control points and independent effect verification. A report or an alert alone is not defense.
 
-The [four core questions](CORE_QUESTIONS.md) and selected [operating architecture](OPERATING_ARCHITECTURE.md) specify immediate enforcement, resident AI supervision, a first ingress actuator, recovery proof and falsifiable scenario traces. This refines the original generic decision-layer design; none of these mechanisms is implemented yet.
+The [four core questions](CORE_QUESTIONS.md) and selected [operating architecture](OPERATING_ARCHITECTURE.md) specify immediate enforcement, resident AI supervision, a first ingress actuator, recovery proof and falsifiable scenario traces. The runtime implements only the scope and evidence explicitly listed in its results; the remaining design is not an implementation claim.
 
 AI-enabled attacks motivate faster and more adaptive defense, but the product must also work on conventional attacks. Do not require attribution to an AI attacker before protecting a system. Do not claim to prevent every attack or recover irrecoverable data.
 
@@ -18,8 +18,8 @@ First users are application/platform operators with authority over their service
 
 | Stage | Deliverable | Authority |
 |---|---|---|
-| S0 — current | Research, rules, architecture, measurable test design | No runtime |
-| S1 — first implementation | Offline replay of continuous AI investigation and deterministic ablation; temporal evidence state, proposals and recovery readiness | Local file inputs; no live actions |
+| S0 — foundation | Research, rules, architecture, measurable test design | Historical design baseline |
+| S1 — experimental implementation | Synthetic replay, resident scheduling and deterministic ablation; temporal evidence state and proposals; real AI benefit unmeasured | Local synthetic inputs; no production actions |
 | S2 | One supported read-only source, recurring AI supervision and shadow decisions against existing controls | Read-only, enrolled assets |
 | S3 | One reversible containment adapter and isolated restore validation | Explicit per-action approval; lab first, then narrowly accepted pilot |
 | S4 | Additional independently proven playbooks and environments | Capability-specific release gates |
@@ -54,7 +54,7 @@ Every case states facts versus hypotheses, source trust, affected scope, severit
 
 ## Success and non-goals
 
-Success is measured against deterministic/existing-tool/manual baselines: time to correct triage, evidence-supported accuracy, time to verified containment, analyst work, service disruption, integrity and actual recovery RPO/RTO. See [evaluation](EVALUATION.md). No measurements exist yet.
+Success is measured against deterministic/existing-tool/manual baselines: time to correct triage, evidence-supported accuracy, time to verified containment, analyst work, service disruption, integrity and actual recovery RPO/RTO. See [evaluation](EVALUATION.md) and the narrowly scoped [first-lab evidence](lab/RESULTS.md); no production or AI-advantage measurement is established.
 
 Prevention needs an effective deployed control on the attack path; during-attack response needs a relevant actuator and measured damage window; recovery needs an actual restored application and trust reconstruction. Continuous AI must improve those workflows under held-out comparison, not merely remain a running process.
 

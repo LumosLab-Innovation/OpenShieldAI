@@ -1,6 +1,6 @@
 # Acceptance criteria
 
-All gates below are unpassed. Documentation completeness is the only deliverable in S0. Do not check an execution gate without reproducible evidence.
+These are full capability gates, not automatic passes from a document or unit test. The [experimental runtime](RUNTIME.md), [first-lab measurements](lab/RESULTS.md) and [independent review](lab/EFFICACY_REVIEW.md) record individual exercised assertions; full S2/S3 acceptance remains open. Do not check an execution gate without reproducible evidence.
 
 ## S0 — reviewable foundation
 

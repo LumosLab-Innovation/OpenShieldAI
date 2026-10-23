@@ -12,5 +12,8 @@ artifacts/
 output/
 incident-data/
 evidence/
+# Curated synthetic public lab records; real evidence remains ignored elsewhere.
+!docs/lab/evidence/
+!docs/lab/evidence/*.json
 *.pem
 *.key

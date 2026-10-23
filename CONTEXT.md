@@ -8,7 +8,7 @@ Help operators prevent, investigate, contain and recover from compromise as atta
 
 ## Current state
 
-This is a research and specification foundation. There is no deployable security product, live connector, model integration, recovery executor or published efficacy measurement. Documents distinguish selected design, proposed integration, experimental research and deferred work.
+The repository now includes a Python/SQLite synthetic runtime, bounded resident scheduling, a CLIProxyAPI/Codex transport module, exact fixed-lab approvals and isolated Caddy/Coraza/restic experiments. No real model endpoint is configured and no AI benefit or production support is established. See [runtime](docs/RUNTIME.md) and [measured evidence](docs/lab/RESULTS.md); research snapshots remain historical sources.
 
 ## Decisions
 

@@ -1,0 +1,94 @@
+{
+  "status": "verified_for_new_ingress_only",
+  "decision": {
+    "assessment": "suspicious",
+    "hypotheses": [
+      {
+        "code": "business_abuse",
+        "evidenceIds": [
+          "observed_effect"
+        ]
+      }
+    ],
+    "nextAction": "set_site_ingress_mode",
+    "evidenceIds": [
+      "observed_effect"
+    ],
+    "readRequests": [],
+    "limitations": [
+      "bounded_window",
+      "synthetic_lab_only",
+      "unverified_effect"
+    ],
+    "schemaVersion": "investigation_v1",
+    "projectId": "lab",
+    "caseId": "active_case",
+    "assetId": "lab_web",
+    "caseVersion": 1,
+    "evidenceWatermark": "c281f4a66af005441a79b3bc1345268f0c714e57b58936f6780e904e353fb1e6",
+    "mode": "baseline",
+    "aiStatus": "not_requested",
+    "calls": 0,
+    "tokens": 0,
+    "tokenAccounting": "conservative_reserved_upper_bound",
+    "startedAt": "2026-10-23T19:18:56.409766Z",
+    "completedAt": "2026-10-23T19:18:56.428734Z",
+    "elapsedSeconds": 0.0,
+    "routeHash": "unconfigured",
+    "modelProvenance": null,
+    "verificationAuthority": "independent_observer_only"
+  },
+  "auditStateRef": "artifacts/runtime-trials/85941620dee1492f9de83d774440420e",
+  "receipt": {
+    "schemaVersion": "lab_action_receipt_v1",
+    "proposalId": "9e804df6e3cb4221b71b9ad52cb1f2df",
+    "approvalId": "2a350c7382d04933a85f8e4337a58548",
+    "status": "succeeded",
+    "errorCode": null,
+    "startedAt": 1792783137.384519,
+    "endedAt": 1792783139.132363,
+    "verification": "pending_independent_observer"
+  },
+  "independentPostcheck": {
+    "new_requests_reach_app": false,
+    "management_ok": true,
+    "legitimate_status": 503,
+    "harm_count": 35,
+    "request_count": 86
+  },
+  "compensationReceipt": {
+    "schemaVersion": "lab_action_receipt_v1",
+    "proposalId": "fdc7c4a1b3434180935b850fa64fe9b1",
+    "approvalId": "8c93d0620cce447db25ddd8cfe14071e",
+    "status": "succeeded",
+    "errorCode": null,
+    "startedAt": 1792783142.394444,
+    "endedAt": 1792783144.175474,
+    "verification": "pending_independent_observer"
+  },
+  "compensationPostcheck": {
+    "new_requests_reach_app": true,
+    "management_ok": true,
+    "legitimate_status": 200,
+    "harm_count": 35,
+    "request_count": 87
+  },
+  "approval": "scripted lab_controller exact-digest fixture; not a human trial",
+  "timingSeconds": {
+    "sourceStimulusToCollection": 0.7729615999996895,
+    "collectionToPlan": 0.1438592000049539,
+    "planToScriptedApproval": 0.8647946999990381,
+    "approvalToReceipt": 1.793116499989992,
+    "receiptToVerification": 1.9576735000009649,
+    "sourceStimulusToVerifiedEffect": 5.532405499994638,
+    "scriptedWait": 0.25,
+    "actualHumanWait": null
+  },
+  "additionalPlantedHarmDuringResponse": 11,
+  "continuedFixtureRequests": 38,
+  "limitations": [
+    "Controlled planted operation; not a real exploit or malware test.",
+    "No AI endpoint used; no machine/human triage advantage measured.",
+    "Existing host processes, sessions, egress and disclosure remain outside this objective."
+  ]
+}

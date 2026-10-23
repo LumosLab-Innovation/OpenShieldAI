@@ -1,6 +1,6 @@
 # Worker and adapter specification
 
-Status: requirements only. A worker is a bounded job in the initial application, not a justification for a separate service or agent.
+Status: normative requirements with an experimental serial synthetic supervisor; see [runtime](RUNTIME.md) for implemented bounds and remaining gates. A worker is a bounded job in the initial application, not a justification for a separate service or agent.
 
 A resident supervisor schedules bounded jobs and persists watermarks across restarts. It is the long-lived service; individual inference/collection/response jobs retain hard deadlines. Waiting for changed evidence is not an infinite model/tool loop.
 

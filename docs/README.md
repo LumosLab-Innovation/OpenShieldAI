@@ -1,6 +1,6 @@
 # Documentation map
 
-All capabilities are proposed unless explicitly backed by implementation and acceptance evidence. Current stage is S0.
+Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measurements](lab/RESULTS.md), [independent efficacy review](lab/EFFICACY_REVIEW.md) and [lab setup](../lab/README.md). Earlier research documents are historical design evidence, not current integration-status records. Full pilot/production gates remain open.
 
 | Start here | Purpose |
 |---|---|

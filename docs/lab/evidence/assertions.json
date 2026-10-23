@@ -1,0 +1,24 @@
+{
+  "scope": "synthetic lab only",
+  "checks": {
+    "planted_prevention_and_legitimate_requests": true,
+    "tested_source_log_minimization": true,
+    "tested_origin_and_observer_boundary": true,
+    "conditional_new_ingress_stop": true,
+    "existing_work_limit_measured": true,
+    "restart_and_reopening_measured": true,
+    "actual_loss_then_usable_isolated_restore": true,
+    "recovery_negative_controls": true,
+    "runtime_approval_bridge": true
+  },
+  "actualDockerSuite": {
+    "passed": 7,
+    "skipped": 0,
+    "seconds": 78.889
+  },
+  "runtimeSuite": {
+    "run": 57,
+    "passed": 54,
+    "skippedActualDockerTests": 3
+  }
+}

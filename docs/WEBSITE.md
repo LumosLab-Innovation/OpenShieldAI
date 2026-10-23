@@ -1,6 +1,6 @@
 # Public project landing
 
-The [GitHub Pages landing](https://lumoslab-innovation.github.io/OpenShieldAI/) presents the project's vision and proposed architecture. It is a static showcase, not the incident-response runtime. Publishing it does not advance the product beyond S0.
+The [GitHub Pages landing](https://lumoslab-innovation.github.io/OpenShieldAI/) presents the project's vision, architecture and links to measured lab evidence. It is a static showcase, not the incident-response runtime. Publishing it does not advance any implementation or acceptance gate.
 
 ## Source and deployment
 
@@ -16,7 +16,7 @@ Open `http://127.0.0.1:8784/`. Test desktop, narrow mobile, keyboard controls, g
 
 ## Visual system
 
-The README and website share [the generated guardian artwork](assets/IMAGE_GENERATION.md), near-black/graphite surfaces, white type and a restrained mint accent. Public landing and README copy are in English. Contributor/star badges use real third-party GitHub data, never fabricated counts; those services may be unavailable independently of this site.
+The README and navigation use the generated S/shield logo; the landing hero uses the separate guardian [artwork](assets/IMAGE_GENERATION.md). Both share near-black/graphite surfaces, white type and a restrained mint accent. Public landing and README copy are in English. Contributor/star badges use real third-party GitHub data, never fabricated counts; those services may be unavailable independently of this site.
 
 ## Diagram authoring
 
@@ -32,4 +32,4 @@ After rendering, replace the region between `BEGIN GENERATED MERMAID` and `END G
 
 The renderer needs a supported local Chrome/Chromium. A workstation-specific Puppeteer configuration can select its executable with `-p`; keep that local path out of published configuration. Use an isolated npm cache if the host cache is broken; do not delete a shared cache. Review the SVG after regeneration and rerun the interactive walkthrough because its node IDs are referenced by the page.
 
-Keep `securityLevel: strict`, disable HTML labels and do not accept visitor-supplied diagram sources or arbitrary SVG URLs. Diagram changes must retain the policy/approval boundary before execution, S3's future status, and separate outcome verification.
+Keep `securityLevel: strict`, disable HTML labels and do not accept visitor-supplied diagram sources or arbitrary SVG URLs. Diagram changes must retain the policy/approval boundary before execution, lab-only action scope, unpassed production gates and separate outcome verification.

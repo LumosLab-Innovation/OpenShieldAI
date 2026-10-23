@@ -1,6 +1,6 @@
 # Proposed data contracts
 
-Status: normative design for S1; no schemas or runtime API implemented yet. Implement versioned machine schemas and compatibility tests before accepting external inputs. Examples use synthetic IDs, never credentials or real incident data.
+Status: broader normative contracts; the current runtime implements only strict `lab_event_v1`, case snapshots, investigation results and lab-specific action records described in [runtime instructions](RUNTIME.md). The full contracts below are not a supported network API. Examples use synthetic IDs, never credentials or real incident data.
 
 ## Common envelope
 

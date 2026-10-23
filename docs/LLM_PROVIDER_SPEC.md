@@ -1,6 +1,6 @@
 # LLM Gateway specification
 
-Status: proposed; no provider configured, SDK installed, model selected or API key required by this repository.
+Status: a [CLIProxyAPI/Codex adapter](RUNTIME.md#cliproxyapi--codex-adapter) is implemented and HTTP-contract tested. No real provider endpoint/model is configured, no provider SDK is installed, and no real inference or AI-benefit result is claimed. Operator proxy client credentials are needed only when enabling that route.
 
 AI is resident supervision in the proposed normal product mode. New material evidence, changed posture, verification/recovery events and bounded recurring review trigger it; a request or an unchanged timer tick does not automatically call an LLM. [Operating architecture](OPERATING_ARCHITECTURE.md) defines persistent state, scheduling, health and the canonical pilot budget.
 

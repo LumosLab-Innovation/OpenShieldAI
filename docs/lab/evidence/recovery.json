@@ -1,0 +1,60 @@
+{
+  "snapshot_id": "76cd7f44266d7f6e1591e4cc220e016df80a5d821e0fc8e45892ea53fb494002",
+  "clean": {
+    "status": "verified",
+    "integrity_ok": true,
+    "business_invariants_ok": true,
+    "clean_build_marker_ok": true,
+    "transaction_ok": true,
+    "application_http_ok": true,
+    "accounts": [
+      [
+        1,
+        600
+      ],
+      [
+        2,
+        400
+      ]
+    ],
+    "elapsed_ms": 3161.739
+  },
+  "missing_key": {
+    "status": "failed",
+    "error": "MISSING_KEY",
+    "elapsed_ms": 0
+  },
+  "wrong_key": {
+    "status": "failed",
+    "error": "RESTORE_TOOL_FAILED",
+    "elapsed_ms": 1341.969
+  },
+  "corrupt": {
+    "status": "failed",
+    "error": "RESTORE_TOOL_FAILED",
+    "elapsed_ms": 1509.377
+  },
+  "contaminated": {
+    "status": "failed",
+    "error": "RESTORED_APPLICATION_INVARIANT_FAILED",
+    "elapsed_ms": 2491.888
+  },
+  "application_inconsistent": {
+    "status": "failed",
+    "error": "RESTORED_APPLICATION_INVARIANT_FAILED",
+    "elapsed_ms": 2427.233
+  },
+  "data_loss_independently_observed": true,
+  "broken_app_transaction_status": 409,
+  "restore_uses_empty_isolated_target": true,
+  "synthetic_rpo_seconds": 5.348,
+  "rpo_definition": "Last application-consistent checkpoint to declared synthetic incident after one further committed transaction.",
+  "committed_transactions_after_checkpoint": 1,
+  "verified_restore_rto_ms": 3161.739,
+  "limitations": [
+    "No production overwrite/reconnection.",
+    "Known planted trust marker is not a malware scanner.",
+    "Recovery does not reverse disclosure.",
+    "No production backup identity/key-management guarantee."
+  ]
+}

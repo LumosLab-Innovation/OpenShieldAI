@@ -1,0 +1,54 @@
+{
+  "applied": {
+    "status": 200,
+    "etag": "\"/config/ 35d6fbfe6d3cb1d5\"",
+    "release": "1e601976ac66448553633a340a724b5aebbbc12ab971eff4af4bb5b11d7658f0",
+    "mode_requested": "maintenance"
+  },
+  "stale_update_status": 412,
+  "during": {
+    "new_requests_reach_app": false,
+    "management_ok": true,
+    "legitimate_status": 503,
+    "harm_count": 20,
+    "request_count": 67
+  },
+  "pre_response_fixture_status": 200,
+  "pre_response_harm_delta": 1,
+  "post_response_fixture_statuses": [
+    503,
+    503,
+    503
+  ],
+  "post_response_harm_delta": 0,
+  "dispatch_with_readback_ms": 1722.661,
+  "in_flight_status": 200,
+  "in_flight_finished": true,
+  "background_continued": true,
+  "retained_without_native_ttl": {
+    "new_requests_reach_app": false,
+    "management_ok": true,
+    "legitimate_status": 503,
+    "harm_count": 20,
+    "request_count": 67
+  },
+  "after_proxy_restart": {
+    "new_requests_reach_app": false,
+    "management_ok": true,
+    "legitimate_status": 503,
+    "harm_count": 20,
+    "request_count": 67
+  },
+  "reopened": {
+    "new_requests_reach_app": true,
+    "management_ok": true,
+    "legitimate_status": 200,
+    "harm_count": 20,
+    "request_count": 68
+  },
+  "approval_mode": "controller fixture; no human approval latency measured",
+  "limitations": [
+    "Ingress maintenance is not host/session/egress containment.",
+    "WebSockets not implemented in this fixture."
+  ]
+}

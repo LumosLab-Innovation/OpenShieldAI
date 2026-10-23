@@ -1,6 +1,6 @@
 # Mandatory security guardrails
 
-Status: normative requirements for future implementation; none are validated runtime controls yet.
+Status: normative requirements. The synthetic runtime exercises a subset through tests and isolated trials; see [runtime scope](RUNTIME.md) and [measured results](lab/RESULTS.md). Unexercised requirements remain open, including production source authentication and isolated identities.
 
 ## 1. Defensive authorization
 

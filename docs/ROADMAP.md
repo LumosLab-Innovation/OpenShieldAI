@@ -1,6 +1,6 @@
 # Roadmap: earn capability before autonomy
 
-Stages are gated by evidence, not promised dates. Current stage is S0. No runtime milestone is complete.
+Stages are gated by evidence, not promised dates. An experimental S1 synthetic runtime and isolated control/recovery experiments now exist; see [runtime scope](RUNTIME.md) and [measured results](lab/RESULTS.md). Real AI value and full S2/S3 release gates remain open.
 
 The engineering spine is now the [four core questions](CORE_QUESTIONS.md) and [operating architecture](OPERATING_ARCHITECTURE.md): actual control points, a continuously present AI supervisor, a narrowly scoped ingress response and isolated application recovery. This is a design selection, not support or efficacy evidence.
 

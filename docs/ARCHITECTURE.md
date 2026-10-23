@@ -1,6 +1,6 @@
 # Architecture
 
-Status: proposed; no components below are executable in this repository yet.
+Status: selected architecture with a limited synthetic implementation. [Runtime instructions](RUNTIME.md) and [lab evidence](lab/RESULTS.md) identify executable modules and unpassed capabilities; this full module map is not a production-support claim.
 
 The selected [operating architecture](OPERATING_ARCHITECTURE.md) and [ADR 0002](adr/0002-continuous-ai-and-enforcement-planes.md) refine this module map with immediate enforcement, continuous AI supervision, a first actuator and T1–T6 effect tests. Read those for the [four core questions](CORE_QUESTIONS.md). The diagram below is the case/control workflow, not the complete request path.
 

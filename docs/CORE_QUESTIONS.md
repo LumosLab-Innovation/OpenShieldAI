@@ -1,6 +1,6 @@
 # The four questions OpenShieldAI must answer
 
-Status: engineering questions and selected design, not a statement of implemented protection. Today the repository has no defensive runtime. Its website and documents cannot prevent, contain or recover from an attack.
+Status: engineering questions and selected design. A synthetic runtime and isolated first-lab experiments now exercise a subset; [measured results](lab/RESULTS.md) distinguish actual observations from unpassed production and AI-benefit claims. The website and documents themselves provide no protection.
 
 Every capability needs a falsifiable chain: **threat → observations → decision → actual control point → independently observed effect → service impact → residual risk**. A response without an actuator is advice. An actuator without verification is an unproven action.
 

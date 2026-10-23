@@ -1,6 +1,6 @@
 # Production readiness
 
-**Current status: S0 research/specification only. Not deployable. All runtime gates below are open.** The repository documentation check verifies structure and links; it does not validate security efficacy.
+**Current scope: experimental S1 synthetic runtime plus isolated control/recovery experiments. No accepted production pilot or measured AI advantage.** See [individual lab assertions](lab/RESULTS.md) and [review](lab/EFFICACY_REVIEW.md). Full release gates below remain open unless exact reproducible evidence closes the entire requirement. Documentation checks validate structure, not security efficacy.
 
 ## Before any implementation claim
 

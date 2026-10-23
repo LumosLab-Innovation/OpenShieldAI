@@ -1,6 +1,6 @@
 # Contributing
 
-Start with [AGENTS.md](AGENTS.md), the [PRD](docs/PRD.md) and [security guardrails](docs/SECURITY_GUARDRAILS.md). The repository is a research/specification foundation; please do not submit a broad autonomous SOC implementation or unrequested integration.
+Start with [AGENTS.md](AGENTS.md), the [PRD](docs/PRD.md), [runtime scope](docs/RUNTIME.md) and [security guardrails](docs/SECURITY_GUARDRAILS.md). The implementation is limited to synthetic runtime and isolated experiments; please do not submit a broad autonomous SOC implementation or unrequested integration.
 
 ## Propose useful work
 
@@ -19,14 +19,15 @@ Use GitHub Issues for planned work. Default triage vocabulary: `needs-triage`, `
 
 ## Local checks
 
-Python 3.11+; no third-party package is required for the current documentation foundation.
+Python 3.11+; no third-party Python package is required for local runtime and documentation tests. Actual lab trials additionally need the explicitly configured Docker/Go environment.
 
 ```text
 python scripts/check_docs.py
 python -m unittest discover -s scripts -p "test_*.py"
+python -m unittest discover -s tests -p "test_*.py" -v
 git diff --check
 ```
 
-These are documentation/provenance checks, not a security or incident-response benchmark. Future runtime changes must additionally run relevant implementation tests and stage acceptance scenarios. State what was tested, what remains unverified and which capability stage the patch reaches.
+Documentation checks are not a security benchmark. Runtime tests include labeled doubles; actual Docker integration tests are opt-in through the [lab instructions](lab/README.md). State what was tested, what remains unverified and which capability stage the patch reaches.
 
 Report potential vulnerabilities privately through [SECURITY.md](SECURITY.md). Participate respectfully under the [code of conduct](CODE_OF_CONDUCT.md).

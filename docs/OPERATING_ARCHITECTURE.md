@@ -1,6 +1,6 @@
 # Operating architecture: prevention, active response, recovery and continuous AI
 
-Status: selected design for implementation, **not a deployed or benchmarked system**. This specification makes the four [core questions](CORE_QUESTIONS.md) concrete. Its lab choices do not authorize accessing a real environment or broaden S1/S2 execution rights.
+Status: selected design, with only the synthetic implementation and isolated experiments recorded in [runtime instructions](RUNTIME.md) and [lab results](lab/RESULTS.md). This is **not a production deployment or demonstrated AI advantage**. The specification makes the four [core questions](CORE_QUESTIONS.md) concrete. Its lab choices do not authorize accessing a real environment or broaden S1/S2 execution rights.
 
 ## 1. The missing distinction: enforcement and supervision
 
@@ -179,4 +179,4 @@ Do not mutate originals or overwrite production. Revoke/replace compromised iden
 | T5 — degraded operation is honest | Provider failure, source drop, control outage, overload and process crash; confirm existing approved data-plane policy, persisted case and visible reduced capability | New unsafe action, silent gap, false complete analysis or dependence of every request on LLM availability |
 | T6 — adversarial input cannot seize authority | Poisoned event/metadata, forged correlation ID, stale approval and parallel config edit | Changed control without exact approval, source-side secrets reaching ordinary logs/model, replayed grant or overwritten newer operator config |
 
-These traces are specifications awaiting implementation. [Evaluation](EVALUATION.md) must publish baseline configuration, held-out ground truth, supported workload, adverse effects and uncertainty. A passing T1 is not proof of T2/T3, and a successful model benchmark is not proof of any deployed control.
+These traces remain acceptance specifications; only exact exercised claims in the [lab report](lab/RESULTS.md) have evidence. [Evaluation](EVALUATION.md) must publish baseline configuration, held-out ground truth, supported workload, adverse effects and uncertainty. A passing T1 is not proof of T2/T3, and a successful model benchmark is not proof of any deployed control.
