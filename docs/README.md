@@ -9,6 +9,8 @@ All capabilities are proposed unless explicitly backed by implementation and acc
 | [Context](../CONTEXT.md) | Decisions, assumptions and open pilot inputs |
 | [Agent rules](../AGENTS.md) | Mandatory read order, scope and definition of done |
 | [PRD](PRD.md) | Users, problem, staged capability and first workflow |
+| [Four core questions](CORE_QUESTIONS.md) | Actual prevention, ongoing response, aftermath and continuous AI |
+| [Operating architecture](OPERATING_ARCHITECTURE.md) | Control points, AI lifecycle, actuator protocol, timing and falsifiable scenario traces |
 | [Architecture](ARCHITECTURE.md) | Modules, trust boundaries, deployment and failure behavior |
 | [Guardrails](SECURITY_GUARDRAILS.md) | Authorization, evidence, approvals, execution and recovery rules |
 | [Acceptance](ACCEPTANCE_CRITERIA.md) | Evidence required to advance each stage |
@@ -25,5 +27,6 @@ All capabilities are proposed unless explicitly backed by implementation and acc
 | [Upstream enrichment](MANUAL_UPSTREAM_ENRICHMENT_POLICY.md) | Manual update, provenance, license and activation rules |
 | [Hunter exchange](OPENHUNTER_COLLABORATION.md) | Later versioned report/manual-retest contract |
 | [ADR 0001](adr/0001-evidence-first-defense.md) | Why evidence-first defense and a modular monolith |
+| [ADR 0002](adr/0002-continuous-ai-and-enforcement-planes.md) | Continuous AI supervision and separate immediate enforcement |
 
 Public-repository policies: [security](../SECURITY.md), [contributing](../CONTRIBUTING.md), [conduct](../CODE_OF_CONDUCT.md), [licensing](../LICENSING.md).

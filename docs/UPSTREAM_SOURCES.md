@@ -8,6 +8,11 @@ Review snapshot: 2026-10-24. Evidence favors bounded, measurable assistance and 
 - [Machine-readable registry](research/upstreams.json): immutable reviewed commits, license evidence, observed activity, adoption decision, required tests and `not_implemented` status. These research commits are not production release recommendations.
 - [AI research and additional IR/recovery references](research/AI_DEFENSE_EVIDENCE.md): measured studies, preprint/benchmark limitations, standards and additional candidates such as AgentDojo, Timesketch and DFIR-IRIS. These supplementary references are not approved runtime dependencies; add a pinned registry entry before adoption.
 - [Skeptical review](research/SKEPTICAL_REVIEW.md): admission criteria, feature decisions and concrete S0 review disposition.
+- [Control-point research](research/CONTROL_POINT_RESEARCH.md): actual proxy/WAF integration tuple, bypasses, log exposure, response mechanics and recovery proof.
+- [Continuous AI research](research/CONTINUOUS_AI_RESEARCH.md): resident event-driven supervision, durable state, bounded reads and evidence for/against complex detectors.
+- [Architecture challenge](research/ARCHITECTURE_CHALLENGE.md): missing mechanisms, four-question tests and adversarial review of the deeper design.
+
+The selected [operating architecture](OPERATING_ARCHITECTURE.md) and [LLM specification](LLM_PROVIDER_SPEC.md) define the canonical pilot budget and actuator. Alternative timing/TTL proposals in research notes are experiments, not simultaneous guarantees or approved runtime behavior.
 
 ## Standards and methodology
 

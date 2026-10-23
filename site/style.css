@@ -20,6 +20,7 @@ p,h1,h2,h3{margin:0}
 .site-header{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;height:100px;padding:0 var(--page-gutter);font-size:13px}
 .wordmark{display:inline-flex;align-items:center;gap:11px;font-size:16px;font-weight:650;letter-spacing:-.5px}
 .wordmark svg{width:24px;height:29px;color:var(--mint)}
+.wordmark img{width:30px;height:30px;object-fit:contain}
 .site-header nav{display:flex;gap:34px;margin-left:45px;color:#d5e0db}
 .site-header a{transition:color .2s}
 .site-header a:hover{color:var(--mint)}

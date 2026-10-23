@@ -8,6 +8,8 @@ Require an authenticated operator, explicit enrollment/ownership attestation, im
 
 No hack-back, exploit delivery, malware deployment, persistence, credential theft or retaliation. No free-form root shell and no external code execution from model output. No production mutation during S1/S2.
 
+An operator's already deployed approved control may enforce incoming requests without a new per-request Shield approval. Changing that control, its scope or its authority is a new action and retains the exact approval requirement. AI supervision is asynchronous; model failure cannot become an implicit allow/deny decision for each application request.
+
 ## 2. Untrusted input and model isolation
 
 Logs, artifacts, retrieved text, rules, reports and tool results may contain adversarial instructions. Parse as data with content-type/schema, size, archive depth, decompression, field count and runtime limits. Disable active content, macro execution, path traversal, unsafe deserialization and automatic URL dereferencing. Uploaded evidence cannot select plugins or model tools.
@@ -22,6 +24,8 @@ Secrets, personal/sensitive data, raw traffic, memory/disk images and live crede
 
 Separate secret broker from evidence and case storage. Encrypt sensitive storage/backups and transport; key lifecycle is owned by the operator. Use scoped, short-lived adapter credentials with auditable access; never put credential values in action records.
 
+Minimize source logs before ordinary logging/telemetry. WAF/connector errors can contain matched request data or query strings; isolate any permitted originals in the restricted evidence boundary. Intake sanitization cannot undo upstream disclosure into logs, backups or aggregators.
+
 ## 4. Action policy
 
 | Risk | Example | Authority |
@@ -32,6 +36,8 @@ Separate secret broker from evidence and case storage. Encrypt sensitive storage
 | R3 | Bulk isolation, revoke/rotate credentials, data deletion, production restore | Qualified human-run procedure; two-person review; no autonomous executor in initial releases |
 
 Read operations that can expose sensitive data or overload services are not automatically R1; classify by actual impact. No model can lower risk classification. No bulk expansion from one asset to a group. Irreversible actions require explicit impact/lockout planning; approval does not make them reversible.
+
+Site maintenance is R2 only within an explicitly accepted low-impact asset/dependency envelope; otherwise classify actual business interruption as R3 and use a qualified-human procedure. Distinguish approval expiration, control lifetime and a human review deadline. No process-local TTL guarantee after a crash, and no automatic reopening of an unsafe service without exact reversal authority.
 
 Approval binds project/case/asset, action type, normalized parameters, evidence references/version, expected state/version, policy version, impact, compensation, postchecks, operator and expiry into an immutable digest. A changed field or stale state invalidates approval. Enforce replay resistance, least privilege, separation of duties and single-use dispatch. Approval UI must display the exact effect and dependencies; never hide unknowns under an AI confidence score.
 

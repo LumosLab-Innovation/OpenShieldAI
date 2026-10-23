@@ -13,14 +13,15 @@ This is a research and specification foundation. There is no deployable security
 ## Decisions
 
 - Standalone defense first; OpenHunterAI is one later evidence producer.
+- The four core questions now drive an explicit enforcement plane plus resident AI supervision; see ADR 0002 and the operating architecture.
 - Evidence/provenance and deterministic policy surround AI reasoning.
 - A small modular monolith precedes distributed services; external security tools remain separate systems.
 - Original evidence stays with the operator; bounded sanitized evidence enters reasoning.
 - Start with offline replay and read-only investigation; earn each action capability with benchmarks and isolated trials.
 - Match OpenHunterAI's PolyForm Noncommercial 1.0.0 policy; dependencies keep their own terms.
 
-See [ADR 0001](docs/adr/0001-evidence-first-defense.md), [roadmap](docs/ROADMAP.md), [research](docs/UPSTREAM_SOURCES.md) and [release gates](docs/PRODUCTION_READINESS.md).
+See [ADR 0001](docs/adr/0001-evidence-first-defense.md), [ADR 0002](docs/adr/0002-continuous-ai-and-enforcement-planes.md), [core questions](docs/CORE_QUESTIONS.md), [operating architecture](docs/OPERATING_ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [release gates](docs/PRODUCTION_READINESS.md).
 
 ## Open decisions
 
-The first pilot organization, telemetry coverage, identity provider, supported host OS, data classification, deployment constraints and named incident commander are not selected. No production execution design is accepted without these inputs. The proposed first lab uses a single Linux web service, synthetic access/auth/file-integrity events and an isolated backup/restore target; it is not a support promise.
+The first pilot organization, telemetry coverage, identity provider, supported host OS, data classification, deployment constraints and named incident commander are not selected. No production execution design is accepted without these inputs. The selected first lab uses a single Linux web service behind a dedicated Caddy/Coraza/CRS proxy with a private origin, synthetic data, independent effect probes and an isolated restic/application restore target. Its source-minimization, compatibility and efficacy gates remain open; it is not a support promise.

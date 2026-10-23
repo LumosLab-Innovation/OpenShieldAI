@@ -2,11 +2,15 @@
 
 Status: requirements only. A worker is a bounded job in the initial application, not a justification for a separate service or agent.
 
+A resident supervisor schedules bounded jobs and persists watermarks across restarts. It is the long-lived service; individual inference/collection/response jobs retain hard deadlines. Waiting for changed evidence is not an infinite model/tool loop.
+
 ## Common input and isolation
 
 Every job carries `schemaVersion`, `projectId`, `caseId`, `runId`, task type, frozen enrollment/scope/policy refs, permitted evidence IDs, deadline, budget, cancellation lease, adapter/runtime ref and idempotency key. Evidence/model text cannot supply executable paths, endpoint URLs, raw commands, credentials or plugins.
 
 Only the action broker can obtain an execution capability. A direct adapter invocation without a valid action-bound grant fails closed. Scope and state are rechecked at the adapter boundary. Read-only and response credentials/processes remain separate. Limit network, filesystem, CPU, memory, output size and subprocess lifetime; avoid a shell and use fixed typed APIs/argv.
+
+Observation jobs bind query catalog ID, allowed fields, record/time-window caps, source grant, case/evidence version and episode budget. Models propose reads; deterministic policy decides and an adapter executes them. Case version + evidence watermark + use case + route version is the inference deduplication key. Apply the canonical episode/concurrency limits in [LLM_PROVIDER_SPEC.md](LLM_PROVIDER_SPEC.md).
 
 ## Job categories
 
@@ -48,6 +52,8 @@ Canonical job status: `succeeded | partial | failed | skipped | cancelled | unkn
 Initial proposed ceiling: one attempt plus at most two retries for idempotent reads, each within the job's total deadline. Configure exact time/resource ceilings per supported adapter before release; zero/unbounded values are invalid. Mutations receive no automatic retry after uncertain completion. Reconcile actual target state and obtain new authorization when required.
 
 Persist intent before dispatch and reconcile expired leases. Deduplicate result callbacks by run/attempt ID; retain late output as evidence without restoring authority. Sanitize ordinary/error logs. Audit policy denial, approval, dispatch, cancellation, capability access, unknown outcome, compensation, verification and closure. Audit failure blocks mutations.
+
+Persist AI/source/control health separately from job completion: oldest unexamined event, last successful analysis, source watermark, dropped-event count and pending verification age. An empty successful job cannot erase a visibility gap or unresolved action. Previously approved static controls continue while supervision is degraded.
 
 ## Required tests
 

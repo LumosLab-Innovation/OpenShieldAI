@@ -2,10 +2,12 @@
 
 Stages are gated by evidence, not promised dates. Current stage is S0. No runtime milestone is complete.
 
+The engineering spine is now the [four core questions](CORE_QUESTIONS.md) and [operating architecture](OPERATING_ARCHITECTURE.md): actual control points, a continuously present AI supervisor, a narrowly scoped ingress response and isolated application recovery. This is a design selection, not support or efficacy evidence.
+
 | Stage | Work | Exit evidence |
 |---|---|---|
 | S0 — research foundation | Primary research, upstream/license registry, architecture, strict rules, skeptical review | Reviewable docs; unresolved assumptions explicit |
-| S1 — offline investigation | Native contracts, bounded import, evidence timeline, deterministic baseline, optional AI, typed response proposal, recovery-readiness output | Held-out replay + utility/safety evaluation; no live writes |
+| S1 — offline investigation | Native contracts, temporal evidence state, resident AI investigation, deterministic ablation, typed response and recovery-readiness output | Held-out replay + utility/safety evaluation; no live writes |
 | S2 — read-only pilot | Choose one actual source already used by a pilot; enroll assets; shadow investigations | Real adapter/version, source quality, operator study, data controls |
 | S3 — approved response | Choose one narrow reversible enforcement path; separate observer; fault injection; isolated restore drill | Verified effect, service safety, compensation, recovery RPO/RTO and operator acceptance |
 | S4 — deeper defense | Expand proven identity/web/host/data-loss/AI-agent playbooks and prevention checks | Per-capability replay and environment acceptance |
@@ -14,11 +16,11 @@ Stages are gated by evidence, not promised dates. Current stage is S0. No runtim
 ## Initial implementation work packages
 
 1. Encode [contracts](DATA_CONTRACTS.md), enrollments and evidence lineage; establish safe replay fixtures and labels.
-2. Build deterministic investigation and no-AI response playbook lookup; measure the baseline before adding models.
-3. Add gateway-isolated hypotheses and challenge; reject unsupported claims and measure incremental value.
+2. Build the deterministic baseline and typed temporal state; use it for ablation and visibly degraded operation.
+3. Build resident gateway-isolated AI triggers, bounded observation requests and challenge; reject unsupported claims and measure incremental value on changed event sequences, not only report summaries.
 4. Build recovery-readiness checks and an isolated manual drill protocol; never confuse backup metadata with recovery proof.
 5. Select one read-only adapter using [upstream evaluation](research/UPSTREAM_EVALUATION.md) and pilot inputs.
-6. Select one S3 containment action only after baseline, scope, authority and service dependencies are understood.
+6. Prove the selected S3 low-impact ingress-maintenance action after baseline/scope/authority/dependency acceptance; do not infer host/identity/egress containment from that result.
 
 Every work package includes negative cases, failure/coverage states, provenance, operator outputs and relevant tests. No agent is assigned a broad toolset before a specific action earns it.
 

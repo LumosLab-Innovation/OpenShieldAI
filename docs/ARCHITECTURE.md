@@ -2,6 +2,8 @@
 
 Status: proposed; no components below are executable in this repository yet.
 
+The selected [operating architecture](OPERATING_ARCHITECTURE.md) and [ADR 0002](adr/0002-continuous-ai-and-enforcement-planes.md) refine this module map with immediate enforcement, continuous AI supervision, a first actuator and T1–T6 effect tests. Read those for the [four core questions](CORE_QUESTIONS.md). The diagram below is the case/control workflow, not the complete request path.
+
 ## Selected design
 
 Start with one local Python application organized by domain modules, a CLI-first replay path, SQLite for sanitized case metadata, and operator-controlled evidence storage. The later authenticated API/UI uses the same application services. Do not add a message broker, microservices, multiple databases or an agent framework until measured workload or isolation requirements justify it. SQLite is for a single-operator pilot, not an enterprise scaling claim.
@@ -33,7 +35,7 @@ In S1/S2 the broker is disabled; operator-managed receipts and evidence enter th
 | Ingestion | Bounded parsers, signed/identified source envelopes, clock and coverage checks | Execute files, follow evidence URLs, trust alert instructions |
 | Evidence | Stable references, derivation lineage, integrity and access journal | Rewrite originals or treat a hash as authenticity |
 | Detection | Explicit rule results, negative controls and coverage gaps | Claim ATT&CK coverage because a rule is installed |
-| Investigation | Timeline, competing hypotheses, evidence requests, contradiction review | Turn speculation into confirmed compromise |
+| Investigation | Resident event-driven AI, durable temporal evidence, hypotheses, catalog-limited evidence requests and contradiction review | Turn speculation into confirmed compromise or run an unbounded prompt loop |
 | Planning | Catalog playbook instances and typed action proposals | Invent shell commands or install tools |
 | Policy / approval | Deny by default, action hashes, expiry, state freshness and separation of duties | Delegate authorization to a model |
 | Execution | Adapter-specific scoped operation and reconciled receipt | Interpret free-form text or retry unknown outcomes |
@@ -58,7 +60,7 @@ S1 is offline replay with synthetic/sanitized local files. S2 is a single-organi
 
 Use a durable state machine and transaction/outbox in the single application rather than a broker initially. Persist proposal/approval/attempt intent before dispatch. Leases, run IDs and idempotency prevent duplicated work. A crash after dispatch produces `unknown_outcome`; reconcile with the target before another mutation. A late callback cannot resurrect expired authority.
 
-Policy/approval/audit failure blocks new mutations. Model failure falls back to deterministic triage with an explicit limitation. Source failure produces a visibility gap. Kill switch revokes pending execution capabilities and stops dispatch; record in-flight operations and require explicit reconciliation. Budget exhaustion must preserve case/evidence and produce an incomplete result.
+Policy/approval/audit failure blocks new mutations. Model failure produces degraded defense with deterministic triage and human escalation; prior approved data-plane controls keep enforcing. Source failure produces a visibility gap. Kill switch revokes pending execution capabilities and stops dispatch; record in-flight operations and require explicit reconciliation. Budget exhaustion preserves case/evidence and produces an incomplete result. The operational design defines source watermarks, AI job triggers, backlog health and canonical pilot budgets.
 
 ## Recovery architecture
 

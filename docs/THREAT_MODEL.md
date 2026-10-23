@@ -1,6 +1,6 @@
 # Proposed threat model
 
-Design-stage model, not a repository security audit or validated implementation. Assumptions: single-organization local pilot, enrolled Linux service, untrusted imported telemetry, optional restricted model, operator-controlled evidence/backup/secret systems. The first pilot must confirm these assumptions before live access.
+Design-stage model, not a repository security audit or validated implementation. Assumptions: single-organization local pilot, enrolled Linux service, untrusted telemetry, restricted resident AI in normal mode with explicit degraded baseline, and operator-controlled evidence/backup/secret systems. The first pilot must confirm these assumptions before live access.
 
 ## Assets and adversaries
 
@@ -12,7 +12,7 @@ Protect service availability, data integrity/confidentiality, incident evidence,
 | Compromised collector sends authentic but false/stale observations | Wrong containment or missed compromise | Source trust/freshness, cross-source contradiction and independent observation; no single-source certainty |
 | Uploaded archive or evidence reference escapes parser boundaries | Code execution, local disclosure or denial of service | Strict bounded parser, no active content/dereference, path/size/decompression tests |
 | Stolen/replayed approval or changed parameters after review | Unauthorized action | Action digest, actor/role, expiry, nonce, state freshness, single-use dispatch and direct-adapter tests |
-| Overbroad isolation removes legitimate traffic/operator access | Self-inflicted outage | Dependency/access checks, narrow TTL action, tested compensation, independent health and kill switch |
+| Overbroad isolation removes legitimate traffic/operator access | Self-inflicted outage | Accepted interruption/dependency envelope, dedicated proxy/reload-scope checks, distinct approval expiry/review deadline/control lifetime, tested compensation, independent health and kill switch |
 | Executor retries after a lost response | Duplicate/destructive effect | Durable intent, idempotency, `unknown_outcome`, target reconciliation before retry |
 | Model/provider receives incident secrets or retained private data | Secondary breach | Minimized derived context, data classification/egress controls, secret canaries, no raw prompt logs |
 | Compromised rule/catalog/update expands execution | Supply-chain authority bypass | Manual pinned provenance/license review, immutable catalogs, no runtime update/install |

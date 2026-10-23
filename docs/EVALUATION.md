@@ -2,6 +2,8 @@
 
 Status: experimental plan. No OpenShieldAI efficacy scores or successful incident responses exist yet. External papers are evidence about their own setups, not results for this product.
 
+Evaluate the [four core questions](CORE_QUESTIONS.md) separately using T1–T6 in [operating architecture](OPERATING_ARCHITECTURE.md). Report design plausibility, replay correctness, deployed control effect and real pilot outcome as different evidence levels. The existence of a document is not the first row of a successful protection benchmark.
+
 ## Questions that decide whether to build
 
 1. Does the product help an operator reach the correct evidence-supported decision faster than their current tools?
@@ -45,8 +47,13 @@ Use the same input visibility, hardware/time budget and labels for comparable va
 | Recovery | Actually restored integrity/application invariants; data-loss interval (RPO), time to usable service (RTO), reinfection checks |
 | Resilience | Outage, truncation, skew, duplicated/out-of-order records, crash recovery, cancellation and unknown-outcome behavior |
 | Cost | End-to-end wall time, CPU/memory, calls/tokens, provider fees and operator review cost |
+| Actual prevention | Denied operation plus independently observed absence of the forbidden app effect, origin/alternate-path bypass tests, legitimate operations and inspected-field coverage |
+| Continuous AI | Event-to-examined-evidence latency, material events left unexamined, useful next reads/actions, duplicate unchanged-state calls, freshness after restart, AI outage/backlog and cost |
+| Damage while responding | Source, queue, AI, human approval, execution and verification times; additional unauthorized operations/exposure during the full interval; downtime and continuing streams/host/egress paths |
 
 AI-generated severity, summary fluency, tool count and ATT&CK mappings are not efficacy metrics. A complete refusal may pass safety but fails utility; a fast answer with false certainty fails both.
+
+For T4, keep static protection, source visibility, tools and authority equal across no-AI, one-shot summary and resident evidence-driven AI variants. Compare multi-step, low-rate, benign-deployment, contradictory-source and post-action scenarios; otherwise a faster summary can be mistaken for better defense. Evaluate both operational benefit and harmful recommendations. Source/label generation and outcome verification must remain independent of the rule/model under test.
 
 ## Gates and interpretation
 

@@ -4,6 +4,8 @@
 
 ## Before any implementation claim
 
+- [ ] Each of the four core questions maps to an actual control/observation/recovery mechanism and falsifiable T1–T6 trace.
+- [ ] Resident AI triggers/state/budgets/freshness work; no-AI is visibly baseline/degraded, not silently normal coverage.
 - [ ] Versioned machine schemas and real domain tests exist for the implemented slice.
 - [ ] Deterministic no-LLM path works on held-out positive/negative replay.
 - [ ] Tool availability, failed/partial results, missing telemetry and limitations are visible.
@@ -12,6 +14,7 @@
 
 ## Before a read-only pilot
 
+- [ ] Actual ingress blocking mode/order, origin bypass, source-side sensitive-log exposure, clock/loss and control availability are measured.
 - [ ] Named environment, owner, asset enrollment, incident commander and data policy accepted.
 - [ ] Authentication, authorization, retention, transport/storage protection and key management tested.
 - [ ] Actual read-only source adapter/version tested, including compromised/stale/missing sources.
@@ -22,6 +25,9 @@
 
 ## Before any brokered mutation
 
+- [ ] Maintenance classification matches actual business impact; the accepted low-impact envelope, existing streams and unaddressed host/identity/egress paths are explicit.
+- [ ] Conditional target-side config updates reject concurrent edits; grant expiry, review deadline and retained control lifetime are distinct.
+- [ ] Disconnected/crashed reconciliation, extended downtime and an independent emergency management path are tested.
 - [ ] Per-action typed capability, immutable approval hash, expiry, roles and replay resistance tested.
 - [ ] Adapter enforces scope even when called directly; no free-form shell or runtime downloads.
 - [ ] Expected-state freshness, dependencies, operator access and resource limits enforced.

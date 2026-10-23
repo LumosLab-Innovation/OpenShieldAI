@@ -17,6 +17,10 @@ All records carry `schemaVersion`, stable `id`, `projectId`, `caseId` where rele
 | `verification_v1` | Observer/procedure identity, relevant baseline, independent post-observations, service/integrity checks, result, remaining risks and coverage |
 | `recovery_check_v1` | Backup product/ref/snapshot, backup time, key availability status, isolated destination ID, integrity/application/contamination checks, observed RPO/RTO or explicitly unmeasured |
 | `case_report_v1` | Scope/window, evidence trust, facts/hypotheses, coverage, actions/approvals, verification, recovery state, residual exposure, next owner actions and provenance |
+| `entity_state_v1` | Case-scoped entity relations, source/evidence refs, time bounds, trust, observations versus hypotheses, contradiction and unresolved objectives; no raw credential identifiers |
+| `feature_window_v1` | Asset/source, 5s/60s experimental window, feature names/units, observed counts, watermark, skew, dropped/truncated data and baseline version; an empty window is not proof of no attack |
+| `ai_episode_v1` | Material-event/timer trigger, case version/evidence watermark, dedup key, frozen route, use case, job/deadline/remaining budget, bounded reads, typed results and AI/source/control health |
+| `control_release_v1` | Enrolled control point, actual observe/enforce/maintenance mode, supported inspected surfaces, approved config digest, target revision/ETag, readback, management health and independently tested bypass limitations |
 
 An evidence digest does not make the source trustworthy. A field named `sanitized` does not establish sanitizer correctness. Validate provenance, transformations and policy rather than trusting producer assertions.
 
@@ -52,22 +56,24 @@ verification: verified | not_verified | inconclusive
   "createdAt": "2026-10-24T03:00:00Z",
   "producer": "openshield-planner/design-fixture",
   "assetId": "asset_demo_web",
-  "actionType": "temporary_ingress_rule",
-  "parameters": {"ruleId": "curated_rule_demo", "ttlSeconds": 300},
+  "actionType": "set_site_ingress_mode",
+  "parameters": {"templateId": "maintenance_demo_v1", "reviewDueAt": "2026-10-24T03:10:00Z"},
   "evidenceIds": ["evidence_demo_1"],
   "expectedStateVersion": "state_demo_7",
   "risk": "R2",
   "policyVersion": "policy_demo_1",
   "scopeVersion": "scope_demo_1",
   "preconditions": ["operator-access-path-preserved", "baseline-health-observed"],
-  "serviceImpact": "May reject legitimate requests matching the curated rule",
-  "compensation": {"catalogProcedureId": "remove_exact_rule_and_check_health"},
-  "verification": {"catalogProcedureId": "observe_rule_effect_and_service_health"},
+  "serviceImpact": "Stops new public ingress for one explicitly accepted low-impact demo site; existing streams may continue",
+  "compensation": {"catalogProcedureId": "approved_overlay_removal_with_conflict_check"},
+  "verification": {"catalogProcedureId": "observe_new_ingress_and_management_health"},
   "expiresAt": "2026-10-24T03:05:00Z"
 }
 ```
 
-This fixture authorizes nothing and defines no executable adapter. Catalog IDs must resolve to reviewed immutable procedures before S3; parameters cannot carry arbitrary rule programs or shell content. TTL expiration requires a durable reconciliation procedure and verified removal, not just a timer or a claimed rollback.
+This fixture authorizes nothing and defines no executable adapter. Catalog IDs must resolve to reviewed immutable procedures before S3; parameters cannot carry arbitrary config/rules/shell content. `expiresAt` is grant dispatch expiry. `reviewDueAt` requires a recorded operator review, not automatic control removal. Maintenance can outlive the review deadline during disconnection and extend downtime; surface this consequence and require separately approved removal. Higher-impact assets require R3 human procedures.
+
+An outcome must name the verified objective and excluded paths. `new_ingress_stopped` cannot become `host_contained`, `sessions_revoked`, `exfiltration_stopped` or `recovery_verified` without separate effect evidence. Persist the last source watermark, AI analysis watermark and control revision so stale reasoning cannot silently authorize current-state changes.
 
 ## Retention and export
 

@@ -25,7 +25,7 @@ flowchart TD
   accDescr: Authorized inputs flow through evidence validation, bounded investigation and a typed proposal. Policy and exact human approval precede the future S3 action adapter. Independent verification determines outcomes. Denied proposals are revised; inconclusive checks return for evidence. This is a proposed design, not a live system.
   INPUT["AUTHORIZED INPUTS<br/>Enrolled assets · telemetry · backup metadata"]
   EVIDENCE["EVIDENCE + PROVENANCE<br/>Validate · sanitize · preserve source refs"]
-  REASON["BOUNDED INVESTIGATION<br/>Deterministic rules + optional AI"]
+  REASON["CONTINUOUS AI SUPERVISION<br/>Changed evidence · bounded investigation"]
   PROPOSAL["TYPED RESPONSE PROPOSAL<br/>Exact action · impact · preconditions"]
   GATE{"POLICY + HUMAN<br/>APPROVAL"}
   ACTION["SCOPED ACTION · S3 ONLY<br/>One allowlisted adapter · exact grant"]

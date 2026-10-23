@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://lumoslab-innovation.github.io/OpenShieldAI/"><img src="site/assets/openshield-guardian.png" alt="OpenShieldAI — AI defense, incident response and recovery" width="100%"></a>
+  <a href="https://lumoslab-innovation.github.io/OpenShieldAI/"><img src="site/assets/openshield-logo.png" alt="OpenShieldAI shield and S logomark" width="144"></a>
 </p>
 
 <h1 align="center">OpenShieldAI</h1>
@@ -27,6 +27,19 @@
 </p>
 
 > **Current status — S0: research and specification.** This repository contains the product foundation, source-backed research and engineering rules. It has no deployable runtime, supported live integrations or measured protection capability yet. Diagrams, playbooks and adapters describe proposed behavior. There is no install command that starts a working defense product.
+
+## The four engineering questions
+
+| Question | Required mechanism and proof |
+|---|---|
+| Can it prevent an attack? | A deployed control on the attack path, no bypass, independently verified absence of the forbidden application effect and measured legitimate-traffic impact |
+| Can it respond while harm is occurring? | Relevant observations and an available actuator; measure source-to-verified-effect time including AI, human approval and the damage window |
+| Can it handle the aftermath? | Rebuild trust, address persistence/identity exposure and actually restore a usable isolated application with measured data loss and recovery time |
+| Where is AI continuously present? | Resident event-driven investigation, posture/response/recovery planning and bounded observations over durable evidence state; explicit degraded mode on failure |
+
+[Full question checklist](docs/CORE_QUESTIONS.md) · [Concrete operating architecture](docs/OPERATING_ARCHITECTURE.md) · [Adversarial architecture review](docs/research/ARCHITECTURE_CHALLENGE.md)
+
+The selected design separates immediate execution of approved controls from AI supervision. The first lab pairs Caddy + Coraza/CRS ingress with a private origin, an independent effect observer and an isolated restic/application recovery drill. The first response actuator stops new ingress for an accepted low-impact site; it does not prove host, identity or egress containment. None of this runtime exists yet.
 
 ## Why OpenShieldAI
 
@@ -90,7 +103,7 @@ We do not claim that another project's paper scores belong to OpenShieldAI, that
 | Stage | Scope | Status |
 |---|---|---|
 | S0 | Research, architecture, strict rules and evaluation design | This repository |
-| S1 | Offline replay, deterministic baseline, optional AI investigation and response proposals | Planned |
+| S1 | Offline replay, resident AI investigation, deterministic ablation and typed proposals | Planned |
 | S2 | One read-only telemetry adapter and operator shadow pilot | Planned |
 | S3 | One approved response adapter and isolated restore drill | Gated |
 | S4 | Expand independently proven prevention, incident and AI-agent defense capabilities | Research roadmap |

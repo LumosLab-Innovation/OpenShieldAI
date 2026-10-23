@@ -1,8 +1,12 @@
 # OpenShieldAI guardian artwork
 
+The guardian is a hero/mascot, not the project logo. The actual [transparent S/shield logomark](../../site/assets/openshield-logo.png) was generated separately with the built-in Imagegen tool on 2026-10-24 and is used in the README, navigation and favicon. It has an alpha background and combines interlocking shield bands with an S-shaped protected core.
+
+Logo prompt: "Use case: logo-brand. Design a genuinely original premium LOGOMARK for OpenShieldAI, a serious AI cyber-defense engineering project. This is a brand identity mark for a GitHub avatar, browser favicon and software navigation, NOT a mascot, hero illustration, scene or poster. One single compact iconic symbol centered with generous transparent margin, no text. Core idea: a powerful angular OPEN SHIELD formed from two precisely interlocking geometric bands; the negative space between the bands subtly forms the letter S and an inward-to-outward signal path. Open upper-right aperture signifies observation; enclosed central negative space signifies a protected core. It must be an immediately legible unique silhouette at 24 pixels. Think expertly designed industrial identity, not generic cyber clipart. Primary color vivid restrained mint/emerald #82f7c7, secondary deeper emerald #18ad84 on a few folded faces. Use crisp bevel-like planar facets for dimensional precision but overall vector-clean, no photoreal metallic noise. Excellent optical balance, bold continuous contours, sharp controlled corners, carefully consistent widths, sophisticated proportions. Transparent background, actual alpha. Avoid all shield-with-checkmark symbols, padlocks, eyes, helmets, robots, hooded people, weapons, circuits spraying everywhere, excessive tiny details, gradients washing out edges, text, letters outside the icon, slogans, watermarks, grids, frames and mockups. Deliver one finished original professional symbol, not a sheet of options."
+
 Generated with the built-in Imagegen tool on 2026-10-24. This is original project artwork, not a screenshot of an implemented defense product. OpenHunterAI's local mascot was inspected for visual-family inspiration; no third-party artwork was copied into this asset.
 
-Final shared asset: [openshield-guardian.png](../../site/assets/openshield-guardian.png). The README and GitHub Pages landing use the same image and its graphite/mint palette. The legacy vector banner is no longer the README cover.
+Hero asset: [openshield-guardian.png](../../site/assets/openshield-guardian.png). The GitHub Pages landing uses this scene; the README uses the separate logomark above. Both share the graphite/mint palette. The legacy vector banner is no longer the README cover.
 
 ## Generation prompt
 

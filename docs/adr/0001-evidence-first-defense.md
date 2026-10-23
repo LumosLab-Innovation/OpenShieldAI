@@ -2,6 +2,8 @@
 
 Date: 2026-10-24. Status: selected specification direction; implementation unstarted.
 
+Refined by [ADR 0002](0002-continuous-ai-and-enforcement-planes.md): continuous AI is the normal supervisory mode; no-AI remains the baseline/degraded path. Explicit enforcement/control points and scenario traces complement this original foundation.
+
 ## Context
 
 The project vision spans prevention, active incident response and recovery under faster AI-enabled attacks. A report-to-chat wrapper cannot establish that vision. Existing open tools already collect telemetry, enforce controls and store backups; rebuilding them increases risk and delays useful experiments. Published agent results are task/environment dependent and cannot authorize unsupervised response.
