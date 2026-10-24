@@ -21,6 +21,14 @@ The benchmark freezes source/corpus hashes before scoring. Its 48 cases comprise
 
 SQLite persists immutable enrollment, accepted evidence, source roles, case watermarks, episode reservations and health. The initial catalog reads only bounded subsets of that same synthetic timeline; it is not a live telemetry collector. Missing visibility and provider failure remain visible. There is no real-world AI coverage claim from a healthy scheduler process.
 
+## Release exposure and the anti-REA lab
+
+`release-audit DIRECTORY --authorized` inspects a stable operator-owned local web release, without executing target code, fetching URLs or modifying the export. It returns safe category counts, opaque file IDs and digests. Exit 0 requires a complete policy pass; blocked/partial returns 1. Optional `--output` must be outside the release. This standalone read-only command can inspect an authorized real release, but its output is not automatically imported into the synthetic incident runtime or sent to a model.
+
+`anti-rea-lab --output output/anti-rea-results.json` creates isolated synthetic files and real loopback HTTP servers, then stops them after checking export exposure, object/session/parameter authority, replay, expiry, quotas and a deliberate algorithm-inference counterexample. It requires neither Docker nor an AI provider. See [implementation and limits](ANTI_REA.md) and [actual REA/HTTP/browser results](lab/ANTI_REA_RESULTS.md).
+
+The exact `lab_event_v1` catalog additionally accepts `kind: release_exposure` with only `status: pass | blocked | partial`, integer `observationCount` and integer `gapCount` (0–1,000,000). A synthetic nonpass, observation or gap becomes `control_gap` and `needs_human` under the deterministic baseline; exposure alone keeps `insufficient_evidence` and never authorizes mutation or proves compromise. Resident supervision uses the same durable state, scope, deduplication and gateway policy. No raw source, path, literal, session or report is a permitted fact. A real release must not be mislabelled synthetic to bypass current intake restrictions.
+
 ## CLIProxyAPI / Codex adapter
 
 All reasoning passes through [gateway.py](../openshield/gateway.py). The selected transport is CLIProxyAPI's OpenAI-compatible, non-streaming `POST /v1/chat/completions`; Codex account authentication stays entirely in the operator's separate proxy. Shield does not read Codex OAuth files, launch Codex CLI, provision keys or inherit `OPENAI_API_KEY`.

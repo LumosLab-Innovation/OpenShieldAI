@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "anti_rea_evidence_v1",
+  "observedDate": "2026-10-24",
+  "synthetic": true,
+  "baseRevision": "9d6fd045bb7906510599a8576ab57fe6735c04c0",
+  "sourceFingerprintEncoding": "UTF-8 with LF newlines",
+  "sourceSha256": {
+    "openshield/exposure.py": "c1e59e69ed88592b4ded3fa1b9631ef10d5455e7719e0532ac50c6b48b6ad20b",
+    "openshield/core.py": "450367ee85b8297585d3d5c2295e023d61d8fd83947d3b74992463d940c92200",
+    "lab/anti_rea.py": "508a2c32bb6f0c8408e9bd5ee09f32aacc641da73cf7d805dfa120ee454eb753",
+    "scripts/anti_rea_browser.cjs": "a2f49f977d0e7d3b4340aeff2e40efd6821c80b9558183bb056d3dff36da805c",
+    "scripts/check_anti_rea_browser.py": "a25cb40f848308e86e19c16a05f3272993cb1f64455d703060df56efb7d5cc6f",
+    "openshield/cli.py": "b20818c752e0bb281d37b8b1be5b8240cd96036032fd2b906f15fc5d0c95f0d4"
+  },
+  "httpTrial": {
+    "schemaVersion": "anti_rea_lab_v1",
+    "synthetic": true,
+    "transport": "real_loopback_http",
+    "checks": {
+      "release_gate_blocks_before_passes_after": true,
+      "synthetic_private_marker_absent_from_all_after_files": true,
+      "baseline_direct_unauthorized_call_succeeds": true,
+      "defended_direct_unauthorized_call_denied": true,
+      "wrong_owner_denied": true,
+      "quantity_tamper_denied": true,
+      "session_rebind_denied": true,
+      "concurrent_single_use": true,
+      "legitimate_output_preserved_q2": true,
+      "legitimate_output_preserved_q3": true,
+      "authorized_outputs_still_reveal_linear_formula": true,
+      "expired_capability_denied": true,
+      "fourth_authorized_query_allowed": true,
+      "fresh_session_cannot_reset_principal_quota": true,
+      "public_client_remains_readable": true,
+      "private_paths_and_error_responses_do_not_export_formula": true
+    },
+    "status": "pass",
+    "exposure": {
+      "before": {
+        "schemaVersion": "release_exposure_v1",
+        "status": "blocked",
+        "complete": true,
+        "artifactSha256": "d85dd43d6e3722a63afeb30d2807e3280f7632582feba69ce3129da11d962949",
+        "counts": {
+          "entries": 3,
+          "files": 3,
+          "bytes": 1906,
+          "inspectedTextFiles": 3,
+          "observations": 3,
+          "gaps": 0,
+          "observationDetailsOmitted": 0,
+          "gapDetailsOmitted": 0
+        },
+        "categories": [
+          {
+            "code": "SOURCE_MAP_FILE",
+            "count": 1
+          },
+          {
+            "code": "SOURCE_MAP_ORIGINAL_CONTENT",
+            "count": 1
+          },
+          {
+            "code": "SOURCE_MAP_REFERENCE",
+            "count": 1
+          }
+        ],
+        "observations": [
+          {
+            "code": "SOURCE_MAP_REFERENCE",
+            "fileId": "file_e07d531ac040ce3f40e0ce63",
+            "sha256": "76d09c0cc975282c579645c2b363b66c8cb99ede1c51aedc5f7d0cffb8898648"
+          },
+          {
+            "code": "SOURCE_MAP_FILE",
+            "fileId": "file_297da2324f155cde1b147e04",
+            "sha256": "90f808035f3477560f771032bad691645348a1eac7274a65b35ff5aafff43ac6"
+          },
+          {
+            "code": "SOURCE_MAP_ORIGINAL_CONTENT",
+            "fileId": "file_297da2324f155cde1b147e04",
+            "sha256": "90f808035f3477560f771032bad691645348a1eac7274a65b35ff5aafff43ac6"
+          }
+        ],
+        "gaps": [],
+        "limits": {
+          "files": 2048,
+          "entries": 4096,
+          "depth": 16,
+          "fileBytes": 8388608,
+          "totalBytes": 67108864,
+          "seconds": 10,
+          "observations": 256
+        },
+        "targetCodeExecuted": false,
+        "networkRequestsMade": false,
+        "isFinding": false,
+        "limitations": [
+          "PASS_IS_ONLY_THIS_RELEASE_POLICY",
+          "NO_RUNTIME_OR_HTTP_HEADER_INSPECTION",
+          "NO_GENERAL_SECRET_OR_PII_DETECTION",
+          "BINARY_ASSETS_HEADER_CHECK_ONLY",
+          "LEXICAL_COMMENTS_NOT_FULL_JAVASCRIPT_GRAMMAR",
+          "STABLE_COPY_REQUIRED_NO_OS_SANDBOX",
+          "DEADLINE_COOPERATIVE_OS_IO_CAN_BLOCK",
+          "OPAQUE_DIGESTS_ARE_NOT_AUTHENTICITY"
+        ]
+      },
+      "after": {
+        "schemaVersion": "release_exposure_v1",
+        "status": "pass",
+        "complete": true,
+        "artifactSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+        "counts": {
+          "entries": 2,
+          "files": 2,
+          "bytes": 1134,
+          "inspectedTextFiles": 2,
+          "observations": 0,
+          "gaps": 0,
+          "observationDetailsOmitted": 0,
+          "gapDetailsOmitted": 0
+        },
+        "categories": [],
+        "observations": [],
+        "gaps": [],
+        "limits": {
+          "files": 2048,
+          "entries": 4096,
+          "depth": 16,
+          "fileBytes": 8388608,
+          "totalBytes": 67108864,
+          "seconds": 10,
+          "observations": 256
+        },
+        "targetCodeExecuted": false,
+        "networkRequestsMade": false,
+        "isFinding": false,
+        "limitations": [
+          "PASS_IS_ONLY_THIS_RELEASE_POLICY",
+          "NO_RUNTIME_OR_HTTP_HEADER_INSPECTION",
+          "NO_GENERAL_SECRET_OR_PII_DETECTION",
+          "BINARY_ASSETS_HEADER_CHECK_ONLY",
+          "LEXICAL_COMMENTS_NOT_FULL_JAVASCRIPT_GRAMMAR",
+          "STABLE_COPY_REQUIRED_NO_OS_SANDBOX",
+          "DEADLINE_COOPERATIVE_OS_IO_CAN_BLOCK",
+          "OPAQUE_DIGESTS_ARE_NOT_AUTHENTICITY"
+        ]
+      }
+    },
+    "authorityAudit": {
+      "denied": 11,
+      "accepted": 4,
+      "quotaDenied": 1
+    },
+    "aiBenefit": {
+      "status": "not_measured"
+    },
+    "limits": [
+      "Owned synthetic example only",
+      "No target code or REA invoked by this trial",
+      "Release pass is a bounded policy result, not a secret or anti-reversing verdict",
+      "Formula is public in this repository; trial measures delivered bytes and HTTP authority",
+      "In-memory lab identities/quotas are not production authentication or durable quotas",
+      "Authorized outputs can reveal algorithms; stolen live sessions/XSS remain risks"
+    ]
+  },
+  "browserTrial": {
+    "schemaVersion": "anti_rea_browser_v1",
+    "synthetic": true,
+    "status": "pass",
+    "checks": {
+      "before_legitimate_ui_works": true,
+      "after_legitimate_ui_works": true,
+      "after_ui_rejects_invalid_session": true,
+      "no_page_script_errors": true
+    },
+    "pageErrors": 0
+  },
+  "reaStaticTrials": {
+    "before": {
+      "schemaVersion": "rea_local_analysis_v1",
+      "operation": "analyze",
+      "status": "partial",
+      "executed": true,
+      "runtime": {
+        "package": "rea-agents",
+        "expectedVersion": "6.7.0",
+        "upstreamCommit": "27dc42d10249f0410904a75c0997842eb03b931c",
+        "installed": true,
+        "executable": true,
+        "integrityVerified": false,
+        "launcherSha256": "ed06cee49505b95a3cc5fceb1b4b279167e26df86227c644bb366ffffdbaf738"
+      },
+      "limits": {
+        "files": 2000,
+        "entries": 4000,
+        "fileBytes": 2097152,
+        "totalBytes": 33554432,
+        "depth": 32,
+        "inventoryMs": 10000,
+        "processMs": 45000,
+        "outputBytes": 8388608
+      },
+      "gaps": [
+        {
+          "code": "STATIC_ANALYSIS_PARTIAL"
+        }
+      ],
+      "independentValidation": false,
+      "isFinding": false,
+      "targetCodeExecuted": false,
+      "networkIsolationEnforced": false,
+      "limitations": [
+        "This optional REA operation performs static analysis of an authorized local web artifact directory; it does not start a website scan or execute target code.",
+        "Only allowlisted statistics, coverage metadata and hashes leave the adapter; upstream source, paths, names, URLs, diagnostics and raw Evidence are discarded.",
+        "Upstream static observations are not independently validated OpenHunter findings.",
+        "Use a stable release directory. Filesystem checks detect observed changes but are not an operating-system sandbox against concurrent modification.",
+        "The installed third-party runtime is trusted operator software; process isolation and a stripped environment do not enforce network or filesystem isolation.",
+        "Forced termination waits for the launcher exit; cleanup of descendant processes is not independently verified.",
+        "Native binaries, application archives, credentials and unsupported files block this operation; they are not silently skipped."
+      ],
+      "target": {
+        "kind": "local_web_artifact_directory",
+        "assetCount": 3,
+        "totalBytes": 1906,
+        "manifestSha256": "d85dd43d6e3722a63afeb30d2807e3280f7632582feba69ce3129da11d962949",
+        "assets": [
+          {
+            "assetId": "asset-000001",
+            "extension": ".js",
+            "type": "web_artifact",
+            "sizeBytes": 686,
+            "sha256": "76d09c0cc975282c579645c2b363b66c8cb99ede1c51aedc5f7d0cffb8898648"
+          },
+          {
+            "assetId": "asset-000002",
+            "extension": ".map",
+            "type": "web_artifact",
+            "sizeBytes": 838,
+            "sha256": "90f808035f3477560f771032bad691645348a1eac7274a65b35ff5aafff43ac6"
+          },
+          {
+            "assetId": "asset-000003",
+            "extension": ".html",
+            "type": "web_artifact",
+            "sizeBytes": 382,
+            "sha256": "34dc8718fb179b91db84f801b48d88762e187a9cde3cc69498c48282a3b2968f"
+          }
+        ]
+      },
+      "analysis": {
+        "artifactSha256": "8f49a4d7a6287a3dff08b935e22ac0a2f7d80045c413d79f76631c1d3958ef30",
+        "statistics": {
+          "relevant_files": 3,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 1906,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 1,
+          "visited_ast_nodes": 94,
+          "modules": 0,
+          "parse_failures": 0,
+          "staticObservationCount": 3,
+          "skipped_javascript_files": 0
+        },
+        "applicationCoverage": {
+          "status": "complete",
+          "truncated": false,
+          "omitted_count": 0
+        },
+        "semanticCoverage": {
+          "status": "unknown",
+          "truncated": false,
+          "omitted_nodes": 0,
+          "omitted_relations": 0
+        },
+        "upstreamLimitationCount": 5
+      }
+    },
+    "after": {
+      "schemaVersion": "rea_local_analysis_v1",
+      "operation": "analyze",
+      "status": "partial",
+      "executed": true,
+      "runtime": {
+        "package": "rea-agents",
+        "expectedVersion": "6.7.0",
+        "upstreamCommit": "27dc42d10249f0410904a75c0997842eb03b931c",
+        "installed": true,
+        "executable": true,
+        "integrityVerified": false,
+        "launcherSha256": "ed06cee49505b95a3cc5fceb1b4b279167e26df86227c644bb366ffffdbaf738"
+      },
+      "limits": {
+        "files": 2000,
+        "entries": 4000,
+        "fileBytes": 2097152,
+        "totalBytes": 33554432,
+        "depth": 32,
+        "inventoryMs": 10000,
+        "processMs": 45000,
+        "outputBytes": 8388608
+      },
+      "gaps": [
+        {
+          "code": "STATIC_ANALYSIS_PARTIAL"
+        }
+      ],
+      "independentValidation": false,
+      "isFinding": false,
+      "targetCodeExecuted": false,
+      "networkIsolationEnforced": false,
+      "limitations": [
+        "This optional REA operation performs static analysis of an authorized local web artifact directory; it does not start a website scan or execute target code.",
+        "Only allowlisted statistics, coverage metadata and hashes leave the adapter; upstream source, paths, names, URLs, diagnostics and raw Evidence are discarded.",
+        "Upstream static observations are not independently validated OpenHunter findings.",
+        "Use a stable release directory. Filesystem checks detect observed changes but are not an operating-system sandbox against concurrent modification.",
+        "The installed third-party runtime is trusted operator software; process isolation and a stripped environment do not enforce network or filesystem isolation.",
+        "Forced termination waits for the launcher exit; cleanup of descendant processes is not independently verified.",
+        "Native binaries, application archives, credentials and unsupported files block this operation; they are not silently skipped."
+      ],
+      "target": {
+        "kind": "local_web_artifact_directory",
+        "assetCount": 2,
+        "totalBytes": 1134,
+        "manifestSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+        "assets": [
+          {
+            "assetId": "asset-000001",
+            "extension": ".js",
+            "type": "web_artifact",
+            "sizeBytes": 752,
+            "sha256": "3500b596e4da9d52c96ec304279ebaee47e6881559865708d358d306e4a966e2"
+          },
+          {
+            "assetId": "asset-000002",
+            "extension": ".html",
+            "type": "web_artifact",
+            "sizeBytes": 382,
+            "sha256": "34dc8718fb179b91db84f801b48d88762e187a9cde3cc69498c48282a3b2968f"
+          }
+        ]
+      },
+      "analysis": {
+        "artifactSha256": "47be84cb81fb132169256219a36000f0c0313318825d47c0fe1736c271984883",
+        "statistics": {
+          "relevant_files": 2,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 1134,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 1,
+          "visited_ast_nodes": 140,
+          "modules": 0,
+          "parse_failures": 0,
+          "staticObservationCount": 3,
+          "skipped_javascript_files": 0
+        },
+        "applicationCoverage": {
+          "status": "complete",
+          "truncated": false,
+          "omitted_count": 0
+        },
+        "semanticCoverage": {
+          "status": "unknown",
+          "truncated": false,
+          "omitted_nodes": 0,
+          "omitted_relations": 0
+        },
+        "upstreamLimitationCount": 5
+      }
+    }
+  }
+}

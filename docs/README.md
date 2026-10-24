@@ -7,6 +7,9 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [Project README](../README.md) | Mission, current stage, research choices and delivery path |
 | [Public landing](WEBSITE.md) | GitHub Pages showcase, shared visual system and diagram authoring |
 | [Context](../CONTEXT.md) | Decisions, assumptions and open pilot inputs |
+| [Anti-REA implementation](ANTI_REA.md) | Release exposure policy, server authority, AI boundary and post-exposure handling |
+| [Anti-REA measurements](lab/ANTI_REA_RESULTS.md) | Actual pinned REA, HTTP, Chrome and independent adversarial results |
+| [REA source research](research/REA_DEFENSE_RESEARCH.md) | Exact upstream mechanisms, immutable references and falsifiable defense choices |
 | [Agent rules](../AGENTS.md) | Mandatory read order, scope and definition of done |
 | [PRD](PRD.md) | Users, problem, staged capability and first workflow |
 | [Four core questions](CORE_QUESTIONS.md) | Actual prevention, ongoing response, aftermath and continuous AI |

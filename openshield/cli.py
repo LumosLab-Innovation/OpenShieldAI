@@ -4,7 +4,9 @@ import argparse
 import getpass
 import hashlib
 import json
+import os
 import sys
+import tempfile
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -23,7 +25,17 @@ def output(value, path=None):
     if path:
         target = Path(path)
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(text + "\n", encoding="utf-8")
+        # Replace the report entry; never write through an existing link to input data.
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=target.parent,
+                                             prefix=".shield-report-", delete=False) as report:
+                temporary = Path(report.name)
+                report.write(text + "\n")
+            os.replace(temporary, target)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
     else:
         print(text)
 
@@ -61,6 +73,12 @@ def parser():
     lab = commands.add_parser("lab", help="Operator-controlled isolated experiment infrastructure")
     lab.add_argument("operation", choices=("build", "start", "verify", "approved", "stop"))
     lab.add_argument("--output", default="output/lab-results.json")
+    exposure = commands.add_parser("release-audit", help="Read-only local release exposure policy; no target execution")
+    exposure.add_argument("directory")
+    exposure.add_argument("--authorized", action="store_true", required=True)
+    exposure.add_argument("--output")
+    anti_rea = commands.add_parser("anti-rea-lab", help="Owned synthetic HTTP authority and exposure experiment")
+    anti_rea.add_argument("--output", default="output/anti-rea-results.json")
     propose = commands.add_parser("propose", help="Print an exact fixed-lab ingress change for review")
     propose.add_argument("case_id")
     propose.add_argument("--mode", choices=("maintenance", "on"), default="maintenance")
@@ -80,6 +98,21 @@ def parser():
 
 def main(argv=None):
     args = parser().parse_args(argv)
+    if args.command == "release-audit":
+        from .exposure import exposure_audit
+        result = exposure_audit(args.directory, authorized=args.authorized)
+        if args.output and any(gap["code"] == "LOCAL_DIRECTORY_REQUIRED" for gap in result["gaps"]):
+            raise ValueError("Local release directory required")
+        if args.output and Path(args.output).resolve().is_relative_to(Path(args.directory).resolve()):
+            raise ValueError("Audit output must be outside the release")
+        output(result, args.output)
+        return 0 if result["status"] == "pass" and result["complete"] else 1
+    if args.command == "anti-rea-lab":
+        from lab.anti_rea import verify
+        result = verify()
+        output(result, args.output)
+        output({"status": result["status"], "checks": result["checks"], "artifact": args.output})
+        return 0 if result["status"] == "pass" else 1
     if args.command == "benchmark":
         from .evaluation import compare
         gateway = Gateway.from_env() if args.with_ai else None

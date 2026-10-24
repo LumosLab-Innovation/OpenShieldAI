@@ -16,6 +16,7 @@ KINDS = {
     "auth_decision": {"decision": {"allow", "deny"}, "subjectLabel": str, "objectLabel": str},
     "deployment": {"revision": str, "authorized": bool},
     "control_state": {"mode": {"enforce", "observe", "maintenance"}, "revision": str},
+    "release_exposure": {"status": {"pass", "blocked", "partial"}, "observationCount": int, "gapCount": int},
     "source_health": {"available": bool, "dropped": int},
     "backup_state": {"snapshotId": str, "keyAvailable": bool, "integrity": {"pass", "fail", "unknown"},
                      "applicationConsistent": bool, "contaminated": bool},
@@ -308,6 +309,12 @@ def baseline(case):
                     not e["facts"]["applicationConsistent"] or e["facts"]["contaminated"])]
     if bad_backups:
         hypotheses.append({"code": "recovery_gap", "evidenceIds": bad_backups})
+    exposed = [e["id"] for e in events if e["kind"] == "release_exposure" and
+               (e["facts"]["status"] != "pass" or e["facts"]["observationCount"] or e["facts"]["gapCount"])]
+    if exposed:
+        hypotheses.append({"code": "control_gap", "evidenceIds": exposed})
+        if action == "observe":
+            action = "needs_human"
     if not hypotheses and events and all(e["kind"] == "app_operation" and e["facts"]["authorized"] for e in events):
         hypotheses.append({"code": "authorized_activity", "evidenceIds": case["evidenceIds"]})
         assessment = "benign"

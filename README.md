@@ -53,6 +53,17 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 The real isolated control/recovery lab additionally requires Docker and Go; follow [lab setup](lab/README.md). Connect an operator-owned CLIProxyAPI/Codex route through the [gateway module](docs/RUNTIME.md#cliproxyapi--codex-adapter). No direct OpenAI API key is used, no proxy credentials are copied, and a missing provider stays explicitly unmeasured.
 
+## Anti-REA: reduce exposure, enforce authority
+
+The first [anti-REA implementation](docs/ANTI_REA.md) follows [actual REA source research](docs/research/REA_DEFENSE_RESEARCH.md): a bounded, read-only release policy catches shipped source maps and private/development artifacts; an owned HTTP lab moves private decisions behind server-checked, expiring, single-use operation grants and a principal query budget.
+
+```text
+python -m openshield release-audit YOUR_RELEASE_DIRECTORY --authorized
+python -m openshield anti-rea-lab --output output/anti-rea-results.json
+```
+
+Real REA parses both clients successfully. Real HTTP and Chrome checks verify the narrower improvement: less private material shipped and unauthorized operations denied. The [results](docs/lab/ANTI_REA_RESULTS.md) also demonstrate that two authorized outputs still reveal the simple synthetic formula. This is not universal resistance to reverse engineering. [Independent adversarial review](docs/research/ANTI_REA_CHALLENGE.md).
+
 ## Why OpenShieldAI
 
 As AI makes more security work automatable, defenders need to turn uncertain evidence into safe, timely decisions. Our long-term goal is to help operators prepare for attacks, investigate compromise, contain damage and recover usable systems and data with verifiable results.
