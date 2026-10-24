@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "next_wave_trials_v1",
+  "dataClass": "synthetic",
+  "corpusClass": "public_engineering_regression_not_heldout",
+  "registeredCorpusSha256": "3bd39142c1cc937a098d75881d9e8b9ea2eae8ae3d1c9fbeefc6e32be63622f3",
+  "allThreeCompletedTrialsIncluded": true,
+  "factsTruthAndGradingChangedBetweenTrials": false,
+  "protocolAndAdapterRepairsBetweenTrials": true,
+  "unscoredInterruptedAttempt": {
+    "corpus": "original_48_case_replay",
+    "status": "interrupted",
+    "exceptionType": "PermissionError",
+    "scoredArtifactRetained": false,
+    "providerUsageKnown": false
+  },
+  "separateContractDiagnostic": "proxy-diagnostic.json",
+  "trials": [
+    {
+      "protocol": "original_catalog",
+      "artifact": "next-wave-first.json",
+      "artifactSha256": "1d50a8b34ca8846aead4fad19494a491e6adaf76288d97cb45bd89607f634f48",
+      "status": "partial",
+      "validCases": 3,
+      "degradedCases": 13,
+      "reservedCalls": 25,
+      "conservativeReservedTokens": 93386,
+      "aiArmWallSeconds": 165.14100000000326
+    },
+    {
+      "protocol": "derived_catalog_v2",
+      "artifact": "next-wave-catalog-fixed.json",
+      "artifactSha256": "7ef797c8ebb4f58d966ac8817de753c24c5d196e7d124911baf0b4dae32ca4e3",
+      "status": "partial",
+      "validCases": 3,
+      "degradedCases": 13,
+      "reservedCalls": 42,
+      "conservativeReservedTokens": 166021,
+      "aiArmWallSeconds": 308.31299999999464
+    },
+    {
+      "protocol": "bounded_read_protocol_v3",
+      "artifact": "next-wave.json",
+      "artifactSha256": "045827a00ade8fe5a3b4e9d09f0c12f46de5bb8fb5f8e8af946b0b6b3889160f",
+      "status": "completed",
+      "validCases": 16,
+      "degradedCases": 0,
+      "reservedCalls": 41,
+      "conservativeReservedTokens": 171631,
+      "aiArmWallSeconds": 318.46899999998277
+    }
+  ],
+  "productionActions": false,
+  "limitations": [
+    "Repeated public regression after generic integration repairs; not blind or held-out evidence",
+    "Reservations are visible-token ceilings, not billed usage; complete provider/account usage is unavailable",
+    "No analyst-time or production-benefit trial"
+  ]
+}

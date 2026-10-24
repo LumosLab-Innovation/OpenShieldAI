@@ -100,6 +100,11 @@ def parser():
     delivery.add_argument("--output")
     delivery_lab = commands.add_parser("delivery-lab", help="Owned HTTP representation and retired-asset experiment")
     delivery_lab.add_argument("--output", default="output/delivery-results.json")
+    for name in ("promotion-lab", "recovery-readiness-lab", "next-wave-lab"):
+        command = commands.add_parser(name, help="Owned synthetic effect experiment; no production action")
+        command.add_argument("--output", default="output/" + name + ".json")
+        if name == "next-wave-lab":
+            command.add_argument("--with-ai", action="store_true", help="Enable configured CLIProxyAPI comparison")
     correlate = commands.add_parser("correlate", help="Bounded read-only Go access-decision correlation")
     correlate.add_argument("case_id")
     correlate.add_argument("--project", default="lab")
@@ -142,6 +147,20 @@ def main(argv=None):
         output(result, args.output)
         output({"status": result["status"], "cases": len(result["cases"]), "artifact": args.output})
         return 0 if result["status"] == "pass" else 1
+    if args.command in {"promotion-lab", "recovery-readiness-lab", "next-wave-lab"}:
+        if args.command == "promotion-lab":
+            from lab.promotion import verify
+        elif args.command == "recovery-readiness-lab":
+            from lab.recovery_readiness import verify
+        else:
+            from lab.next_wave import verify
+            if Path(args.output).resolve() == (Path(__file__).resolve().parents[1] / "output/next-wave-corpus.json").resolve():
+                raise ValueError("Report cannot replace the registered corpus")
+        result = verify(with_ai=args.with_ai) if args.command == "next-wave-lab" else verify()
+        output(result, args.output)
+        output({"status": result["status"], "artifact": args.output,
+                "effectCheckCounts": result.get("effectCheckCounts")})
+        return 0 if result["status"] in {"passed", "completed"} else 1
     if args.command == "anti-rea-lab":
         from lab.anti_rea import verify
         result = verify()
@@ -150,6 +169,8 @@ def main(argv=None):
         return 0 if result["status"] == "pass" else 1
     if args.command == "benchmark":
         from .evaluation import compare
+        if Path(args.output).resolve() == Path(args.corpus).resolve():
+            raise ValueError("Report cannot replace the registered corpus")
         gateway = Gateway.from_env() if args.with_ai else None
         result = compare(args.corpus, gateway)
         output(result, args.output)

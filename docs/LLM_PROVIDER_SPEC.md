@@ -1,6 +1,6 @@
 # LLM Gateway specification
 
-Status: a [CLIProxyAPI/Codex adapter](RUNTIME.md#cliproxyapi--codex-adapter) is implemented and HTTP-contract tested. No real provider endpoint/model is configured, no provider SDK is installed, and no real inference or AI-benefit result is claimed. Operator proxy client credentials are needed only when enabling that route.
+Status: a [CLIProxyAPI/Codex adapter](RUNTIME.md#cliproxyapi--codex-adapter) is implemented and HTTP-contract tested. An operator-authorized [local setup](CLIPROXY_SETUP.md) now supports actual Codex trials; [measured results](lab/NEXT_WAVE_RESULTS.md) separate completed model decisions, degradation and incremental value. Repository defaults remain unconfigured and no provider SDK is installed. Operator proxy client credentials are needed only when explicitly enabling that route.
 
 AI is resident supervision in the proposed normal product mode. New material evidence, changed posture, verification/recovery events and bounded recurring review trigger it; a request or an unchanged timer tick does not automatically call an LLM. [Operating architecture](OPERATING_ARCHITECTURE.md) defines persistent state, scheduling, health and the canonical pilot budget.
 
@@ -53,3 +53,7 @@ Model-requested read results, resulting case-version updates and follow-up reaso
 Record use case, actual provider/model/version, configuration hash, safe input/evidence manifest hash, latency, token/cost totals, fallback and safe error. Do not log raw prompt or completion. Unversioned models reduce reproducibility and must be disclosed.
 
 Test sanitizer/error paths, injection in evidence, unknown/cross-case references, fake action IDs, schema refusal, over-budget, timeout, forbidden fallback/egress and unavailable routes. Measure baseline versus AI, AI without challenge and full bounded pipeline. Evaluate both safety and useful work; a model that refuses everything is not successful defense.
+
+The HTTP adapter additionally enforces an absolute response deadline by interrupting its transport; a server trickling headers cannot indefinitely extend an inactivity timeout. Evaluations respect registered action capabilities equally in both arms. The next-wave public regression registers zero actuators, keeps truth outside prompts, preserves indistinguishable unknown cases and reports optional proposal/required-code checks separately. These are engineering measurements, not held-out production accuracy or an AI prevention claim.
+
+The gateway's `cliproxyapi_chat_v3` route projects validated Go-derived catalog candidates separately from ordinary event-ID reads. Runtime-owned `readRoundsRemaining` descends from two to zero; the final response must request no further reads, and violations remain degraded. Safe failure codes distinguish contract/read-limit/provider failures without exposing exception text. The final real 16-case run completed all cases, tied baseline assessment quality and took longer; [all trials](lab/NEXT_WAVE_RESULTS.md) preserve the earlier integration failures.

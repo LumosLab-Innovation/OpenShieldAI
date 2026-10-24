@@ -16,6 +16,8 @@ The current slice also includes a dependency-free Go access-decision correlator,
 
 Selected PM/BA cases now have parallel [implemented defense experiments](docs/PARALLEL_DEFENSE.md): Go downstream tool authority (A1/A2/A3), declared identity/gzip HTTP release delivery, and persistent SQLite quote grants/revocation/principal budgets. [Aggregate evidence](docs/lab/PARALLEL_DEFENSE_RESULTS.md) records actual owned loopback effects and positive controls. Go tool authority remains ephemeral; the separate quote authority is durable locally. Neither is a production identity adapter, and the release gate does not discover unknown URLs or remove earlier disclosures.
 
+The [next-wave coverage ledger](docs/NEXT_WAVE.md) adds fixed Go identity/business-flow/egress experiments, exact local origin promotion plus separately approved cache retirement, and actual SQLite scratch restore validation. A separately installed, loopback CLIProxyAPI uses operator-completed Codex OAuth for real comparisons. [Current results](docs/lab/NEXT_WAVE_RESULTS.md) retain failed/degraded trials; inference success and required-code checks are distinct from defensive effects and production/analyst benefit.
+
 - Standalone defense first; OpenHunterAI is one later evidence producer.
 - The four core questions now drive an explicit enforcement plane plus resident AI supervision; see ADR 0002 and the operating architecture.
 - Evidence/provenance and deterministic policy surround AI reasoning.

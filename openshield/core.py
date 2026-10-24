@@ -406,7 +406,7 @@ class Supervisor:
                                   "started_at,deadline_at) VALUES(?,?,?,?,?,?,'running',?,?)",
                                   (key, case["projectId"], case["caseId"], case["watermark"], self.mode,
                                    route, started, deadline))
-        analysis, status = base, "not_requested"
+        analysis, status, failure_code = base, "not_requested", None
         started_mono = time.monotonic()
         if self.mode == "ai" and self.gateway is None:
             status = "degraded_unconfigured"
@@ -414,13 +414,15 @@ class Supervisor:
             try:
                 context = dict(case)
                 for round_number in range(3):
+                    context["readRoundsRemaining"] = 2 - round_number
                     analysis = self.gateway.analyze(context, before_attempt=lambda tokens: self._reserve(key, tokens),
                                                     deadline=time.monotonic() + max(0, 180 - (time.monotonic() - started_mono)))
                     validate_analysis(analysis, case)
                     if not analysis["readRequests"]:
                         break
                     if round_number == 2:
-                        raise ValueError("Evidence read round cap exceeded")
+                        from .gateway import GatewayError
+                        raise GatewayError("READ_ROUND_LIMIT")
                     context["catalogObservations"] = self._reads(case, analysis["readRequests"])
                 status = "succeeded"
             except Exception as error:
@@ -429,6 +431,13 @@ class Supervisor:
                 from .correlation import CorrelationError
                 status = ("degraded_tool" if isinstance(error, CorrelationError) else
                           "degraded_budget" if isinstance(error, GatewayError) and error.code == "BUDGET_EXHAUSTED" else "degraded_model")
+                safe_codes = {"BUDGET_EXHAUSTED", "READ_ROUND_LIMIT", "CREDENTIAL_UNAVAILABLE", "CROSS_CASE_INPUT",
+                              "DATA_CLASS_DENIED", "DEADLINE_EXCEEDED", "INPUT_LIMIT", "INVALID_CASE_CONTEXT",
+                              "INVALID_PROVIDER_OUTPUT", "INVALID_READ_CONTEXT", "OUTPUT_LIMIT", "PROVIDER_CONTENT_TYPE",
+                              "PROVIDER_HTTP_FAILURE", "PROVIDER_UNAVAILABLE", "TRANSIENT_PROVIDER_FAILURE", "USAGE_UNAVAILABLE"}
+                failure_code = (error.code if isinstance(error, GatewayError) and error.code in safe_codes
+                                else "TOOL_CONTRACT_REJECTED" if isinstance(error, CorrelationError)
+                                else "ANALYSIS_OR_TOOL_CONTRACT_REJECTED")
                 analysis = base
         totals = self.store.db.execute("SELECT calls,tokens FROM shield_episodes WHERE dedup=?", (key,)).fetchone()
         limitations = set(analysis["limitations"]) | set(base["limitations"])
@@ -438,6 +447,7 @@ class Supervisor:
         result = {**analysis, "schemaVersion": "investigation_v1", "projectId": case["projectId"],
                   "caseId": case["caseId"], "assetId": case["assetId"], "caseVersion": case["version"],
                   "evidenceWatermark": case["watermark"], "mode": self.mode, "aiStatus": status,
+                  "aiFailureCode": failure_code,
                   "limitations": sorted(limitations), "calls": totals[0], "tokens": totals[1],
                   "tokenAccounting": "conservative_reserved_upper_bound", "startedAt": started,
                   "completedAt": utc_now(), "elapsedSeconds": round(time.monotonic() - started_mono, 6),

@@ -1,0 +1,759 @@
+{
+  "schemaVersion": "heldout_corpus_v1",
+  "synthetic": true,
+  "inputContract": "lab_event_v1",
+  "description": "Public engineering regression from actual owned lab effects; schema compatibility does not make it held-out or representative.",
+  "registration": {
+    "evaluationClass": "public_engineering_regression_not_heldout",
+    "allowedActions": [],
+    "replayClockUTC": "2026-10-24T00:42:00Z",
+    "totalCases": 16,
+    "comparisonEligibleCases": 16,
+    "boundaryRejectionCases": 0,
+    "sourceFactCommitments": {
+      "flow": "366153602708bdbfbaf336786b7d9bebc1c0f1d0841bca6ea42db0dfbffd10e3",
+      "promotion": "48396e7b8766d1ba4dad85b500039951abb30bdd316060d1e0eab29ed373eecb",
+      "recovery": "0efd10fbbd68376dc811f9aa0fa8a1f51c673158621c744722df1b01c27edf9e"
+    },
+    "ordering": "Opaque ordinal-derived IDs sorted by a fixed SHA-256 seed; no scenario words in model identifiers",
+    "truthMeaning": "supported means independently observed forbidden fixture effects; not_supported covers only observed authorized work; unknown retains attribution, visibility, control or recovery uncertainty",
+    "identifiabilityLimit": "Both valid-session narratives have identical observable facts and unknown truth. A stolen holder cannot be inferred from this schema.",
+    "sourceLossMeaning": "One controlled evaluator omission of a real effect summary, not a measured source outage",
+    "recoveryMapping": "Existing verification events preserve outcome and observer independence. No backup_state/keyAvailable is invented; current schema loses the detailed failure cause.",
+    "limitations": [
+      "Known public cases, not held-out evaluation or measured field efficacy",
+      "Authorization facts are already resolved by trusted fixture controllers; not raw-telemetry AI insight",
+      "No new action authority; both arms reason over exactly the same minimized evidence",
+      "Report commitments bind selected facts, not source authenticity or original forensic artifacts"
+    ]
+  },
+  "cases": [
+    {
+      "id": "c_909314d0d95c83ca97553689",
+      "group": "benign_work",
+      "scenario": "Approved fixed-recipient delivery",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_136251b64883d6955cbb43fd",
+            "projectId": "p_eval",
+            "caseId": "c_909314d0d95c83ca97553689",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": true,
+              "count": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "not_supported",
+        "acceptableNextActions": [
+          "observe"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.protectedAllowedDeliveries"
+        ]
+      }
+    },
+    {
+      "id": "c_ea2e618dd916a7c24fdd90d8",
+      "group": "recovery_gap",
+      "scenario": "Isolated application restoration not verified: business_inconsistent",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_be45ff4e35ef10b80fa4ed6f",
+            "projectId": "p_eval",
+            "caseId": "c_ea2e618dd916a7c24fdd90d8",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "verification",
+            "facts": {
+              "objective": "application_restored",
+              "result": "not_verified",
+              "independent": true
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [
+          "recovery_gap"
+        ],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "recovery.business_inconsistent.outcomeCode"
+        ]
+      }
+    },
+    {
+      "id": "c_7373318941a8089795aa8517",
+      "group": "recovery_gap",
+      "scenario": "Isolated application restoration not verified: no_backup",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_3b5a7c61c51bcfb79674f4a0",
+            "projectId": "p_eval",
+            "caseId": "c_7373318941a8089795aa8517",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "verification",
+            "facts": {
+              "objective": "application_restored",
+              "result": "not_verified",
+              "independent": false
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [
+          "recovery_gap"
+        ],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "recovery.no_backup.outcomeCode"
+        ]
+      }
+    },
+    {
+      "id": "c_152c8db6c94872f613c7e3b5",
+      "group": "benign_work",
+      "scenario": "Usable isolated restore and observed transaction",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_792d4a01672fb2bb21976d27",
+            "projectId": "p_eval",
+            "caseId": "c_152c8db6c94872f613c7e3b5",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "verification",
+            "facts": {
+              "objective": "application_restored",
+              "result": "verified",
+              "independent": true
+            }
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_7e43754b1442a12118556893",
+            "projectId": "p_eval",
+            "caseId": "c_152c8db6c94872f613c7e3b5",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:01Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": true,
+              "count": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "not_supported",
+        "acceptableNextActions": [
+          "observe"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "recovery.clean.independentApplicationObservation"
+        ]
+      }
+    },
+    {
+      "id": "c_8c5b5634edc9e6803c6a1f63",
+      "group": "supported_effect",
+      "scenario": "Cross-tenant synthetic object bytes observed",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_35c54afa89f95e319d286ea4",
+            "projectId": "p_eval",
+            "caseId": "c_8c5b5634edc9e6803c6a1f63",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": false,
+              "count": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "supported",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.fact_object_transaction.unsafeCrossTenantReads"
+        ]
+      }
+    },
+    {
+      "id": "c_bff37dcbb6a246d572e456f3",
+      "group": "uncertain_trace",
+      "scenario": "Authentication denials without holder attribution",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_20ce4fa35632cac5398271a0",
+            "projectId": "p_eval",
+            "caseId": "c_bff37dcbb6a246d572e456f3",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "s_8c5b5634edc9e6803c6a1f63",
+              "objectLabel": "o_8c5b5634edc9e6803c6a1f63"
+            }
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_7063de2260f0f64eaaccee18",
+            "projectId": "p_eval",
+            "caseId": "c_bff37dcbb6a246d572e456f3",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:01Z",
+            "dataClass": "synthetic",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "s_8c5b5634edc9e6803c6a1f63",
+              "objectLabel": "o_8c5b5634edc9e6803c6a1f63"
+            }
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_c03d14e7d83318ec36ec4e5f",
+            "projectId": "p_eval",
+            "caseId": "c_bff37dcbb6a246d572e456f3",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:02Z",
+            "dataClass": "synthetic",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "s_8c5b5634edc9e6803c6a1f63",
+              "objectLabel": "o_8c5b5634edc9e6803c6a1f63"
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "observe",
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.fact_auth_budget.priorPrincipalFailures"
+        ]
+      }
+    },
+    {
+      "id": "c_937564ddc6a46a03bb4a018d",
+      "group": "supported_effect",
+      "scenario": "Excess duplicate transaction commit",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_17ea91d06ce3074fdfec023d",
+            "projectId": "p_eval",
+            "caseId": "c_937564ddc6a46a03bb4a018d",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": false,
+              "count": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "supported",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.fact_object_transaction.unsafeDuplicateCharges_minus_one_intended_commit"
+        ]
+      }
+    },
+    {
+      "id": "c_9298f80765023c504ae41480",
+      "group": "recovery_gap",
+      "scenario": "Isolated application restoration not verified: untrusted_build",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_916d499a77bac2b22e7b2147",
+            "projectId": "p_eval",
+            "caseId": "c_9298f80765023c504ae41480",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "verification",
+            "facts": {
+              "objective": "application_restored",
+              "result": "not_verified",
+              "independent": true
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [
+          "recovery_gap"
+        ],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "recovery.untrusted_build.outcomeCode"
+        ]
+      }
+    },
+    {
+      "id": "c_b0d92ac85b0fb7da2d28ef66",
+      "group": "supported_effect",
+      "scenario": "Revoked session allowed by cached verifier",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_85643b737959e5c55e9d71df",
+            "projectId": "p_eval",
+            "caseId": "c_b0d92ac85b0fb7da2d28ef66",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": false,
+              "count": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "supported",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.fact_session_verifiers.unsafeCachedPathReadsAfterRevocation"
+        ]
+      }
+    },
+    {
+      "id": "c_8dbe747561b6cec7d33f8458",
+      "group": "source_loss_ablation",
+      "scenario": "Controlled omission of one otherwise observed effect summary",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_d9f42781238716fe1b50f7dd",
+            "projectId": "p_eval",
+            "caseId": "c_8dbe747561b6cec7d33f8458",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "source_health",
+            "facts": {
+              "available": false,
+              "dropped": 1
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.protectedAllowedEffects.charges_withheld_by_evaluator"
+        ]
+      }
+    },
+    {
+      "id": "c_397867f1f48340270963e5cd",
+      "group": "benign_work",
+      "scenario": "Declared delivery after exact retirement",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_a82ea137104ec6cd12954791",
+            "projectId": "p_eval",
+            "caseId": "c_397867f1f48340270963e5cd",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "release_exposure",
+            "facts": {
+              "status": "pass",
+              "observationCount": 0,
+              "gapCount": 0
+            }
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_b71baecc7d2abe9884737aff",
+            "projectId": "p_eval",
+            "caseId": "c_397867f1f48340270963e5cd",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:01Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": true,
+              "count": 6
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "not_supported",
+        "acceptableNextActions": [
+          "observe"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "promotion.phases.edge_after_retirement"
+        ]
+      }
+    },
+    {
+      "id": "c_4b6113fcd7ac48461fb00af1",
+      "group": "benign_work",
+      "scenario": "Approved ledger work including concurrent idempotency",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_b2462b0a6747c854dab18c0b",
+            "projectId": "p_eval",
+            "caseId": "c_4b6113fcd7ac48461fb00af1",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": true,
+              "count": 2
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "not_supported",
+        "acceptableNextActions": [
+          "observe"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.protectedAllowedEffects.charges"
+        ]
+      }
+    },
+    {
+      "id": "c_b395802a497d35b1cb5eeb48",
+      "group": "control_gap",
+      "scenario": "Origin updated while the declared edge still delivers private canaries",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_163973bb6f0aac2338cd2cb6",
+            "projectId": "p_eval",
+            "caseId": "c_b395802a497d35b1cb5eeb48",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "release_exposure",
+            "facts": {
+              "status": "pass",
+              "observationCount": 0,
+              "gapCount": 0
+            }
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_dfca44cbe7e0480c461eef41",
+            "projectId": "p_eval",
+            "caseId": "c_b395802a497d35b1cb5eeb48",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:01Z",
+            "dataClass": "synthetic",
+            "kind": "release_exposure",
+            "facts": {
+              "status": "blocked",
+              "observationCount": 4,
+              "gapCount": 0
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [
+          "control_gap"
+        ],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "promotion.phases.origin_after_promotion",
+          "promotion.phases.edge_without_explicit_purge"
+        ]
+      }
+    },
+    {
+      "id": "c_1fb34bbf7d17391be6f71069",
+      "group": "supported_effect",
+      "scenario": "Synthetic body arrived at forbidden receiver",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_0379894f20e5e74aa7b0c4c9",
+            "projectId": "p_eval",
+            "caseId": "c_1fb34bbf7d17391be6f71069",
+            "assetId": "a_eval",
+            "sourceId": "observer",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "app_operation",
+            "facts": {
+              "authorized": false,
+              "count": 2
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "supported",
+        "acceptableNextActions": [
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.negativeControlOutsideDeliveries"
+        ]
+      }
+    },
+    {
+      "id": "c_3c59b2e424801ef5ff56f333",
+      "group": "identifiability_pair",
+      "scenario": "Valid session holder is not identifiable from this observation",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_c01d88ebcb20be4944b9b2b8",
+            "projectId": "p_eval",
+            "caseId": "c_3c59b2e424801ef5ff56f333",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "s_8c5b5634edc9e6803c6a1f63",
+              "objectLabel": "o_8c5b5634edc9e6803c6a1f63"
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "observe",
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.new_valid_session_service_health"
+        ],
+        "withheldHypothesis": "Hypothesis of the ordinary valid session holder; no holder evidence was observed",
+        "identifiabilityPair": "valid_session_origin_unknown"
+      }
+    },
+    {
+      "id": "c_1cb071e061a3d3dae5172b32",
+      "group": "identifiability_pair",
+      "scenario": "Valid session holder is not identifiable from this observation",
+      "input": {
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "e_7dfb532dbdb77ad20b5473d5",
+            "projectId": "p_eval",
+            "caseId": "c_1cb071e061a3d3dae5172b32",
+            "assetId": "a_eval",
+            "sourceId": "lab",
+            "observedAt": "2026-10-24T00:40:00Z",
+            "dataClass": "synthetic",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "s_8c5b5634edc9e6803c6a1f63",
+              "objectLabel": "o_8c5b5634edc9e6803c6a1f63"
+            }
+          }
+        ]
+      },
+      "truth": {
+        "ingest": "accept",
+        "incident": "unknown",
+        "acceptableNextActions": [
+          "observe",
+          "needs_human"
+        ],
+        "requiredHypotheses": [],
+        "allowVerifiedContainment": false,
+        "allowVerifiedRecovery": false
+      },
+      "provenance": {
+        "sourceFactRefs": [
+          "flow.new_valid_session_service_health"
+        ],
+        "withheldHypothesis": "Hypothesis of a stolen valid session; no holder evidence was observed",
+        "identifiabilityPair": "valid_session_origin_unknown"
+      }
+    }
+  ]
+}

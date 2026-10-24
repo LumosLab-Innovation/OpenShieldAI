@@ -52,6 +52,8 @@ Resident investigation can request `access_patterns` inside its existing read-ro
 
 ## CLIProxyAPI / Codex adapter
 
+The operator-authorized [local setup](CLIPROXY_SETUP.md) and [new comparison record](lab/NEXT_WAVE_RESULTS.md) now exercise a real Codex route. The older first-lab comparison remains historical. Each checkout still requires its own explicitly configured endpoint/model/key; credentials and OAuth data are absent from this repository.
+
 All reasoning passes through [gateway.py](../openshield/gateway.py). The selected transport is CLIProxyAPI's OpenAI-compatible, non-streaming `POST /v1/chat/completions`; Codex account authentication stays entirely in the operator's separate proxy. Shield does not read Codex OAuth files, launch Codex CLI, provision keys or inherit `OPENAI_API_KEY`.
 
 Reviewed upstream: [CLIProxyAPI commit 8289ec4](https://github.com/router-for-me/CLIProxyAPI/tree/8289ec4c71ad914d0612c2776352b76ba3d355a6), observed 2026-10-24; [MIT license](https://github.com/router-for-me/CLIProxyAPI/blob/8289ec4c71ad914d0612c2776352b76ba3d355a6/LICENSE). No proxy source is vendored or installed by the runtime. [The minimal proxy example](../config/cliproxy.example.yaml) uses its reviewed v8 configuration layout; configure Codex OAuth and model routing using the upstream's own instructions. Bind the proxy to loopback, keep its authentication directory outside source control, select one known Codex route and disable sensitive request logging in the proxy's own deployment.
@@ -75,6 +77,12 @@ Only explicitly configured literal-IP endpoints are supported initially, avoidin
 Each reasoning episode allows at most eight calls, 64k conservative visible-token reservations, 180 seconds, two read rounds and three reads per round; per-call deadline is 20 seconds and one transient retry. Model-requested evidence cannot reset a budget. Reservations count failed attempts and are **not actual billing**. Proxy-hidden reasoning/account usage and an alias's actual upstream model are not independently established; real-provider budget, usage, model compatibility and retention checks remain open. Unit HTTP contract tests use a visibly named local double, never an efficacy result.
 
 Even after connection, an AI-benefit claim needs harder held-out ambiguous cases, genuinely useful additional observations, an equally capable baseline/operator and measured correctness, harm, time, cost and adverse proposals. Fluent explanations and this structured fixture score are insufficient.
+
+## Next-wave effect and triage experiments
+
+Build the fixed flow executable with `go -C runtime-go build -trimpath -o ../artifacts/runtime-go/shield-flow-lab.exe ./cmd/shield-flow-lab` (omit `.exe` on Linux/macOS). `promotion-lab` measures exact approved origin promotion and separately approved retirement/purge. `recovery-readiness-lab` restores a pinned SQLite fixture only into fresh scratch targets and checks real application transactions. `next-wave-lab` combines these with the Go identity/business-flow/egress experiment and freezes a 16-case engineering regression before comparing triage. Add `--with-ai` to explicitly enable the configured gateway; an unavailable/incomplete AI arm produces `partial`, with no fake successful AI score. Default execution and CI remain offline.
+
+See the [24-case coverage ledger](NEXT_WAVE.md) for exact implemented slices and seven unsupported cases. The Go and promotion authorities are ephemeral local controllers, not production identity/deployment adapters. Allowed effects, forbidden effects, cache history and restore readiness are observed independently of model decisions; the AI arm receives no new execution authority.
 
 ## Exact approved lab actions
 

@@ -33,6 +33,8 @@ jobs:
           go vet ./...
           go build -trimpath -o ../artifacts/runtime-go/shield-correlate ./cmd/shield-correlate
           go build -trimpath -o ../artifacts/runtime-go/shield-tool-lab ./cmd/shield-tool-lab
+          go build -trimpath -o ../artifacts/runtime-go/shield-flow-lab ./cmd/shield-flow-lab
       - run: python -m unittest discover -s tests -p 'test_*.py' -v
       - run: python scripts/check_parallel_defense.py
+      - run: python -m openshield next-wave-lab
       - run: python -m openshield --help

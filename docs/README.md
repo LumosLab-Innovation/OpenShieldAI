@@ -13,6 +13,12 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [Go evidence](lab/GO_CORRELATION_RESULTS.md) | Actual regression failures/limits, performance and independent review |
 | [Parallel implemented methods](PARALLEL_DEFENSE.md) | Selected PM/BA tool-authority, durable quote-authority and HTTP delivery cases |
 | [Parallel measured effects](lab/PARALLEL_DEFENSE_RESULTS.md) | Positive/negative controls, safe aggregate evidence and independent challenge |
+| [Next-wave methods and coverage ledger](NEXT_WAVE.md) | All 24 PM cases mapped to prior/new slices, limited proofs or unsupported work and missing authority |
+| [Next-wave measurements](lab/NEXT_WAVE_RESULTS.md) | Application, publication and restore effects; separately recorded actual CLIProxyAPI comparison |
+| [Application-flow lab](lab/FLOW_LAB_RESULTS.md) | Go session/object/idempotency enforcement, fixed egress, real receiver and ledger observations |
+| [Publication and cache retirement](lab/PROMOTION_RESULTS.md) | Exact approved bytes, current generation, explicit purge and unrecalled historical downloads |
+| [Application recovery readiness](lab/RECOVERY_READINESS_RESULTS.md) | Scratch SQLite restore, false-readiness negatives and independent committed/rollback probes |
+| [Next-wave independent challenge](research/NEXT_WAVE_CHALLENGE.md) | Actual counterexamples, fixes, comparison safeguards and remaining limits |
 | [Anti-REA implementation](ANTI_REA.md) | Release exposure policy, server authority, AI boundary and post-exposure handling |
 | [Anti-REA measurements](lab/ANTI_REA_RESULTS.md) | Actual pinned REA, HTTP, Chrome and independent adversarial results |
 | [REA source research](research/REA_DEFENSE_RESEARCH.md) | Exact upstream mechanisms, immutable references and falsifiable defense choices |

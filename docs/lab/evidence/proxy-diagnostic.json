@@ -1,0 +1,22 @@
+{
+  "purpose": "single_case_contract_diagnostic_not_an_efficacy_score",
+  "schemaVersion": "proxy_diagnostic_v1",
+  "aiStatus": "degraded_model",
+  "aiFailureCode": "ANALYSIS_OR_TOOL_CONTRACT_REJECTED",
+  "calls": 1,
+  "reservedTokens": 3513,
+  "responseShapeSummaries": [
+    {
+      "finishReason": "stop",
+      "reportedTokens": 946,
+      "responseContentBytes": 492,
+      "hasProviderTools": false,
+      "analysisSchemaCorrect": true,
+      "unknownHypothesisCount": 0,
+      "unknownLimitationCount": 0,
+      "unknownEvidenceCount": 0,
+      "proposalAllowed": true,
+      "requestedReadCount": 2
+    }
+  ]
+}

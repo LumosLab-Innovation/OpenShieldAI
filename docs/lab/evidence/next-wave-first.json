@@ -1,0 +1,1669 @@
+{
+  "schemaVersion": "next_wave_lab_v1",
+  "status": "partial",
+  "dataClass": "synthetic",
+  "effectsStatus": "passed",
+  "effects": {
+    "flow": {
+      "schemaVersion": "flow_lab_v1",
+      "status": "passed",
+      "dataClass": "synthetic",
+      "checks": [
+        {
+          "code": "ambiguous_external_delivery_not_retried",
+          "passed": true
+        },
+        {
+          "code": "approved_charge_actual_ledger_row",
+          "passed": true
+        },
+        {
+          "code": "approved_export_actual_receiver",
+          "passed": true
+        },
+        {
+          "code": "auth_budget_denies_before_authenticator",
+          "passed": true
+        },
+        {
+          "code": "auth_budget_unrelated_principal_works",
+          "passed": true
+        },
+        {
+          "code": "auth_budget_unsafe_issues_session",
+          "passed": true
+        },
+        {
+          "code": "auth_budget_unsafe_protected_read_observed",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_protected_1",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_protected_2",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_protected_3",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_unsafe_1",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_unsafe_2",
+          "passed": true
+        },
+        {
+          "code": "auth_failed_fixture_unsafe_3",
+          "passed": true
+        },
+        {
+          "code": "auth_window_correct_login_recovers",
+          "passed": true
+        },
+        {
+          "code": "charge_capability_replay_denied",
+          "passed": true
+        },
+        {
+          "code": "charge_direct_invocation_denied",
+          "passed": true
+        },
+        {
+          "code": "charge_exact_units_binding",
+          "passed": true
+        },
+        {
+          "code": "charge_requires_controller_approval",
+          "passed": true
+        },
+        {
+          "code": "concurrent_distinct_grants_one_transaction",
+          "passed": true
+        },
+        {
+          "code": "export_does_not_mutate_business_ledger",
+          "passed": true
+        },
+        {
+          "code": "export_replay_has_no_delivery",
+          "passed": true
+        },
+        {
+          "code": "fresh_session_cannot_reset_principal_read_budget",
+          "passed": true
+        },
+        {
+          "code": "idempotency_payload_conflict_denied",
+          "passed": true
+        },
+        {
+          "code": "independent_forbidden_receiver_zero",
+          "passed": true
+        },
+        {
+          "code": "inflight_requests_resume_within_budget",
+          "passed": true
+        },
+        {
+          "code": "lost_response_reconciles_without_second_charge",
+          "passed": true
+        },
+        {
+          "code": "negative_control_ledger_observed",
+          "passed": true
+        },
+        {
+          "code": "new_valid_session_service_health",
+          "passed": true
+        },
+        {
+          "code": "object_authority_/v1/resource",
+          "passed": true
+        },
+        {
+          "code": "object_authority_/v2/resource",
+          "passed": true
+        },
+        {
+          "code": "protected_forbidden_effects_zero",
+          "passed": true
+        },
+        {
+          "code": "protected_legitimate_effects_preserved",
+          "passed": true
+        },
+        {
+          "code": "redirect_refused_before_forbidden_request",
+          "passed": true
+        },
+        {
+          "code": "request_worker_overload_has_no_read",
+          "passed": true
+        },
+        {
+          "code": "revoked_denied_/v1/resource",
+          "passed": true
+        },
+        {
+          "code": "revoked_denied_/v2/resource",
+          "passed": true
+        },
+        {
+          "code": "revoked_inflight_rechecked_before_commit",
+          "passed": true
+        },
+        {
+          "code": "session_issuance_capacity_bounded",
+          "passed": true
+        },
+        {
+          "code": "unregistered_recipient_denied",
+          "passed": true
+        },
+        {
+          "code": "unsafe_cached_verifier_reads_after_revocation",
+          "passed": true
+        },
+        {
+          "code": "unsafe_cross_tenant_read_observed",
+          "passed": true
+        },
+        {
+          "code": "unsafe_duplicate_charges_observed",
+          "passed": true
+        },
+        {
+          "code": "unsafe_inflight_effect_after_revocation",
+          "passed": true
+        },
+        {
+          "code": "unsafe_outside_receiver_observes_data",
+          "passed": true
+        },
+        {
+          "code": "unsafe_primary_verifier_denies_revocation",
+          "passed": true
+        },
+        {
+          "code": "unsafe_redirect_exfiltrates_synthetic_data",
+          "passed": true
+        },
+        {
+          "code": "verifier_warm_protected",
+          "passed": true
+        },
+        {
+          "code": "verifier_warm_unsafe",
+          "passed": true
+        }
+      ],
+      "negativeControlEffects": {
+        "reads": 4,
+        "charges": 3,
+        "chargedUnits": 3
+      },
+      "protectedForbiddenEffects": {
+        "reads": 0,
+        "charges": 0,
+        "chargedUnits": 0
+      },
+      "protectedAllowedEffects": {
+        "reads": 2,
+        "charges": 2,
+        "chargedUnits": 2
+      },
+      "negativeControlOutsideDeliveries": 2,
+      "protectedOutsideDeliveries": 0,
+      "protectedOutsideRequests": 0,
+      "protectedAllowedDeliveries": 1,
+      "idempotentConcurrentCommits": 1,
+      "observations": [
+        {
+          "id": "fact_auth_budget",
+          "caseId": "I1",
+          "facts": {
+            "afterWindowLoginAccepted": 1,
+            "correctProofRejectedDuringLockout": 1,
+            "furtherCredentialChecks": 0,
+            "priorPrincipalFailures": 3,
+            "unrelatedPrincipalLoginAccepted": 1
+          }
+        },
+        {
+          "id": "fact_session_verifiers",
+          "caseId": "I2",
+          "facts": {
+            "declaredVerifierPaths": 2,
+            "newValidSessionReadAccepted": 1,
+            "revokedProtectedPathsDenied": 2,
+            "unsafeCachedPathReadsAfterRevocation": 1
+          }
+        },
+        {
+          "id": "fact_object_transaction",
+          "caseId": "W3",
+          "facts": {
+            "conflictingPayloadRejected": 1,
+            "crossTenantProtectedReads": 0,
+            "protectedConcurrentCommits": 1,
+            "unsafeCrossTenantReads": 1,
+            "unsafeDuplicateCharges": 2
+          }
+        },
+        {
+          "id": "fact_egress_receivers",
+          "caseId": "W4_D4",
+          "facts": {
+            "protectedAllowedDeliveries": 1,
+            "protectedOutsideRequests": 0,
+            "redirectRejected": 1,
+            "unsafeOutsideDataDeliveries": 2
+          }
+        }
+      ],
+      "modelCalls": 0,
+      "productionActions": false,
+      "limitations": [
+        "Owned fixed loopback fixtures only; proofClass is a synthetic authenticator result, never a real password or identity provider.",
+        "Ephemeral single-process session, grant, throttle and idempotency state; no restart, distributed consistency, TLS or production authentication claim.",
+        "Three-failure per-principal lockout lasts sixty fixture seconds; a correct login is denied during lockout, and valid stolen credentials before failures remain usable.",
+        "Revocation covers only the two declared resource paths and requests rechecked before effect; already committed effects, external verifiers and outstanding network transfers are not undone.",
+        "Fixed synthetic receiver mediation only; no arbitrary URL fetching, DNS-rebinding, general DLP, alternate-process egress or earlier-disclosure coverage.",
+        "Ledger and receivers are separate in-process observers, not external trusted monitors; no crash-safe exactly-once guarantee for external effects.",
+        "Read quota is principal-wide eight reads in the fixture lifetime, not learned intent; denial can disrupt legitimate bulk work.",
+        "Fixture lifetime bounds: sixteen sessions, eight per principal, sixty-four outstanding grants, thirty-two transaction keys, twenty-four admitted login checks and four in-flight requests.",
+        "Known bounded engineering cases, not held-out attack prevalence, classifier accuracy, real AI benefit or workload performance."
+      ]
+    },
+    "promotion": {
+      "schemaVersion": "promotion_lab_v1",
+      "status": "passed",
+      "dataClass": "synthetic",
+      "checks": [
+        {
+          "code": "NEGATIVE_CONTROL_DELIVERS_FOUR_PRIVATE_REPRESENTATIONS",
+          "passed": true
+        },
+        {
+          "code": "FAILED_VALIDATION_CANNOT_PROMOTE",
+          "passed": true
+        },
+        {
+          "code": "FAILED_VALIDATION_PRESERVES_ACTIVE_STATE",
+          "passed": true
+        },
+        {
+          "code": "EXPLICIT_LOCAL_AUTHORIZATION_REQUIRED",
+          "passed": true
+        },
+        {
+          "code": "PUBLIC_HTTP_CANNOT_APPROVE_OR_PROMOTE",
+          "passed": true
+        },
+        {
+          "code": "FORGED_GRANT_CANNOT_PROMOTE",
+          "passed": true
+        },
+        {
+          "code": "CHANGED_APPROVED_TREE_REJECTED",
+          "passed": true
+        },
+        {
+          "code": "CHANGED_TREE_PRESERVES_ACTIVE_STATE",
+          "passed": true
+        },
+        {
+          "code": "DENIED_GRANT_CANNOT_BE_REUSED",
+          "passed": true
+        },
+        {
+          "code": "EXACT_APPROVED_SNAPSHOT_PROMOTED",
+          "passed": true
+        },
+        {
+          "code": "PROMOTION_APPROVAL_ONE_USE",
+          "passed": true
+        },
+        {
+          "code": "NEW_ORIGIN_HAS_NO_PRIVATE_CANARY",
+          "passed": true
+        },
+        {
+          "code": "ORIGIN_PROMOTION_ALONE_LEAVES_FOUR_CACHED_LEAKS",
+          "passed": true
+        },
+        {
+          "code": "CLEAN_ORIGIN_PRESERVES_SIX_REQUIRED_GETS",
+          "passed": true
+        },
+        {
+          "code": "STALE_EDGE_FAILS_REAL_DELIVERY_GATE",
+          "passed": true
+        },
+        {
+          "code": "FORGED_RETIREMENT_CANNOT_PURGE",
+          "passed": true
+        },
+        {
+          "code": "PURGE_REMOVES_EIGHT_CACHED_REPRESENTATIONS",
+          "passed": true
+        },
+        {
+          "code": "RETIREMENT_APPROVAL_ONE_USE",
+          "passed": true
+        },
+        {
+          "code": "EDGE_AFTER_RETIREMENT_NO_PRIVATE_CANARY",
+          "passed": true
+        },
+        {
+          "code": "EDGE_AFTER_RETIREMENT_SIX_REQUIRED_GETS",
+          "passed": true
+        },
+        {
+          "code": "EDGE_AFTER_RETIREMENT_BOTH_MAP_ENCODINGS_DENIED",
+          "passed": true
+        },
+        {
+          "code": "ORIGIN_AFTER_RETIREMENT_NO_PRIVATE_CANARY",
+          "passed": true
+        },
+        {
+          "code": "ORIGIN_AFTER_RETIREMENT_SIX_REQUIRED_GETS",
+          "passed": true
+        },
+        {
+          "code": "ORIGIN_AFTER_RETIREMENT_BOTH_MAP_ENCODINGS_DENIED",
+          "passed": true
+        },
+        {
+          "code": "POST_RETIREMENT_REAL_DELIVERY_GATE_PASSES",
+          "passed": true
+        },
+        {
+          "code": "HISTORICAL_DOWNLOAD_STILL_CONTAINS_PRIVATE_BYTES",
+          "passed": true
+        },
+        {
+          "code": "OLD_GENERATION_CANNOT_AUTHORIZE_ROLLBACK",
+          "passed": true
+        }
+      ],
+      "phases": {
+        "before": {
+          "requests": 8,
+          "privateCanaryDeliveries": 4,
+          "requiredGetSuccesses": 4,
+          "retiredDenied": 0
+        },
+        "origin_after_promotion": {
+          "requests": 8,
+          "privateCanaryDeliveries": 0,
+          "requiredGetSuccesses": 6,
+          "retiredDenied": 2
+        },
+        "edge_without_explicit_purge": {
+          "requests": 8,
+          "privateCanaryDeliveries": 4,
+          "requiredGetSuccesses": 4,
+          "retiredDenied": 0
+        },
+        "edge_after_retirement": {
+          "requests": 8,
+          "privateCanaryDeliveries": 0,
+          "requiredGetSuccesses": 6,
+          "retiredDenied": 2
+        },
+        "origin_after_retirement": {
+          "requests": 8,
+          "privateCanaryDeliveries": 0,
+          "requiredGetSuccesses": 6,
+          "retiredDenied": 2
+        }
+      },
+      "modelCalls": 0,
+      "productionActions": false,
+      "derivedFacts": {
+        "legacyExposureObserved": true,
+        "candidateDigestBound": true,
+        "originChangedButCacheStillExposed": true,
+        "explicitPurgeVerified": true,
+        "historicalDownloadRetainsPrivateBytes": true
+      },
+      "limitations": [
+        "Owned loopback static fixtures with three server roles in one process; not a production adapter",
+        "Fixed root/index/app/map paths and identity/gzip only; no CDN, query alias, hidden route or browser coverage",
+        "Controller identity and approvals are trusted local test actions; no cryptographic provenance or durable deployment ledger",
+        "Explicit purge limits future delivery through this controlled edge; historical downloaded copies remain disclosed",
+        "Already started responses may finish; the purge epoch prevents old responses from refilling the cache",
+        "Required GET bytes are verified; JavaScript UI behavior is not executed",
+        "AI benefit is not measured by this deterministic effect experiment"
+      ]
+    },
+    "recovery": {
+      "schemaVersion": "recovery_readiness_lab_v1",
+      "status": "passed",
+      "dataClass": "synthetic",
+      "checks": [
+        {
+          "code": "CLEAN_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "CLEAN_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "CLEAN_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "NO_BACKUP_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "NO_BACKUP_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "NO_BACKUP_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "DIGEST_CHANGED_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "DIGEST_CHANGED_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "DIGEST_CHANGED_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "BUSINESS_INCONSISTENT_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "BUSINESS_INCONSISTENT_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "BUSINESS_INCONSISTENT_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "BUSINESS_INCONSISTENT_HASH_ONLY_FALSE_READINESS",
+          "passed": true
+        },
+        {
+          "code": "FOREIGN_KEY_VIOLATION_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "FOREIGN_KEY_VIOLATION_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "FOREIGN_KEY_VIOLATION_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "FOREIGN_KEY_VIOLATION_HASH_ONLY_FALSE_READINESS",
+          "passed": true
+        },
+        {
+          "code": "UNTRUSTED_BUILD_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "UNTRUSTED_BUILD_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "UNTRUSTED_BUILD_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "UNTRUSTED_BUILD_HASH_ONLY_FALSE_READINESS",
+          "passed": true
+        },
+        {
+          "code": "MISSING_REQUIRED_OBJECT_EXPECTED_OUTCOME",
+          "passed": true
+        },
+        {
+          "code": "MISSING_REQUIRED_OBJECT_PINNED_INPUT_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "MISSING_REQUIRED_OBJECT_SOURCE_UNCHANGED",
+          "passed": true
+        },
+        {
+          "code": "MISSING_REQUIRED_OBJECT_HASH_ONLY_FALSE_READINESS",
+          "passed": true
+        },
+        {
+          "code": "CLEAN_RESTORED_APPLICATION_COMMIT_AND_ROLLBACK",
+          "passed": true
+        },
+        {
+          "code": "SOURCE_APPLICATION_REMAINS_USABLE",
+          "passed": true
+        },
+        {
+          "code": "EVERY_DESTINATION_FRESH_AND_ISOLATED",
+          "passed": true
+        }
+      ],
+      "cases": [
+        {
+          "caseId": "clean",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": true,
+          "restoreReceipt": {
+            "status": "copied",
+            "code": "RESTORE_BYTES_COPIED"
+          },
+          "independentApplicationObservation": {
+            "status": "usable",
+            "code": "APPLICATION_INVARIANTS_PASSED",
+            "accounts": 2,
+            "ledgerRows": 1,
+            "totalBalance": 1000,
+            "rollbackVerified": true,
+            "committedTransferObserved": true
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "APPLICATION_INVARIANTS_PASSED"
+        },
+        {
+          "caseId": "no_backup",
+          "metadataOnlyReady": false,
+          "copyHashOnlyReady": false,
+          "restoreReceipt": {
+            "status": "failed",
+            "code": "BACKUP_UNAVAILABLE"
+          },
+          "independentApplicationObservation": {
+            "status": "not_checked",
+            "code": "BACKUP_UNAVAILABLE"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "BACKUP_UNAVAILABLE"
+        },
+        {
+          "caseId": "digest_changed",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": false,
+          "restoreReceipt": {
+            "status": "failed",
+            "code": "SNAPSHOT_DIGEST_MISMATCH"
+          },
+          "independentApplicationObservation": {
+            "status": "not_checked",
+            "code": "SNAPSHOT_DIGEST_MISMATCH"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "SNAPSHOT_DIGEST_MISMATCH"
+        },
+        {
+          "caseId": "business_inconsistent",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": true,
+          "restoreReceipt": {
+            "status": "copied",
+            "code": "RESTORE_BYTES_COPIED"
+          },
+          "independentApplicationObservation": {
+            "status": "failed",
+            "code": "BUSINESS_INVARIANT_FAILED"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "BUSINESS_INVARIANT_FAILED"
+        },
+        {
+          "caseId": "foreign_key_violation",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": true,
+          "restoreReceipt": {
+            "status": "copied",
+            "code": "RESTORE_BYTES_COPIED"
+          },
+          "independentApplicationObservation": {
+            "status": "failed",
+            "code": "FOREIGN_KEY_FAILED"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "FOREIGN_KEY_FAILED"
+        },
+        {
+          "caseId": "untrusted_build",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": true,
+          "restoreReceipt": {
+            "status": "copied",
+            "code": "RESTORE_BYTES_COPIED"
+          },
+          "independentApplicationObservation": {
+            "status": "failed",
+            "code": "UNTRUSTED_BUILD_MARKER"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "UNTRUSTED_BUILD_MARKER"
+        },
+        {
+          "caseId": "missing_required_object",
+          "metadataOnlyReady": true,
+          "copyHashOnlyReady": true,
+          "restoreReceipt": {
+            "status": "copied",
+            "code": "RESTORE_BYTES_COPIED"
+          },
+          "independentApplicationObservation": {
+            "status": "failed",
+            "code": "MISSING_REQUIRED_OBJECT"
+          },
+          "snapshotUnchanged": true,
+          "sourceUnchanged": true,
+          "isolatedDestination": true,
+          "outcomeCode": "MISSING_REQUIRED_OBJECT"
+        }
+      ],
+      "modelCalls": 0,
+      "productionActions": false,
+      "elapsedSeconds": 0.437,
+      "limitations": [
+        "Owned fixed SQLite application only; no production destination or restored code is executed",
+        "Local snapshot digest pins bytes relative to this trusted capture; it does not authenticate their source",
+        "Known ledger and build-marker checks do not prove malware eradication or universal application consistency",
+        "No encrypted backup, key availability, interrupted restore, production RPO/RTO or HTTP service was tested",
+        "Restore and observer use separate connections in one trusted process; no isolated observer identity",
+        "Recovery cannot reverse prior disclosure; real AI benefit is not measured"
+      ]
+    }
+  },
+  "effectCheckCounts": {
+    "flow": 48,
+    "promotion": 27,
+    "recovery": 28
+  },
+  "effectManifestSha256": "a4fce017c1621acd43900add624be7904b06744b5f132f524e37e36959e43696",
+  "goBinarySha256": "e264dc72745413c421d5446a8613ec241d7a93c1774e86f237a86bd51d543d48",
+  "sourceHashes": {
+    "lab/next_wave.py": "b29202e832a3c09dbbc8d994659cbe5f54dcbeb1db967303c0d4d7718a940c95",
+    "lab/next_wave_corpus.py": "3925e51dd36a93a6010aa4777f5ca610dec27ac9b8a15dcc4795fd17e4720b9c",
+    "lab/promotion.py": "00dbca59ba21fe45ec764df8ecf1b75f138e9b4e8cec96a6a2a3256cbe919404",
+    "openshield/promotion.py": "1b117c5983adbbcce2631f94732c4099733aa3b5fea96d1fd3b3bd2268f1753c",
+    "lab/recovery_readiness.py": "776d54841d971970dec55bd81c8c6dea5ff79bf75da21adb84a8d6f5b1de7d1c",
+    "openshield/core.py": "e1f271f29de853447d0f113f681c14032b937a9eb5c17ffb1351ba81bb30f510",
+    "openshield/gateway.py": "70b4d42e3f25373ba31e0f4ad180baf251fd05d2a49deb84c39f69c28292bc1b",
+    "openshield/evaluation.py": "21db7ec5d48449e27552267d8e6d7965dc0b5241cb44d0ffaf74a6fd9eb0ffce"
+  },
+  "registeredCorpusSha256": "3bd39142c1cc937a098d75881d9e8b9ea2eae8ae3d1c9fbeefc6e32be63622f3",
+  "comparison": {
+    "schemaVersion": "comparison_v1",
+    "synthetic": true,
+    "manifest": {
+      "corpusSha256": "3bd39142c1cc937a098d75881d9e8b9ea2eae8ae3d1c9fbeefc6e32be63622f3",
+      "coreSha256": "e1f271f29de853447d0f113f681c14032b937a9eb5c17ffb1351ba81bb30f510",
+      "gatewaySha256": "70b4d42e3f25373ba31e0f4ad180baf251fd05d2a49deb84c39f69c28292bc1b",
+      "evaluationSha256": "21db7ec5d48449e27552267d8e6d7965dc0b5241cb44d0ffaf74a6fd9eb0ffce",
+      "evaluationClass": "public_engineering_regression_not_heldout",
+      "allowedActions": [],
+      "sourceHashFormat": "SHA-256 of UTF-8 text with LF newlines",
+      "python": "3.11.15",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "hostRunAt": "2026-10-24T06:58:59.490035Z",
+      "replayClockUTC": "2026-10-24T00:42:00Z",
+      "labelsSentToModel": false,
+      "promptTuningDisclosure": "Not automatically verified; see the registered first-run independent review.",
+      "aiRoute": {
+        "provider": "cliproxyapi",
+        "modelAlias": "gpt-6.1-sol",
+        "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+        "globalReservedTokenCeiling": 192000,
+        "upstreamIdentityVerified": false
+      }
+    },
+    "arms": {
+      "baseline": {
+        "status": "completed",
+        "metrics": {
+          "cases": 16,
+          "comparisonCases": 16,
+          "policyAcceptableDecisions": 16,
+          "supportedCases": 4,
+          "truePositives": 4,
+          "falsePositives": 0,
+          "negativeCases": 4,
+          "unknownCases": 8,
+          "decisiveBenign": 2,
+          "negativeAbstentions": 2,
+          "correctUnknown": 8,
+          "abstentions": 10,
+          "boundaryRejects": 0,
+          "providerUnavailableCases": 0,
+          "proposalScoredCases": 16,
+          "acceptableProposals": 12,
+          "hypothesisScoredCases": 16,
+          "requiredHypothesisMatches": 13,
+          "calls": 0,
+          "tokens": 0,
+          "wallSeconds": 4.375
+        },
+        "decisionMatrix": {
+          "supported": {
+            "suspicious": 4,
+            "benign": 0,
+            "insufficient_evidence": 0,
+            "null": 0
+          },
+          "not_supported": {
+            "suspicious": 0,
+            "benign": 2,
+            "insufficient_evidence": 2,
+            "null": 0
+          },
+          "unknown": {
+            "suspicious": 0,
+            "benign": 0,
+            "insufficient_evidence": 8,
+            "null": 0
+          }
+        },
+        "cases": [
+          {
+            "id": "c_909314d0d95c83ca97553689",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "benign",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [
+              "authorized_activity"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.11000000001513399
+          },
+          {
+            "id": "c_ea2e618dd916a7c24fdd90d8",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10899999999674037
+          },
+          {
+            "id": "c_7373318941a8089795aa8517",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10899999999674037
+          },
+          {
+            "id": "c_152c8db6c94872f613c7e3b5",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10899999999674037
+          },
+          {
+            "id": "c_8c5b5634edc9e6803c6a1f63",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          },
+          {
+            "id": "c_bff37dcbb6a246d572e456f3",
+            "group": "uncertain_trace",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10899999999674037
+          },
+          {
+            "id": "c_937564ddc6a46a03bb4a018d",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          },
+          {
+            "id": "c_9298f80765023c504ae41480",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10999999998603016
+          },
+          {
+            "id": "c_b0d92ac85b0fb7da2d28ef66",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.14000000001396984
+          },
+          {
+            "id": "c_8dbe747561b6cec7d33f8458",
+            "group": "source_loss_ablation",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [
+              "visibility_gap"
+            ],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          },
+          {
+            "id": "c_397867f1f48340270963e5cd",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.21900000001187436
+          },
+          {
+            "id": "c_4b6113fcd7ac48461fb00af1",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "benign",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [
+              "authorized_activity"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.2029999999795109
+          },
+          {
+            "id": "c_b395802a497d35b1cb5eeb48",
+            "group": "control_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "control_gap"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          },
+          {
+            "id": "c_1fb34bbf7d17391be6f71069",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          },
+          {
+            "id": "c_3c59b2e424801ef5ff56f333",
+            "group": "identifiability_pair",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.10899999999674037
+          },
+          {
+            "id": "c_1cb071e061a3d3dae5172b32",
+            "group": "identifiability_pair",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "not_requested",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": null,
+            "routeHash": "unconfigured",
+            "sourceGaps": [],
+            "calls": 0,
+            "tokens": 0,
+            "elapsedSeconds": 0.125
+          }
+        ]
+      },
+      "ai": {
+        "status": "completed",
+        "metrics": {
+          "cases": 16,
+          "comparisonCases": 16,
+          "policyAcceptableDecisions": 3,
+          "supportedCases": 4,
+          "truePositives": 0,
+          "falsePositives": 0,
+          "negativeCases": 4,
+          "unknownCases": 8,
+          "decisiveBenign": 3,
+          "negativeAbstentions": 1,
+          "correctUnknown": 0,
+          "abstentions": 9,
+          "boundaryRejects": 0,
+          "providerUnavailableCases": 13,
+          "proposalScoredCases": 16,
+          "acceptableProposals": 3,
+          "hypothesisScoredCases": 16,
+          "requiredHypothesisMatches": 3,
+          "calls": 25,
+          "tokens": 93386,
+          "wallSeconds": 165.14100000000326
+        },
+        "decisionMatrix": {
+          "supported": {
+            "suspicious": 4,
+            "benign": 0,
+            "insufficient_evidence": 0,
+            "null": 0
+          },
+          "not_supported": {
+            "suspicious": 0,
+            "benign": 3,
+            "insufficient_evidence": 1,
+            "null": 0
+          },
+          "unknown": {
+            "suspicious": 0,
+            "benign": 0,
+            "insufficient_evidence": 8,
+            "null": 0
+          }
+        },
+        "cases": [
+          {
+            "id": "c_909314d0d95c83ca97553689",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "benign",
+            "aiStatus": "succeeded",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [
+              "authorized_activity"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": {
+              "provider": "cliproxyapi",
+              "requestedModelAlias": "gpt-6.1-sol",
+              "reportedModel": "gpt-6.1-sol",
+              "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+              "latencySeconds": 4.609,
+              "inputManifestHash": "7a05ed2b818ad27765ab463149e070a014fb7c3627579fe27cb0b6ebdf64accf",
+              "reportedTokens": 868,
+              "reservedTokens": 3512,
+              "attempt": 1,
+              "upstreamIdentityVerified": false
+            },
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3512,
+            "elapsedSeconds": 4.73399999999674
+          },
+          {
+            "id": "c_ea2e618dd916a7c24fdd90d8",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 3,
+            "tokens": 10979,
+            "elapsedSeconds": 14.437000000005355
+          },
+          {
+            "id": "c_7373318941a8089795aa8517",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 3,
+            "tokens": 11077,
+            "elapsedSeconds": 24.094000000011874
+          },
+          {
+            "id": "c_152c8db6c94872f613c7e3b5",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "benign",
+            "aiStatus": "succeeded",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [
+              "authorized_activity"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": {
+              "provider": "cliproxyapi",
+              "requestedModelAlias": "gpt-6.1-sol",
+              "reportedModel": "gpt-6.1-sol",
+              "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+              "latencySeconds": 9.484,
+              "inputManifestHash": "928c66614848ddc8cc6f2a2714234e5acd094df98a379d324227fe221d0a8027",
+              "reportedTokens": 1123,
+              "reservedTokens": 3924,
+              "attempt": 1,
+              "upstreamIdentityVerified": false
+            },
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3924,
+            "elapsedSeconds": 9.625
+          },
+          {
+            "id": "c_8c5b5634edc9e6803c6a1f63",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3513,
+            "elapsedSeconds": 5.094000000011874
+          },
+          {
+            "id": "c_bff37dcbb6a246d572e456f3",
+            "group": "uncertain_trace",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 4474,
+            "elapsedSeconds": 10.35899999999674
+          },
+          {
+            "id": "c_937564ddc6a46a03bb4a018d",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3513,
+            "elapsedSeconds": 4.937999999994645
+          },
+          {
+            "id": "c_9298f80765023c504ae41480",
+            "group": "recovery_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 3,
+            "tokens": 10979,
+            "elapsedSeconds": 17.921999999991385
+          },
+          {
+            "id": "c_b0d92ac85b0fb7da2d28ef66",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3513,
+            "elapsedSeconds": 8.64100000000326
+          },
+          {
+            "id": "c_8dbe747561b6cec7d33f8458",
+            "group": "source_loss_ablation",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [
+              "visibility_gap"
+            ],
+            "calls": 1,
+            "tokens": 3527,
+            "elapsedSeconds": 4.5
+          },
+          {
+            "id": "c_397867f1f48340270963e5cd",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 2,
+            "tokens": 7972,
+            "elapsedSeconds": 18.48399999999674
+          },
+          {
+            "id": "c_4b6113fcd7ac48461fb00af1",
+            "group": "benign_work",
+            "expectedIncident": "not_supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "benign",
+            "aiStatus": "succeeded",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": true,
+            "correct": true,
+            "nextAction": "observe",
+            "hypothesisCodes": [
+              "authorized_activity"
+            ],
+            "proposalAcceptable": true,
+            "requiredHypothesesPresent": true,
+            "modelProvenance": {
+              "provider": "cliproxyapi",
+              "requestedModelAlias": "gpt-6.1-sol",
+              "reportedModel": "gpt-6.1-sol",
+              "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+              "latencySeconds": 4.828,
+              "inputManifestHash": "95a6737c5df236944798fc61aba117ecdf7eb63205853bd781f6fe02f0a789c9",
+              "reportedTokens": 918,
+              "reservedTokens": 3512,
+              "attempt": 1,
+              "upstreamIdentityVerified": false
+            },
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3512,
+            "elapsedSeconds": 4.969000000011874
+          },
+          {
+            "id": "c_b395802a497d35b1cb5eeb48",
+            "group": "control_gap",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "control_gap"
+            ],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 3,
+            "tokens": 12192,
+            "elapsedSeconds": 16.76500000001397
+          },
+          {
+            "id": "c_1fb34bbf7d17391be6f71069",
+            "group": "supported_effect",
+            "expectedIncident": "supported",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "suspicious",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "needs_human",
+            "hypothesisCodes": [
+              "business_abuse"
+            ],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3513,
+            "elapsedSeconds": 6.937999999994645
+          },
+          {
+            "id": "c_3c59b2e424801ef5ff56f333",
+            "group": "identifiability_pair",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3593,
+            "elapsedSeconds": 5.875
+          },
+          {
+            "id": "c_1cb071e061a3d3dae5172b32",
+            "group": "identifiability_pair",
+            "expectedIncident": "unknown",
+            "expectedIngest": "accept",
+            "rejected": false,
+            "assessment": "insufficient_evidence",
+            "aiStatus": "degraded_model",
+            "persistedEventsAfterReject": null,
+            "eligible": true,
+            "available": false,
+            "correct": false,
+            "nextAction": "observe",
+            "hypothesisCodes": [],
+            "proposalAcceptable": false,
+            "requiredHypothesesPresent": false,
+            "modelProvenance": null,
+            "routeHash": "2a7d7bf270127cefe1b854509537dc460c7982cd8f8a179c466c8b4933004873",
+            "sourceGaps": [],
+            "calls": 1,
+            "tokens": 3593,
+            "elapsedSeconds": 5.51600000000326
+          }
+        ]
+      }
+    },
+    "limitations": [
+      "Synthetic corpus with its declared registration class; no production efficacy or analyst-time claim.",
+      "Some inputs already encode observer-resolved facts; this is not proof of raw-telemetry AI insight.",
+      "The same enrollment, evidence and action authority are used by both arms.",
+      "A conservative abstention on a benign case is counted acceptable and reported separately.",
+      "No human/operator trial; no AI advantage can be inferred from an unavailable provider.",
+      "Proposal/hypothesis checks use explicit curator expectations, not general semantic verification.",
+      "Both arms share observed effects; this comparison does not credit deterministic prevention to AI."
+    ]
+  },
+  "realAIRequested": true,
+  "realAICompletedAllCases": false,
+  "productionActions": false,
+  "limitations": [
+    "Selected public engineering regressions, not held-out efficacy or portfolio-wide protection",
+    "Inference sees minimized facts only; missing distinctions remain unknowable",
+    "Effect controls and authority are identical with and without AI; AI cannot approve or execute",
+    "Triage and typed proposals are scored separately from actual prevention/recovery effects",
+    "No blinded operator-time trial or production AI advantage is established"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "local_proxy_setup_v1",
+  "provider": "CLIProxyAPI",
+  "version": "8.0.41",
+  "sourceCommit": "8289ec4c71ad914d0612c2776352b76ba3d355a6",
+  "releaseAsset": "CLIProxyAPI_8.0.41_windows_amd64.zip",
+  "releaseSha256": "81bba2e24e2979741a7d224164b7d3aa4bc53f38704e46cab1f10ad8dc877bd7",
+  "binarySha256": "96fc252460cf0a053fa8a7432e2aab503c2a40e5b58f0630f5b9071ddfe3cb32",
+  "listener": "127.0.0.1:8317",
+  "freshDeviceOAuthCompletedByOperator": true,
+  "codexCredentialCacheCopied": false,
+  "upstreamIdentityIndependentlyVerified": false,
+  "proxyAuthRecords": 1,
+  "httpChecks": {
+    "unauthenticated_models": 401,
+    "authenticated_models": 200,
+    "authenticated_management": 404
+  },
+  "benchmarkSelectedAlias": "gpt-6.1-sol",
+  "credentialsOrOAuthMaterialIncluded": false,
+  "automaticMachineStartupInstalled": false
+}

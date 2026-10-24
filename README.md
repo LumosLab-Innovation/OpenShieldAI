@@ -26,7 +26,7 @@
   <a href="https://github.com/LumosLab-Innovation/OpenShieldAI/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/LumosLab-Innovation/OpenShieldAI?style=flat&color=36d9c7"></a>
 </p>
 
-> **Current status — experimental synthetic runtime and isolated lab.** Python/SQLite investigation, exact lab approvals and a CLIProxyAPI/Codex adapter now exist. Caddy/Coraza and restic run in an isolated synthetic fixture. This is not production protection or an accepted S2/S3 pilot. The real AI comparison is unmeasured because no provider endpoint is configured. See [runtime instructions](docs/RUNTIME.md), [measured lab results](docs/lab/RESULTS.md) and [independent review](docs/lab/EFFICACY_REVIEW.md).
+> **Current status — experimental synthetic runtime and isolated lab.** Python/SQLite investigation, exact lab approvals and a CLIProxyAPI/Codex adapter now exist. Caddy/Coraza and restic run in an isolated synthetic fixture. This is not production protection or an accepted S2/S3 pilot. Actual CLIProxyAPI/Codex comparison trials now run separately; their outcomes and limitations belong to the [next-wave measurement record](docs/lab/NEXT_WAVE_RESULTS.md). An available model route does not establish AI benefit. See [runtime instructions](docs/RUNTIME.md), [first-lab measurements](docs/lab/RESULTS.md) and [independent review](docs/lab/EFFICACY_REVIEW.md).
 
 ## The four engineering questions
 
@@ -82,6 +82,19 @@ PM and BA research now defines [24 concrete security scenarios](docs/research/SE
 The first [Go worker](docs/GO_RUNTIME.md) performs bounded temporal correlation of synthetic access decisions and source gaps. It integrates with the CLI and resident investigator's read catalog; Python/SQLite retains state, gateway and approval authority. [Local evidence](docs/lab/GO_CORRELATION_RESULTS.md) records 24/24 rule-regression cases, actual latency and deliberate false-candidate/missed-scenario counterexamples. [Independent review](docs/research/GO_RUST_EFFICACY_REVIEW.md) rejects broader protection or language-speedup claims. [ADR 0003](docs/adr/0003-bounded-go-analysis-workers.md) records where Go and a future justified Rust component belong.
 
 Selected PM/BA cases now have [parallel effect experiments](docs/PARALLEL_DEFENSE.md): A1 read-to-write escalation, A2 recipient/data-class substitution, A3 approval laundering, W2/C2 unexpected release delivery and I2/W3 revoked or replayed authority. The [Go tool trial](docs/lab/TOOL_GUARD_RESULTS.md) observes forbidden effects with enforcement disabled, zero forbidden effects under the selected protected requests, and successful approved reads, writes and receipts. The remaining portfolio retains its own unpassed telemetry, authority and efficacy gates.
+
+## Next-wave methods and remaining coverage
+
+The [next-wave implementation and 24-case ledger](docs/NEXT_WAVE.md) add Go application-flow experiments for login bounds, revoked sessions, object ownership, idempotent charges and fixed-recipient egress; exact release promotion with separately approved cache retirement; and SQLite restore probes that reject hash-valid but unusable applications. [Measured effects](docs/lab/NEXT_WAVE_RESULTS.md) and the [strict independent challenge](docs/research/NEXT_WAVE_CHALLENGE.md) keep useful legitimate work, forbidden effects and unresolved counterexamples visible.
+
+```text
+python -m openshield next-wave-lab --output output/next-wave.json
+python -m openshield next-wave-lab --with-ai --output output/next-wave-with-ai.json
+```
+
+Build the fixed Go binary and configure the authorized CLIProxyAPI route as described in [setup](docs/NEXT_WAVE.md#run-the-fixed-owned-experiments). The AI/no-AI comparison scores bounded investigation separately from deterministic control effects. The public 48-case regression and new 16-case engineering corpus do not establish held-out, operator or production benefit. Seven portfolio cases remain unsupported by a case-specific effect experiment; every case retains unpassed source, authority or production gates.
+
+The final [real Codex comparison](docs/lab/NEXT_WAVE_RESULTS.md) completed all 16 cases and tied the baseline's acceptable assessments. AI satisfied more registered proposal checks but took 318.469 seconds versus 4.078 seconds; incremental operational value is unproven. Earlier degraded trials are retained. [Local proxy and separate OAuth setup](docs/CLIPROXY_SETUP.md).
 
 ## Why OpenShieldAI
 

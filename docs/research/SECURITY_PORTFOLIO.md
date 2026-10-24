@@ -153,3 +153,16 @@ Other canonical research sources used above: NIST SP 800-61r3 (2025), NIST SP 80
 This 24-scenario sample does not cover every OS, email/SaaS compromise, mobile/embedded device, industrial/OT safety system, cryptographic implementation, insider process or jurisdictional incident requirement. Those need environment owners and specialist evidence; breadth here is a triage map, not completeness.
 
 A case enters implementation only after its owner identifies: enrolled asset and business invariant, allowed data and actual source, relevant enforced control, bounded independent observer, false-positive/service-impact budget, failure/unknown outcomes and safe reproduction. Publish actual measured evidence before marking any scenario supported. Until then its status stays **proposed**, even when its methods are established elsewhere.
+
+## Implementation addendum: selected slices, not portfolio completion
+
+The [next-wave coverage ledger](../NEXT_WAVE.md#coverage-ledger-all-24-cases) now records all 24 cases against actual executable evidence. It preserves the research requirements above: an owned fixture is not an accepted production adapter, and one implemented method does not complete the incident family.
+
+| Evidence category | Cases | Boundary |
+|---|---|---|
+| New selected slice | I1, I2, W2, W3, W4, D2, D3, D4, C2, C3, V1 | Fixed Go application/receiver effects; exact local publication and cache retirement; SQLite application-readiness probes. V1 exercises selected admission/quota bounds, not an availability/load envelope |
+| Prior implemented slice | A1, A2, A3 | Fixed tool capability mediation, actual synthetic mark/receipt effects and positive controls; no model prompt-injection probability claim |
+| Existing limited synthetic/isolated proof | W1, H3, V3 | Selected Coraza planted effects, bounded intake/correlation, durable scheduling and visible degraded modes. Complete source authentication, overload and operational support remain open |
+| Unsupported case-specific effect/source/authority | I3, I4, H1, H2, D1, C1, V2 | No accepted identity-role/secret, host, destructive-write, cloud-policy or representative cumulative-abuse adapter is supplied |
+
+[Measured next-wave results](../lab/NEXT_WAVE_RESULTS.md) publish control effects separately from actual CLIProxyAPI decision comparison. The existing 48-case public regression and new 16-case engineering comparison are not held-out field efficacy estimates. No result here establishes production protection, human effort saved, general SSRF/DLP, complete malware eradication or reversal of historical disclosure. The [independent challenge](NEXT_WAVE_CHALLENGE.md) retains failures and their verified corrections rather than inferring success from a model or receipt.
