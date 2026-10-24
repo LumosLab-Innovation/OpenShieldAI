@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
       - name: Check local documentation paths and pinned research records
         run: python scripts/check_docs.py
-      - name: Test documentation checker
+      - name: Test offline documentation and experiment report gates
         run: python -m unittest discover -s scripts -p 'test_*.py'
       - name: Check whitespace
         run: git show --format= --check HEAD

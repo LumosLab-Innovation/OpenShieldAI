@@ -11,6 +11,8 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [BA methods and hypotheses](research/DEFENSE_METHODS_AND_HYPOTHESES.md) | Method assumptions, math, confounders, costs and 16 testable hypotheses |
 | [Go analysis runtime](GO_RUNTIME.md) | Build, exact correlation contract, bounded caller and resident AI read integration |
 | [Go evidence](lab/GO_CORRELATION_RESULTS.md) | Actual regression failures/limits, performance and independent review |
+| [Parallel implemented methods](PARALLEL_DEFENSE.md) | Selected PM/BA tool-authority, durable quote-authority and HTTP delivery cases |
+| [Parallel measured effects](lab/PARALLEL_DEFENSE_RESULTS.md) | Positive/negative controls, safe aggregate evidence and independent challenge |
 | [Anti-REA implementation](ANTI_REA.md) | Release exposure policy, server authority, AI boundary and post-exposure handling |
 | [Anti-REA measurements](lab/ANTI_REA_RESULTS.md) | Actual pinned REA, HTTP, Chrome and independent adversarial results |
 | [REA source research](research/REA_DEFENSE_RESEARCH.md) | Exact upstream mechanisms, immutable references and falsifiable defense choices |

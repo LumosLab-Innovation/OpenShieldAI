@@ -29,6 +29,21 @@ SQLite persists immutable enrollment, accepted evidence, source roles, case wate
 
 The exact `lab_event_v1` catalog additionally accepts `kind: release_exposure` with only `status: pass | blocked | partial`, integer `observationCount` and integer `gapCount` (0–1,000,000). A synthetic nonpass, observation or gap becomes `control_gap` and `needs_human` under the deterministic baseline; exposure alone keeps `insufficient_evidence` and never authorizes mutation or proves compromise. Resident supervision uses the same durable state, scope, deduplication and gateway policy. No raw source, path, literal, session or report is a permitted fact. A real release must not be mislabelled synthetic to bypass current intake restrictions.
 
+### Declared HTTP delivery and parallel authority experiments
+
+`delivery-audit DIRECTORY --base-url http://127.0.0.1:PORT --authorized [--retired-path /old/app.js.map] [--output FILE]` compares an accepted local reference against a separately started operator-owned static preview. Every reference path and the root index alias are checked with identity/gzip requests; decoded mismatches and source-map response headers block promotion. Declared retired paths must return 404/410 under both requests. Redirects, unsupported encodings, incomplete streams, unavailable paths or bounds exhaustion cannot pass. No map URL or redirect is followed. Exit 0 requires complete declared-scope agreement; the output must be outside the reference. No unknown-route, external origin, CDN or history discovery is implemented.
+
+`delivery-lab` runs thirteen owned HTTP representation scenarios. The quote lab now stores hash-only grants, session revocation and principal-wide successful-query budgets in bounded SQLite transactions; reopening the same state preserves them. Local controller/OS trust and valid database snapshot rollback remain limits. This changes no production enrollment or event admission.
+
+The separate dependency-free Go tool lab mediates three fixed synthetic operations, including observable record mutation and recipient-specific delivery. Its state is ephemeral, and it has no arbitrary tool/URL/recipient interface. Build and run the combined measured experiment:
+
+```powershell
+go -C runtime-go build -trimpath -o ../artifacts/runtime-go/shield-tool-lab.exe ./cmd/shield-tool-lab
+python scripts/check_parallel_defense.py
+```
+
+On Linux/macOS omit `.exe`. The script starts/stops only owned loopback fixtures, uses the fixed locally compiled binary with a 20-second timeout and writes safe aggregate evidence to `output/parallel-defense.json`. CI builds both Go executables and runs the same experiments. See [methods and cases](PARALLEL_DEFENSE.md) and [measured results](lab/PARALLEL_DEFENSE_RESULTS.md). No real model calls or production actions occur.
+
 ## Bounded Go access correlation
 
 The additional `correlate CASE_ID --project lab [--output FILE]` command analyzes only accepted synthetic access/source-health facts. Build the fixed platform-specific Go binary before using it or running the full test suite. It returns evidence-bound candidates, source/time gaps and `isFinding: false`; the command does not change case facts or enable an action. See [Go build and contract](GO_RUNTIME.md), [measurements](lab/GO_CORRELATION_RESULTS.md) and [independent challenge](research/GO_RUST_EFFICACY_REVIEW.md).

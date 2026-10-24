@@ -1,0 +1,1100 @@
+{
+  "schemaVersion": "parallel_defense_v1",
+  "status": "pass",
+  "dataClass": "synthetic",
+  "transport": "real_loopback_http",
+  "modelCalls": 0,
+  "productionActions": false,
+  "sourceTreeSha256": "cf21f0aea589cd66a1b6e060ac36d327cfe68a304ce609540280b1900e83d27b",
+  "goBinarySha256": "4a478bde7fcaad2e08212d23ad24b3a9a9167e5b7a180f7e34227ed60b2d8a78",
+  "checks": {
+    "toolAuthority": 43,
+    "antiRea": 16,
+    "durableAuthority": 11,
+    "delivery": 13
+  },
+  "arms": {
+    "toolAuthority": {
+      "schemaVersion": "tool_guard_trial_v1",
+      "status": "passed",
+      "dataClass": "synthetic",
+      "checks": [
+        {
+          "code": "approved_receipt_after_recipient_attack",
+          "passed": true
+        },
+        {
+          "code": "approved_receipt_wrong_recipient",
+          "passed": true
+        },
+        {
+          "code": "benign_probe_after_attacks",
+          "passed": true
+        },
+        {
+          "code": "boolean_parameter",
+          "passed": true
+        },
+        {
+          "code": "case_alias",
+          "passed": true
+        },
+        {
+          "code": "concurrent_one_use",
+          "passed": true
+        },
+        {
+          "code": "controller_requires_write_approval",
+          "passed": true
+        },
+        {
+          "code": "cross_agent_grant",
+          "passed": true
+        },
+        {
+          "code": "data_class_rebinding",
+          "passed": true
+        },
+        {
+          "code": "direct_invocation_no_grant",
+          "passed": true
+        },
+        {
+          "code": "duplicate_operation",
+          "passed": true
+        },
+        {
+          "code": "duplicate_parameter",
+          "passed": true
+        },
+        {
+          "code": "evidence_drift",
+          "passed": true
+        },
+        {
+          "code": "expired_grant",
+          "passed": true
+        },
+        {
+          "code": "float_parameter",
+          "passed": true
+        },
+        {
+          "code": "forged_approval",
+          "passed": true
+        },
+        {
+          "code": "forged_approval_field",
+          "passed": true
+        },
+        {
+          "code": "forged_session",
+          "passed": true
+        },
+        {
+          "code": "invalid_utf8",
+          "passed": true
+        },
+        {
+          "code": "legitimate_read_after_attacks",
+          "passed": true
+        },
+        {
+          "code": "negative_control_mark_reviewed",
+          "passed": true
+        },
+        {
+          "code": "negative_control_observed_forbidden_effects",
+          "passed": true
+        },
+        {
+          "code": "negative_control_receiver_observed",
+          "passed": true
+        },
+        {
+          "code": "negative_control_send_receipt",
+          "passed": true
+        },
+        {
+          "code": "no_forbidden_effects",
+          "passed": true
+        },
+        {
+          "code": "null_evidence",
+          "passed": true
+        },
+        {
+          "code": "null_parameter",
+          "passed": true
+        },
+        {
+          "code": "oversized_body",
+          "passed": true
+        },
+        {
+          "code": "parameter_revision_rebinding",
+          "passed": true
+        },
+        {
+          "code": "parameter_value_rebinding",
+          "passed": true
+        },
+        {
+          "code": "poisoned_read_to_write",
+          "passed": true
+        },
+        {
+          "code": "policy_drift",
+          "passed": true
+        },
+        {
+          "code": "receipt_replay_denied",
+          "passed": true
+        },
+        {
+          "code": "recipient_rebinding",
+          "passed": true
+        },
+        {
+          "code": "replay_denied",
+          "passed": true
+        },
+        {
+          "code": "scope_drift",
+          "passed": true
+        },
+        {
+          "code": "trailing_document",
+          "passed": true
+        },
+        {
+          "code": "unknown_parameter",
+          "passed": true
+        },
+        {
+          "code": "wrong_agent",
+          "passed": true
+        },
+        {
+          "code": "wrong_asset",
+          "passed": true
+        },
+        {
+          "code": "wrong_case",
+          "passed": true
+        },
+        {
+          "code": "wrong_object",
+          "passed": true
+        },
+        {
+          "code": "wrong_tenant",
+          "passed": true
+        }
+      ],
+      "negativeControlEffects": {
+        "reads": 0,
+        "marks": 1,
+        "deliveries": 1
+      },
+      "negativeControlOutsideRecipientDeliveries": 1,
+      "protectedForbiddenEffects": {
+        "reads": 0,
+        "marks": 0,
+        "deliveries": 0
+      },
+      "protectedAllowedEffects": {
+        "reads": 9,
+        "marks": 1,
+        "deliveries": 1
+      },
+      "concurrentAccepted": 1,
+      "modelCalls": 0,
+      "productionActions": false,
+      "limitations": [
+        "Scripted poisoned-tool proposals; no LLM or measured prompt-injection success rate.",
+        "Fixed loopback fixture only; no production identity, TLS, persistence or multi-process authority.",
+        "Separate in-process observer reads actual counters, not executor receipts; no external observer trust claim.",
+        "Allowed operations can still be semantically harmful; capability binding is not intent detection.",
+        "No workload throughput, denial-of-service resilience or Internet-scale security claim."
+      ]
+    },
+    "antiRea": {
+      "schemaVersion": "anti_rea_lab_v1",
+      "synthetic": true,
+      "transport": "real_loopback_http",
+      "checks": {
+        "release_gate_blocks_before_passes_after": true,
+        "synthetic_private_marker_absent_from_all_after_files": true,
+        "baseline_direct_unauthorized_call_succeeds": true,
+        "defended_direct_unauthorized_call_denied": true,
+        "wrong_owner_denied": true,
+        "quantity_tamper_denied": true,
+        "session_rebind_denied": true,
+        "concurrent_single_use": true,
+        "legitimate_output_preserved_q2": true,
+        "legitimate_output_preserved_q3": true,
+        "authorized_outputs_still_reveal_linear_formula": true,
+        "expired_capability_denied": true,
+        "fourth_authorized_query_allowed": true,
+        "fresh_session_cannot_reset_principal_quota": true,
+        "public_client_remains_readable": true,
+        "private_paths_and_error_responses_do_not_export_formula": true
+      },
+      "status": "pass",
+      "exposure": {
+        "before": {
+          "schemaVersion": "release_exposure_v1",
+          "status": "blocked",
+          "complete": true,
+          "artifactSha256": "d85dd43d6e3722a63afeb30d2807e3280f7632582feba69ce3129da11d962949",
+          "counts": {
+            "entries": 3,
+            "files": 3,
+            "bytes": 1906,
+            "inspectedTextFiles": 3,
+            "observations": 3,
+            "gaps": 0,
+            "observationDetailsOmitted": 0,
+            "gapDetailsOmitted": 0
+          },
+          "categories": [
+            {
+              "code": "SOURCE_MAP_FILE",
+              "count": 1
+            },
+            {
+              "code": "SOURCE_MAP_ORIGINAL_CONTENT",
+              "count": 1
+            },
+            {
+              "code": "SOURCE_MAP_REFERENCE",
+              "count": 1
+            }
+          ],
+          "observations": [
+            {
+              "code": "SOURCE_MAP_REFERENCE",
+              "fileId": "file_e07d531ac040ce3f40e0ce63",
+              "sha256": "76d09c0cc975282c579645c2b363b66c8cb99ede1c51aedc5f7d0cffb8898648"
+            },
+            {
+              "code": "SOURCE_MAP_FILE",
+              "fileId": "file_297da2324f155cde1b147e04",
+              "sha256": "90f808035f3477560f771032bad691645348a1eac7274a65b35ff5aafff43ac6"
+            },
+            {
+              "code": "SOURCE_MAP_ORIGINAL_CONTENT",
+              "fileId": "file_297da2324f155cde1b147e04",
+              "sha256": "90f808035f3477560f771032bad691645348a1eac7274a65b35ff5aafff43ac6"
+            }
+          ],
+          "gaps": [],
+          "limits": {
+            "files": 2048,
+            "entries": 4096,
+            "depth": 16,
+            "fileBytes": 8388608,
+            "totalBytes": 67108864,
+            "seconds": 10,
+            "observations": 256
+          },
+          "targetCodeExecuted": false,
+          "networkRequestsMade": false,
+          "isFinding": false,
+          "limitations": [
+            "PASS_IS_ONLY_THIS_RELEASE_POLICY",
+            "NO_RUNTIME_OR_HTTP_HEADER_INSPECTION",
+            "NO_GENERAL_SECRET_OR_PII_DETECTION",
+            "BINARY_ASSETS_HEADER_CHECK_ONLY",
+            "LEXICAL_COMMENTS_NOT_FULL_JAVASCRIPT_GRAMMAR",
+            "STABLE_COPY_REQUIRED_NO_OS_SANDBOX",
+            "DEADLINE_COOPERATIVE_OS_IO_CAN_BLOCK",
+            "OPAQUE_DIGESTS_ARE_NOT_AUTHENTICITY"
+          ]
+        },
+        "after": {
+          "schemaVersion": "release_exposure_v1",
+          "status": "pass",
+          "complete": true,
+          "artifactSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+          "counts": {
+            "entries": 2,
+            "files": 2,
+            "bytes": 1134,
+            "inspectedTextFiles": 2,
+            "observations": 0,
+            "gaps": 0,
+            "observationDetailsOmitted": 0,
+            "gapDetailsOmitted": 0
+          },
+          "categories": [],
+          "observations": [],
+          "gaps": [],
+          "limits": {
+            "files": 2048,
+            "entries": 4096,
+            "depth": 16,
+            "fileBytes": 8388608,
+            "totalBytes": 67108864,
+            "seconds": 10,
+            "observations": 256
+          },
+          "targetCodeExecuted": false,
+          "networkRequestsMade": false,
+          "isFinding": false,
+          "limitations": [
+            "PASS_IS_ONLY_THIS_RELEASE_POLICY",
+            "NO_RUNTIME_OR_HTTP_HEADER_INSPECTION",
+            "NO_GENERAL_SECRET_OR_PII_DETECTION",
+            "BINARY_ASSETS_HEADER_CHECK_ONLY",
+            "LEXICAL_COMMENTS_NOT_FULL_JAVASCRIPT_GRAMMAR",
+            "STABLE_COPY_REQUIRED_NO_OS_SANDBOX",
+            "DEADLINE_COOPERATIVE_OS_IO_CAN_BLOCK",
+            "OPAQUE_DIGESTS_ARE_NOT_AUTHENTICITY"
+          ]
+        }
+      },
+      "authorityAudit": {
+        "denied": 11,
+        "accepted": 4,
+        "quotaDenied": 1
+      },
+      "aiBenefit": {
+        "status": "not_measured"
+      },
+      "limits": [
+        "Owned synthetic example only",
+        "No target code or REA invoked by this trial",
+        "Release pass is a bounded policy result, not a secret or anti-reversing verdict",
+        "Formula is public in this repository; trial measures delivered bytes and HTTP authority",
+        "Controller identities and local SQLite are not accepted production authentication or protected storage",
+        "Authorized outputs can reveal algorithms; stolen live sessions/XSS remain risks"
+      ]
+    },
+    "durableAuthority": {
+      "schemaVersion": "durable_authority_lab_v1",
+      "synthetic": true,
+      "transport": "real_loopback_http",
+      "status": "pass",
+      "checks": {
+        "initial_authorized_operation_accepted": true,
+        "second_authorized_operation_accepted": true,
+        "consumed_capability_rejected_after_restart": true,
+        "unspent_capability_survives_restart": true,
+        "revoked_session_and_capability_stay_revoked_after_restart": true,
+        "authorized_outputs_still_allow_linear_inference": true,
+        "last_principal_budget_slot_survives_two_restarts": true,
+        "fresh_session_cannot_reset_exhausted_principal_budget": true,
+        "clock_rollback_fails_closed": true,
+        "rollback_denial_does_not_consume_capability_or_budget": true,
+        "capability_rejected_at_exact_expiry": true
+      },
+      "serverInstances": 3,
+      "authorityAudit": {
+        "denied": 3,
+        "accepted": 5,
+        "quotaDenied": 1
+      },
+      "modelCalls": 0,
+      "productionActions": false,
+      "limits": [
+        "Owned synthetic identities and local SQLite only",
+        "No accepted production authentication, transport or storage-protection claim",
+        "Administrator deletion or rollback of a valid state snapshot can reset authority",
+        "Authorized query outputs can still reveal a simple hidden algorithm",
+        "Atomic spend does not establish exactly-once external effects"
+      ]
+    },
+    "delivery": {
+      "schemaVersion": "delivery_lab_v1",
+      "synthetic": true,
+      "status": "pass",
+      "cases": [
+        {
+          "case": "clean",
+          "expectedStatus": "pass",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "pass",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 3074,
+              "decodedBytes": 3074,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "gzip",
+          "expectedStatus": "pass",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "pass",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 2475,
+              "decodedBytes": 3074,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "map_header",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 3074,
+              "decodedBytes": 3074,
+              "retiredProbes": 2,
+              "observations": 2,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "SOURCE_MAP_RESPONSE_HEADER",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              },
+              {
+                "code": "SOURCE_MAP_RESPONSE_HEADER",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "stale_gzip",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 2766,
+              "decodedBytes": 3008,
+              "retiredProbes": 2,
+              "observations": 1,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "DELIVERED_BYTES_DIFFER_FROM_REFERENCE",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "retired_map",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 4708,
+              "decodedBytes": 4708,
+              "retiredProbes": 2,
+              "observations": 2,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "RETIRED_PATH_POLICY_VIOLATION",
+                "assetId": "retired_b580441d919fa613c4656a87"
+              },
+              {
+                "code": "RETIRED_PATH_POLICY_VIOLATION",
+                "assetId": "retired_b580441d919fa613c4656a87"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "retired_gzip",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 3891,
+              "decodedBytes": 3891,
+              "retiredProbes": 2,
+              "observations": 1,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "RETIRED_PATH_POLICY_VIOLATION",
+                "assetId": "retired_b580441d919fa613c4656a87"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "retired_fallback",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 3796,
+              "decodedBytes": 3796,
+              "retiredProbes": 2,
+              "observations": 2,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "RETIRED_PATH_POLICY_VIOLATION",
+                "assetId": "retired_b580441d919fa613c4656a87"
+              },
+              {
+                "code": "RETIRED_PATH_POLICY_VIOLATION",
+                "assetId": "retired_b580441d919fa613c4656a87"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "root_mismatch",
+          "expectedStatus": "blocked",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "blocked",
+            "complete": true,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 2380,
+              "decodedBytes": 2380,
+              "retiredProbes": 2,
+              "observations": 2,
+              "gaps": 0,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [
+              {
+                "code": "DELIVERED_BYTES_DIFFER_FROM_REFERENCE",
+                "assetId": "asset_8a5edab282632443219e051e"
+              },
+              {
+                "code": "DELIVERED_BYTES_DIFFER_FROM_REFERENCE",
+                "assetId": "asset_8a5edab282632443219e051e"
+              }
+            ],
+            "gaps": [],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "redirect",
+          "expectedStatus": "partial",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "partial",
+            "complete": false,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 1570,
+              "decodedBytes": 1570,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 2,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [
+              {
+                "code": "REDIRECT_DENIED",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              },
+              {
+                "code": "REDIRECT_DENIED",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "gzip_bomb",
+          "expectedStatus": "partial",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "partial",
+            "complete": false,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 4389,
+              "decodedBytes": 2322,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 1,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [
+              {
+                "code": "DECODED_BYTES_LIMIT",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "truncated_gzip",
+          "expectedStatus": "partial",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "partial",
+            "complete": false,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 2701,
+              "decodedBytes": 2322,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 1,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [
+              {
+                "code": "GZIP_INCOMPLETE_OR_EXTRA_MEMBER",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "multi_gzip",
+          "expectedStatus": "partial",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "partial",
+            "complete": false,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 2750,
+              "decodedBytes": 2322,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 1,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [
+              {
+                "code": "GZIP_INCOMPLETE_OR_EXTRA_MEMBER",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        },
+        {
+          "case": "brotli",
+          "expectedStatus": "partial",
+          "passed": true,
+          "result": {
+            "schemaVersion": "delivery_exposure_v1",
+            "status": "partial",
+            "complete": false,
+            "referenceSha256": "866655c4a34dac82f3bf4460cdc0ee5bd299322c727ab6eb265ded12aecb70b0",
+            "counts": {
+              "referenceFiles": 2,
+              "requested": 8,
+              "wireBytes": 1570,
+              "decodedBytes": 1570,
+              "retiredProbes": 2,
+              "observations": 0,
+              "gaps": 2,
+              "observationDetailsOmitted": 0,
+              "gapDetailsOmitted": 0
+            },
+            "observations": [],
+            "gaps": [
+              {
+                "code": "CONTENT_ENCODING_UNSUPPORTED",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              },
+              {
+                "code": "CONTENT_ENCODING_UNSUPPORTED",
+                "assetId": "asset_d5e8a067e9f2ac7b37dd1c86"
+              }
+            ],
+            "limits": {
+              "files": 256,
+              "entries": 512,
+              "depth": 16,
+              "fileBytes": 2097152,
+              "totalBytes": 16777216,
+              "seconds": 10,
+              "observations": 256
+            },
+            "targetCodeExecuted": false,
+            "networkRequestsMade": true,
+            "isFinding": false,
+            "coverage": "DECLARED_REFERENCE_PATHS_AND_RETIRED_PATHS_ONLY",
+            "limitations": [
+              "REFERENCE_REQUIRES_OWNER_REVIEW_NOT_AUTHENTICATED_BY_HASH",
+              "NO_UNKNOWN_ROUTE_CDN_CACHE_OR_HISTORY_DISCOVERY",
+              "NO_GENERAL_SECRET_DETECTION",
+              "LOOPBACK_STATIC_PREVIEW_ONLY",
+              "GET_MAY_HAVE_EFFECTS_ON_A_MISCONFIGURED_SERVER",
+              "AUDIT_DOES_NOT_REMOVE_ALREADY_DISCLOSED_BYTES"
+            ]
+          }
+        }
+      ],
+      "aiBenefit": {
+        "status": "not_measured"
+      },
+      "limits": [
+        "Real loopback HTTP with owned static fixtures only",
+        "Audit is a promotion gate when wired into the operator release process; it does not intercept served bytes",
+        "Declared paths cannot prove absence of undisclosed URLs, caches or historic downloads",
+        "A reachable retired route is a policy violation, not proof its body contains private code"
+      ]
+    }
+  },
+  "aiBenefit": {
+    "status": "not_measured"
+  },
+  "limitations": [
+    "Named assertions and fixtures, not independent attack success-rate estimates",
+    "No authenticated production identity, model efficacy or full website coverage",
+    "Durable quote authority and ephemeral Go tool authority are different experiments",
+    "Trusted administrator snapshot rollback can restore old authority state",
+    "Authorized outputs remain an algorithm-inference channel"
+  ]
+}

@@ -14,6 +14,8 @@ The repository now includes a Python/SQLite synthetic runtime, bounded resident 
 
 The current slice also includes a dependency-free Go access-decision correlator, a bounded Python caller, CLI/catalog integration and independent regression/performance evidence. [PM scenarios](docs/research/SECURITY_PORTFOLIO.md), [BA methods/hypotheses](docs/research/DEFENSE_METHODS_AND_HYPOTHESES.md) and [ADR 0003](docs/adr/0003-bounded-go-analysis-workers.md) guide further experiments. These generic patterns are candidates, not login-takeover findings; source authentication, live effects and AI value remain unverified. See [Go runtime](docs/GO_RUNTIME.md).
 
+Selected PM/BA cases now have parallel [implemented defense experiments](docs/PARALLEL_DEFENSE.md): Go downstream tool authority (A1/A2/A3), declared identity/gzip HTTP release delivery, and persistent SQLite quote grants/revocation/principal budgets. [Aggregate evidence](docs/lab/PARALLEL_DEFENSE_RESULTS.md) records actual owned loopback effects and positive controls. Go tool authority remains ephemeral; the separate quote authority is durable locally. Neither is a production identity adapter, and the release gate does not discover unknown URLs or remove earlier disclosures.
+
 - Standalone defense first; OpenHunterAI is one later evidence producer.
 - The four core questions now drive an explicit enforcement plane plus resident AI supervision; see ADR 0002 and the operating architecture.
 - Evidence/provenance and deterministic policy surround AI reasoning.

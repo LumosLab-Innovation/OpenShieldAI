@@ -65,11 +65,23 @@ python -m openshield anti-rea-lab --output output/anti-rea-results.json
 
 Real REA parses both clients successfully. Real HTTP and Chrome checks verify the narrower improvement: less private material shipped and unauthorized operations denied. The [results](docs/lab/ANTI_REA_RESULTS.md) also demonstrate that two authorized outputs still reveal the simple synthetic formula. This is not universal resistance to reverse engineering. [Independent adversarial review](docs/research/ANTI_REA_CHALLENGE.md).
 
+The next [parallel implementation](docs/PARALLEL_DEFENSE.md) adds an authorized loopback delivery audit: compare decoded identity/gzip responses with a reviewed release, reject HTTP source-map headers and probe explicitly declared retired paths. The quote lab now persists capability consumption, revocation and principal query spend in shared local SQLite state. A separate Go tool lab mediates fixed operations and recipient/data-class bindings at the actual HTTP execution boundary. [Current evidence](docs/lab/PARALLEL_DEFENSE_RESULTS.md) keeps these mechanisms separate from the historical REA/Chrome measurements.
+
+```text
+python -m openshield delivery-audit YOUR_RELEASE_DIRECTORY --base-url http://127.0.0.1:PORT --authorized --retired-path /retired/app.js.map
+python -m openshield delivery-lab
+go -C runtime-go run ./cmd/shield-tool-lab
+```
+
+Delivery coverage is limited to declared local preview paths and the tested identity/gzip representations. The Go grants remain ephemeral; the Python quote authority's durable state assumes a trusted local host and has no external database-rollback anchor. Neither mechanism establishes production identity or measured AI advantage.
+
 ## Security portfolio, methods and Go implementation
 
 PM and BA research now defines [24 concrete security scenarios](docs/research/SECURITY_PORTFOLIO.md), [13 methods and 16 falsifiable hypotheses](docs/research/DEFENSE_METHODS_AND_HYPOTHESES.md). Each experiment needs telemetry, a controllable effect, a baseline, an AI task, negative controls and an independent falsifier. Portfolio breadth is proposed coverage.
 
 The first [Go worker](docs/GO_RUNTIME.md) performs bounded temporal correlation of synthetic access decisions and source gaps. It integrates with the CLI and resident investigator's read catalog; Python/SQLite retains state, gateway and approval authority. [Local evidence](docs/lab/GO_CORRELATION_RESULTS.md) records 24/24 rule-regression cases, actual latency and deliberate false-candidate/missed-scenario counterexamples. [Independent review](docs/research/GO_RUST_EFFICACY_REVIEW.md) rejects broader protection or language-speedup claims. [ADR 0003](docs/adr/0003-bounded-go-analysis-workers.md) records where Go and a future justified Rust component belong.
+
+Selected PM/BA cases now have [parallel effect experiments](docs/PARALLEL_DEFENSE.md): A1 read-to-write escalation, A2 recipient/data-class substitution, A3 approval laundering, W2/C2 unexpected release delivery and I2/W3 revoked or replayed authority. The [Go tool trial](docs/lab/TOOL_GUARD_RESULTS.md) observes forbidden effects with enforcement disabled, zero forbidden effects under the selected protected requests, and successful approved reads, writes and receipts. The remaining portfolio retains its own unpassed telemetry, authority and efficacy gates.
 
 ## Why OpenShieldAI
 
@@ -165,7 +177,7 @@ python scripts/check_docs.py
 python -m unittest discover -s scripts -p "test_*.py"
 ```
 
-These checks validate documentation links and research-registry invariants. They do not test incident detection, response, restore or AI efficacy. Follow [contributing guidance](CONTRIBUTING.md); use GitHub Issues for sanitized proposals and reproducible defects.
+These checks validate documentation links, research-registry invariants and experiment-report gates using labelled test doubles. They do not measure incident detection, response, restore or AI efficacy. Follow [contributing guidance](CONTRIBUTING.md); use GitHub Issues for sanitized proposals and reproducible defects.
 
 ## Community
 

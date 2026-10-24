@@ -24,9 +24,13 @@ flowchart TD
 
 The implementation uses Python's standard library and the existing runtime boundaries. It adds no network collector, obfuscator, remote executor, browser fingerprinting or provider SDK.
 
+The [parallel defense increment](PARALLEL_DEFENSE.md) now checks explicitly authorized loopback delivery and durable quote authority as separate boundaries. Its [current results](lab/PARALLEL_DEFENSE_RESULTS.md) supplement the historical REA/Chrome run; they do not replace that run's artifact fingerprints or silently extend its coverage.
+
 | Module | Current responsibility |
 |---|---|
 | [exposure.py](../openshield/exposure.py) | `exposure_audit`: inspect an explicitly authorized local release copy; emit opaque IDs/digests, counts, policy categories and gaps |
+| [delivery.py](../openshield/delivery.py) | Compare declared loopback HTTP identity/gzip representations with a reviewed local reference; check source-map headers and declared retired paths |
+| [authority.py](../openshield/authority.py) | Hash-only quote grants/sessions, durable principal spend and revocation in bounded local SQLite transactions |
 | [cli.py](../openshield/cli.py) | `release-audit` and `anti-rea-lab`; release-audit reports cannot be written inside their audited release |
 | [anti_rea.py](../lab/anti_rea.py) | Owned synthetic loopback HTTP application, before/after public exports, operation grants and adversarial trials |
 | [core.py](../openshield/core.py) | Typed synthetic `release_exposure` facts join the existing durable timeline and control-gap investigation |
@@ -48,6 +52,21 @@ Limits include 2,048 files, 4,096 entries, depth 16, 8 MiB per file, 64 MiB tota
 
 **`pass` means no matched rule and no recorded gap under this policy.** It does not prove absence of unknown secrets, private formulas, PII, encoded concepts or reconstructable behavior. This release-directory check does not inspect deployed HTTP headers, CDN/object-storage permissions, old releases or previously downloaded/service-worker-cached assets. Digests bind observed bytes; they do not independently authenticate their origin. A REA timeout, missing runtime or partial parse is never a defensive success.
 
+## Verify declared HTTP delivery
+
+```powershell
+python -m openshield delivery-audit .\release-copy --base-url http://127.0.0.1:PORT --authorized --retired-path /retired/app.js.map
+python -m openshield delivery-lab
+```
+
+This second audit first requires a complete local policy pass, records that reference commitment, and GETs each declared asset with identity and gzip requests. When `index.html` is in the reference it also checks `/`. It decodes bounded supported content codings and compares the resulting bytes with the reviewed file digest. Unexpected bytes or `SourceMap`/legacy `X-SourceMap` response headers block the candidate. Each explicitly declared retired path must return `404` or `410` for both requested representations; an application-page fallback is a policy violation, not proof its body contains private source.
+
+The header check follows [ECMA-426 source-map linking](https://tc39.es/ecma426/#sec-linking-through-http-headers); deleting a JavaScript annotation alone does not remove this separate discovery channel. Representation checks use the distinction between encoded content and decoded representation described by [RFC 9110 §8.4](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.4). These standards motivate the checks; the stricter release policy is this project's decision.
+
+Only an explicit `http://127.0.0.1:PORT` static preview is accepted. There is no credential, DNS resolution, redirect following, JavaScript execution or source-map URL fetch. The bounded defaults are 256 files, 512 entries, depth 16, 2 MiB per response/file, 16 MiB aggregate wire and decoded bytes, 16 retired paths, two seconds per HTTP operation and a ten-second total job deadline. Unsupported coding, malformed/truncated/concatenated gzip, excess bytes, redirects, reference changes and timeouts remain gaps rather than a clean verdict.
+
+This audit makes real HTTP GET requests and requires operator authorization; GET is expected to be safe on the selected static preview but a misconfigured handler can have effects. Reports contain opaque path IDs, digests, counts and fixed codes. Coverage is **declared reference and retired paths only**, at the observed preview and time. Unknown routes, external origins, CDN variants, browser/service-worker caches, historical downloads and an operator-supplied reference's authenticity remain outside it. The gate stops promotion only when the operator wires its result into their release process; it does not intercept live serving or recall disclosed bytes.
+
 ## Run the actual HTTP experiment
 
 ```powershell
@@ -59,9 +78,11 @@ The trial starts temporary loopback HTTP servers with synthetic identities/data 
 
 The before release ships a planted private-rule marker, an unnecessary pricing implementation and a source map containing original text. Its server also accepts a direct unauthenticated quote request. The after release removes that implementation/map from the public exports and leaves a readable thin client that calls the same known server API. One `_exports` function supplies both the audited static files and served responses; integration tests compare their actual bytes. Source-map/private/unlisted paths return errors rather than a catch-all application page.
 
-The protected server validates the exact object/quantity schema, an opaque controller-issued session and object ownership. It issues an opaque grant for the quote operation, bound to the exact session, object, quantity and server-clock expiry. The default lifetime is 30 seconds. Grant consumption and the principal's accepted-query count share one lock: replay and concurrent reuse cannot authorize another operation. A new session or grant does not reset the same principal's quota of four accepted quotes. Public knowledge of `/api/quote` grants no authority.
+The protected server validates the exact object/quantity schema, an opaque controller-issued session and object ownership. It issues an opaque grant for the quote operation, bound to the exact session, object, quantity and server-clock expiry. The default lifetime is 30 seconds. In the current increment, grant consumption and the principal's accepted-query count share one SQLite `BEGIN IMMEDIATE` transaction: replay and concurrent reuse cannot authorize another operation. A new session, grant, process or reopening of the same configured state does not reset the same principal's quota of four accepted quotes. Public knowledge of `/api/quote` grants no authority.
 
-This quota is an intentionally small experiment allowance, not a recommended production threshold. Sessions, grants and quotas are in memory; restart resets them. Production adoption needs a real identity system, durable shared atomic authorization/accounting and an accepted workload/availability policy. A stolen authorized session, same-origin script compromise, additional authorized principals or a compromised server remain outside the proof.
+This quota is an intentionally small experiment allowance, not a recommended production threshold. Session/grant values are stored as SHA-256 digests; the controller retains the raw opaque values only for use in the lab. Reopening the same database preserves consumed grants, principal spend and session revocation. Concurrent connections/processes share the write boundary; SQLite documents its [transaction and writer semantics](https://sqlite.org/lang_transaction.html). A failed authority database, backward persisted clock or incompatible configuration fails closed instead of becoming an empty in-memory allowance. Tests also exercise revoked sessions and outstanding grants after restart.
+
+The default experiment uses a temporary database which is removed after its run; persistence is measured by explicitly reopening the same state path. Creating a new absent state path intentionally starts a new lab. An attacker who can restore an older valid database can roll back the spend and clock watermark together: there is no external anti-rollback anchor. Local host/storage access is trusted; digest storage is not encryption, host-compromise resistance or accepted production authentication. This fixed pure calculation does not implement reconciliation for external side effects or ambiguous delivery. A stolen authorized session, same-origin script compromise, additional authorized principals, distributed deployment and production availability remain outside the proof.
 
 **Removing shipped code and preventing inference are different claims.** The trial deliberately shows that a few allowed quote results reveal its simple linear formula even after the formula disappears from delivered files. The formula is also public in this repository because it is synthetic. The experiment measures delivered-byte reduction, server authority and bounded sampling; it cannot establish secrecy of an arbitrary business algorithm.
 

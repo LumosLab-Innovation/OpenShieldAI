@@ -5,6 +5,7 @@ import getpass
 import hashlib
 import json
 import os
+import re
 import sys
 import tempfile
 import time
@@ -51,6 +52,18 @@ def read_events(path):
     return events
 
 
+def audit_output_path(directory, destination):
+    if not destination:
+        return
+    # Reject remote/device syntax before resolving a caller-supplied reference.
+    if (not directory.strip() or "\0" in directory or directory.startswith(("\\\\", "//"))
+            or re.match(r"^[a-z][a-z\d+.-]*:", directory, re.I)
+            and not re.match(r"^[a-z]:[\\/]", directory, re.I)):
+        raise ValueError("Local release directory required")
+    if Path(destination).resolve().is_relative_to(Path(directory).resolve()):
+        raise ValueError("Audit output must be outside the release")
+
+
 def parser():
     root = argparse.ArgumentParser(prog="python -m openshield", description="Synthetic lab runtime; no production support.")
     root.add_argument("--state", default="incident-data/runtime.sqlite3", help="Operator-owned SQLite path")
@@ -79,6 +92,14 @@ def parser():
     exposure.add_argument("--output")
     anti_rea = commands.add_parser("anti-rea-lab", help="Owned synthetic HTTP authority and exposure experiment")
     anti_rea.add_argument("--output", default="output/anti-rea-results.json")
+    delivery = commands.add_parser("delivery-audit", help="Compare reviewed files with authorized loopback static HTTP delivery")
+    delivery.add_argument("directory")
+    delivery.add_argument("--base-url", required=True)
+    delivery.add_argument("--authorized", action="store_true", required=True)
+    delivery.add_argument("--retired-path", action="append", default=[])
+    delivery.add_argument("--output")
+    delivery_lab = commands.add_parser("delivery-lab", help="Owned HTTP representation and retired-asset experiment")
+    delivery_lab.add_argument("--output", default="output/delivery-results.json")
     correlate = commands.add_parser("correlate", help="Bounded read-only Go access-decision correlation")
     correlate.add_argument("case_id")
     correlate.add_argument("--project", default="lab")
@@ -104,13 +125,23 @@ def main(argv=None):
     args = parser().parse_args(argv)
     if args.command == "release-audit":
         from .exposure import exposure_audit
+        audit_output_path(args.directory, args.output)
         result = exposure_audit(args.directory, authorized=args.authorized)
-        if args.output and any(gap["code"] == "LOCAL_DIRECTORY_REQUIRED" for gap in result["gaps"]):
-            raise ValueError("Local release directory required")
-        if args.output and Path(args.output).resolve().is_relative_to(Path(args.directory).resolve()):
-            raise ValueError("Audit output must be outside the release")
         output(result, args.output)
         return 0 if result["status"] == "pass" and result["complete"] else 1
+    if args.command == "delivery-audit":
+        from .delivery import delivery_audit
+        audit_output_path(args.directory, args.output)
+        result = delivery_audit(args.directory, args.base_url, authorized=args.authorized,
+                                retired_paths=args.retired_path)
+        output(result, args.output)
+        return 0 if result["status"] == "pass" and result["complete"] else 1
+    if args.command == "delivery-lab":
+        from lab.delivery import verify
+        result = verify()
+        output(result, args.output)
+        output({"status": result["status"], "cases": len(result["cases"]), "artifact": args.output})
+        return 0 if result["status"] == "pass" else 1
     if args.command == "anti-rea-lab":
         from lab.anti_rea import verify
         result = verify()

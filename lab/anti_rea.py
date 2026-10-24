@@ -2,7 +2,6 @@
 
 import http.client
 import json
-import secrets
 import tempfile
 import threading
 import time
@@ -11,6 +10,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from openshield.authority import Authority, AuthorityError
 from openshield.exposure import exposure_audit
 from openshield.gateway import strict_json
 
@@ -77,29 +77,35 @@ def _private_price(quantity):
 class AntiReaLab:
     """Loopback only. Test controller supplies identities; HTTP cannot mint sessions.
 
-    shortcut: sessions, grants and quotas are in-memory; production needs durable,
-    shared atomic authorization state and a real identity provider before adoption.
+    shortcut: SQLite and controller identities are an owned lab; production needs
+    accepted identity, protected storage, TLS and recovery policy before adoption.
     """
 
-    def __init__(self, protected=True, clock=time.monotonic, quota=4, grant_ttl=30):
+    def __init__(self, protected=True, clock=time.time, quota=4, grant_ttl=30, state_path=None):
         if type(protected) is not bool or type(quota) is not int or not 1 <= quota <= 100:
             raise ValueError("Invalid lab configuration")
         if type(grant_ttl) not in (int, float) or not 0 < grant_ttl <= 60:
             raise ValueError("Invalid grant lifetime")
         self.protected, self.clock, self.quota, self.grant_ttl = protected, clock, quota, grant_ttl
-        self.sessions, self.grants, self.used = {}, {}, {"alice": 0, "bob": 0}
-        self.lock = threading.Lock()
-        self.audit = {"denied": 0, "accepted": 0, "quotaDenied": 0}
+        self._temp_state = tempfile.TemporaryDirectory(prefix="openshield-authority-") if state_path is None else None
+        try:
+            self.authority = Authority(Path(self._temp_state.name) / "authority.sqlite3" if self._temp_state else state_path,
+                                       clock=clock, quota=quota, grant_ttl=grant_ttl)
+        except Exception:
+            if self._temp_state:
+                self._temp_state.cleanup()
+            raise
 
     def issue_session(self, subject="alice"):
-        if subject not in {"alice", "bob"}:
-            raise ValueError("Unknown synthetic identity")
-        with self.lock:
-            if len(self.sessions) >= 64:
-                raise ValueError("Lab session bound reached")
-            token = secrets.token_urlsafe(32)
-            self.sessions[token] = subject
-            return token
+        return self.authority.issue_session(subject)
+
+    def revoke_session(self, token):
+        """Test-controller action only; no HTTP route can revoke or mint identities."""
+        return self.authority.revoke_session(token)
+
+    @property
+    def audit(self):
+        return self.authority.audit
 
     def __enter__(self):
         lab = self
@@ -157,31 +163,11 @@ class AntiReaLab:
                     return self.reply(403, {"error": "denied"})
                 session = auth[0][7:]
                 capability = caps[0] if caps else ""
-                with lab.lock:
-                    subject = lab.sessions.get(session)
-                    if not subject or {"quote-a": "alice", "quote-b": "bob"}[obj] != subject:
-                        lab.audit["denied"] += 1
-                        return self.reply(403, {"error": "denied"})
-                    if lab.used[subject] >= lab.quota:
-                        lab.audit["quotaDenied"] += 1
-                        return self.reply(429, {"error": "query_budget_exhausted"})
-                    if self.path == "/api/grants":
-                        # Expired grants cannot accumulate indefinitely in this bounded lab.
-                        lab.grants = {key: record for key, record in lab.grants.items() if record[3] > lab.clock()}
-                        if len(lab.grants) >= 64:
-                            return self.reply(429, {"error": "grant_budget_exhausted"})
-                        token = secrets.token_urlsafe(32)
-                        lab.grants[token] = (session, obj, quantity, lab.clock() + lab.grant_ttl)
-                        return self.reply(201, {"capability": token})
-                    record = lab.grants.get(capability)
-                    if not record or record[:3] != (session, obj, quantity) or record[3] <= lab.clock():
-                        lab.audit["denied"] += 1
-                        return self.reply(403, {"error": "denied"})
-                    # Matching consume and principal quota update are a single critical section.
-                    del lab.grants[capability]
-                    lab.used[subject] += 1
-                    lab.audit["accepted"] += 1
-                    return self.reply(200, {"totalCents": _private_price(quantity)})
+                try:
+                    status, body = lab.authority.operate(self.path, session, capability, obj, quantity)
+                except AuthorityError:
+                    return self.reply(503, {"error": "authority_unavailable"})
+                return self.reply(status, body)
 
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         self.server.daemon_threads = True
@@ -194,6 +180,8 @@ class AntiReaLab:
         self.server.shutdown()
         self.server.server_close()
         self.thread.join(timeout=3)
+        if self._temp_state:
+            self._temp_state.cleanup()
 
     def request(self, method, path, payload=None, session=None, capability=None):
         connection = http.client.HTTPConnection("127.0.0.1", self.server.server_port, timeout=3)
@@ -261,5 +249,5 @@ def verify():
             "limits": ["Owned synthetic example only", "No target code or REA invoked by this trial",
                        "Release pass is a bounded policy result, not a secret or anti-reversing verdict",
                        "Formula is public in this repository; trial measures delivered bytes and HTTP authority",
-                       "In-memory lab identities/quotas are not production authentication or durable quotas",
+                       "Controller identities and local SQLite are not accepted production authentication or protected storage",
                        "Authorized outputs can reveal algorithms; stolen live sessions/XSS remain risks"]}
