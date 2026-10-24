@@ -15,6 +15,8 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [Parallel measured effects](lab/PARALLEL_DEFENSE_RESULTS.md) | Positive/negative controls, safe aggregate evidence and independent challenge |
 | [Next-wave methods and coverage ledger](NEXT_WAVE.md) | All 24 PM cases mapped to prior/new slices, limited proofs or unsupported work and missing authority |
 | [Next-wave measurements](lab/NEXT_WAVE_RESULTS.md) | Application, publication and restore effects; separately recorded actual CLIProxyAPI comparison |
+| [Public benchmark inventory](lab/METRICS_AUDIT.md) | Independently checked counts, failed trials, measurement boundaries and raw records |
+| [Stronger deterministic comparator](lab/BASELINE_V2_RESULTS.md) | Post-hoc rules/lookup control against retained real AI; no new provider call |
 | [Application-flow lab](lab/FLOW_LAB_RESULTS.md) | Go session/object/idempotency enforcement, fixed egress, real receiver and ledger observations |
 | [Publication and cache retirement](lab/PROMOTION_RESULTS.md) | Exact approved bytes, current generation, explicit purge and unrecalled historical downloads |
 | [Application recovery readiness](lab/RECOVERY_READINESS_RESULTS.md) | Scratch SQLite restore, false-readiness negatives and independent committed/rollback probes |

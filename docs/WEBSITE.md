@@ -1,6 +1,16 @@
 # Public project landing
 
-The [GitHub Pages landing](https://lumoslab-innovation.github.io/OpenShieldAI/) presents the project's vision, architecture and links to measured lab evidence. It is a static showcase, not the incident-response runtime. Publishing it does not advance any implementation or acceptance gate.
+The [GitHub Pages landing](https://lumoslab-innovation.github.io/OpenShieldAI/) presents the project's vision, architecture and a visible [benchmark ledger](https://lumoslab-innovation.github.io/OpenShieldAI/#benchmarks). It is a static showcase, not the incident-response runtime. Publishing it does not advance any implementation or acceptance gate.
+
+## Benchmark publication
+
+The ledger is plain English HTML with a complete final Codex/baseline table, the separate post-hoc v2 lookup comparison, all completed model attempts, measured control/recovery effects, Go performance, historical Docker/Chrome/REA trials and the 24-case coverage boundary. Native expandable details keep dense evidence readable; table values and source links remain available without JavaScript. Tables use captions, row/column headers and labelled keyboard-focusable horizontal scroll regions. The existing mint/graphite visual system and generated hero/Mermaid diagram are preserved.
+
+The [metric audit](lab/METRICS_AUDIT.md) maps every published number to safe frozen evidence. Keep failed/degraded trials visible beside successful outcomes. Distinguish engineering assertion counts, independent attack samples, inference decisions, model reservations, elapsed boundaries and historical validation snapshots. Do not pool overlapping suites or credit deterministic enforcement to AI. The current 16-case corpus is public engineering regression material, not a held-out efficacy estimate; coarse assessment quality ties and operational AI advantage remains unproven.
+
+When results change, update README and the static ledger together against the exact report and normalized source/corpus commitments. `#ai-benchmark` cells expose numeric `data-metric`, `data-arm` and `data-value` attributes for publication consistency checks; visitors see the formatted values directly. Keep historical records labelled and immutable, disclose protocol changes, and link current CI independently of captured historical test counts. No landing script calls the model or reads the operator proxy.
+
+The publication checks run with `python -m unittest discover -s scripts -p 'test_*.py'`: they compare both public AI tables with the frozen JSON, require links to failed attempts and every measurement family, and verify normalized trial hashes. The 2026-10-24 local Chrome check exercised 1440 px desktop, 390/320 px mobile, keyboard details, manual graph stepping/pause, reduced motion and no-JavaScript tables. The primary mobile AI table fits without horizontal scrolling; wider detailed tables scroll inside their labelled regions. No page errors or failed local assets were observed. These are showcase checks, not security-efficacy measurements.
 
 ## Source and deployment
 

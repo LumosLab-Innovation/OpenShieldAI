@@ -8,6 +8,7 @@
 
 <p align="center">
   <a href="https://lumoslab-innovation.github.io/OpenShieldAI/">Vision &amp; architecture</a> ·
+  <a href="#measured-benchmarks">Benchmarks</a> ·
   <a href="docs/research/AI_DEFENSE_EVIDENCE.md">Research</a> ·
   <a href="docs/ROADMAP.md">Roadmap</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
@@ -27,6 +28,85 @@
 </p>
 
 > **Current status — experimental synthetic runtime and isolated lab.** Python/SQLite investigation, exact lab approvals and a CLIProxyAPI/Codex adapter now exist. Caddy/Coraza and restic run in an isolated synthetic fixture. This is not production protection or an accepted S2/S3 pilot. Actual CLIProxyAPI/Codex comparison trials now run separately; their outcomes and limitations belong to the [next-wave measurement record](docs/lab/NEXT_WAVE_RESULTS.md). An available model route does not establish AI benefit. See [runtime instructions](docs/RUNTIME.md), [first-lab measurements](docs/lab/RESULTS.md) and [independent review](docs/lab/EFFICACY_REVIEW.md).
+
+## Measured benchmarks
+
+**Recorded 2026-10-24 · owned synthetic experiments · no accepted production pilot.** These are captured measurements, not a live dashboard. The [landing benchmark section](https://lumoslab-innovation.github.io/OpenShieldAI/#benchmarks) presents the same evidence. Assertions, authored regression cases and independently observed effects have different denominators; their totals must not be combined into an attack-prevention percentage.
+
+### Real AI versus no AI
+
+Sixteen public engineering cases contain four observed harmful effects, four benign workloads and eight unknowns. Both arms receive the same accepted facts, source roles, read catalog and **zero mutation capabilities**. Labels and scenario narratives stay outside prompts. The actual configured alias is `gpt-6.1-sol` through CLIProxyAPI 8.0.41; upstream identity is proxy-reported. [Protocol, interpretation and reproduction](docs/lab/NEXT_WAVE_RESULTS.md) · [final raw record](docs/lab/evidence/next-wave.json) · [frozen corpus](docs/lab/evidence/next-wave-corpus.json).
+
+| Final registered metric | Deterministic baseline v1 | Actual Codex |
+|---|---:|---:|
+| Valid completed decisions | 16/16 | 16/16 |
+| Policy-acceptable assessments | 16/16 | 16/16 |
+| Supported-effect cases identified | 4/4 | 4/4 |
+| False suspicious among four benign cases | 0/4 | 0/4 |
+| Correct unknown outcomes | 8/8 | 8/8 |
+| Decisive benign / benign abstentions | 2 / 2 | 4 / 0 |
+| Acceptable next-step proposals | 12/16 | 16/16 |
+| Registered required-code presence | 13/16 | 14/16 |
+| Degraded cases | 0 | 0 |
+| Model calls | 0 | 41 |
+| Conservative reserved visible tokens | 0 | 171,631 |
+| Triage-arm wall time | 4.078 s | 318.469 s |
+
+**Assessment quality ties; operational AI benefit remains unproven.** The four proposal gains concern three failed-recovery escalations and one missing-source escalation. The stronger deterministic comparison below closes them. Required-code presence is not semantic precision, and decisive benign decisions have not been validated in a human trial. Inputs include already observed control outcomes; this is a public regression, not held-out detection accuracy. Enforcement is identical with and without AI. Reserved tokens are conservative gateway accounting, not billed tokens or complete provider/account usage.
+
+The separate [rules + lookup v2 comparator](docs/lab/BASELINE_V2_RESULTS.md) adds failed-restore and visibility-gap escalation rules, with no new observations or authority. It was **tuned after examining this public regression**; v1 and the real AI record remain unchanged. [V2 raw record](docs/lab/evidence/baseline-v2.json).
+
+| Post-hoc public comparison | Baseline v1, retained | Rules + lookup v2 | Codex, retained |
+|---|---:|---:|---:|
+| Policy-acceptable assessments | 16/16 | 16/16 | 16/16 |
+| Acceptable next-step proposals | 12/16 | 16/16 | 16/16 |
+| Registered required-code presence | 13/16 | 16/16 | 14/16 |
+| Decisive benign / benign abstentions | 2 / 2 | 2 / 2 | 4 / 0 |
+| Model calls | 0 | 0 | 41 |
+
+V2 retains 4/4 supported-effect identifications, 0/4 false suspicious benign outcomes and 8/8 unknowns. Its single pass took 2.375 s through a direct-function/SQLite harness that omits Supervisor persistence; this is **not a matched speedup comparison** with the historical v1/AI times. Eight focused tests exercise the added rules and isolation. V2 retains historical restore failures for human review even after a later verified observation; it does not reconcile current restoration readiness. Closing these public proposal checks does not prove v2 generalizes or AI has no value; a fresh ambiguous corpus and operator trial remain necessary.
+
+All attempts remain visible; protocol repairs used the same corpus and scoring. Earlier source hashes identify those runs, but the intermediate source versions were not separately committed. The final source is reproducible; exact upstream model behavior is not guaranteed.
+
+| Completed 16-case AI trial | Valid / degraded | Calls | Reserved tokens | AI-arm wall time |
+|---|---:|---:|---:|---:|
+| [Original catalog projection](docs/lab/evidence/next-wave-first.json) | 3 / 13 | 25 | 93,386 | 165.141 s |
+| [Catalog repair; read-round failures](docs/lab/evidence/next-wave-catalog-fixed.json) | 3 / 13 | 42 | 166,021 | 308.313 s |
+| [Final bounded-round protocol](docs/lab/evidence/next-wave.json) | 16 / 0 | 41 | 171,631 | 318.469 s |
+
+The earlier 48-case run stopped on a local cleanup error before a scored artifact; full usage is unknown. A separate [one-case diagnostic](docs/lab/evidence/proxy-diagnostic.json) diagnosed the adapter contract and is unscored. [Complete attempt manifest](docs/lab/evidence/next-wave-trials.json).
+
+### Actual defensive effects and recovery
+
+The controls below run independently of an LLM. Each row links its scope, negative controls and raw observations; a passing fixture does not establish protection for a different deployment.
+
+| Experiment | Measured comparison / useful work | Boundary and evidence |
+|---|---|---|
+| Request prevention, historical Docker lab | Three planted patterns reach harmful operations with Off/DetectionOnly; On returns 403 with zero app reach/harm. Nine benign requests return 200 across the three modes | Request-rule subset only; planted effects, not demonstrated SQLi/XSS/RCE. [Report](docs/lab/RESULTS.md), [raw](docs/lab/evidence/prevention.json) |
+| Approved ingress response, historical Docker lab | 5.532 s source-to-verified-effect; **11 additional planted effects** during response. Three post-maintenance requests return 503; approved reopening returns 200 | Scripted approval; human time unmeasured. In-flight/background activity continues. [Report](docs/lab/RESULTS.md), [runtime raw](docs/lab/evidence/approved-runtime-response.json), [direct-control raw](docs/lab/evidence/response.json) |
+| Isolated restic recovery, historical Docker lab | 3.162 s restore-to-usable-app check; synthetic RPO 5.348 s / one transaction. Missing/wrong key, corrupt pack, contaminated and inconsistent snapshots fail | One actual drill; no production RPO/RTO or eradication guarantee. [Report](docs/lab/RESULTS.md), [raw](docs/lab/evidence/recovery.json) |
+| Original anti-REA / real Chrome / pinned REA | 16/16 HTTP assertions and 4/4 browser assertions. Release 3→2 files, 1,906→1,134 bytes. Both clients parse 1/1 JS; AST nodes 94→140; semantic coverage unknown, partial/exit 1 both sides | Eight concurrent grant uses yield one success. Principal limit four outputs, but **two authorized outputs still infer the formula**. No REA-proof claim. [Report](docs/lab/ANTI_REA_RESULTS.md), [raw](docs/lab/evidence/anti-rea.json) |
+| Go downstream tool authority | Unsafe: one forbidden mark and one outside delivery. Protected: zero forbidden effects, nine allowed reads, one approved mark and one receipt; one of 16 concurrent consumers succeeds | 43 named checks; fixed HTTP operations, ephemeral grants, no general prompt-injection or DLP efficacy. [Report](docs/lab/TOOL_GUARD_RESULTS.md), [raw](docs/lab/evidence/parallel-defense.json) |
+| Durable quote authority | Replay/revocation and four-query principal spend persist across three server instances and fresh sessions; expiry and backward clock fail closed | 11 named checks. Trusted local SQLite; a valid old database can roll back spend; authorized-output inference remains. [Report](docs/lab/PARALLEL_DEFENSE_RESULTS.md), [raw](docs/lab/evidence/parallel-defense.json) |
+| HTTP delivery audit | Clean identity/gzip pass; stale gzip, map headers, retired paths and mismatching root block; redirects, bombs and unsupported encodings remain partial | 13 case expectations. Fixed declared preview paths; does not purge CDN copies or recall downloads. [Report](docs/lab/PARALLEL_DEFENSE_RESULTS.md), [raw](docs/lab/evidence/parallel-defense.json) |
+| Go application flows | Unsafe: four reads, three charges and two forbidden deliveries. Protected: two valid reads, two approved charges, **zero forbidden effects**, one allowed delivery; 16 distinct grants sharing one idempotency key produce one commit | 48 named assertions. Revocation rechecked before effect; throttle lockout cost is observed. Eight-read cap and four concurrent slots are fixture policy, not Internet DDoS protection. [Report](docs/lab/FLOW_LAB_RESULTS.md), [raw](docs/lab/evidence/next-wave.json) |
+| Exact promotion and separate cache retirement | Four leaking representations / eight requests before. Clean origin alone leaves four cached leaks. Exact approved retirement purges eight cached representations; then zero private deliveries, 6/6 required GETs, both map encodings denied | 27 named assertions. Fixed owned origin/edge, identity/gzip. Already downloaded bytes remain disclosed. [Report](docs/lab/PROMOTION_RESULTS.md), [raw](docs/lab/evidence/next-wave.json) |
+| Usable SQLite restore | Seven cases / 28 checks. Metadata falsely accepts five unusable cases; copy/hash accepts four; application probes reject them. Clean rollback and independent committed balances 599/401 with one ledger row work | Fresh scratch only; no encrypted-backup/key, interrupted restore or production recovery measurement in this experiment. [Report](docs/lab/RECOVERY_READINESS_RESULTS.md), [raw](docs/lab/evidence/next-wave.json) |
+
+The [parallel controller](docs/lab/PARALLEL_DEFENSE_RESULTS.md) records **83 named assertions/case expectations** (43 tool + 16 original HTTP + 11 durability + 13 delivery). The [next-wave controller](docs/lab/NEXT_WAVE_RESULTS.md) records **103 named assertions** (48 flow + 27 promotion + 28 recovery). These counts include legitimate work and known counterexamples; they are not independent attacks or evidence of AI prevention.
+
+### Rule consistency, performance and coverage
+
+| Measurement | Captured result | Interpretation / source |
+|---|---|---|
+| Original 48-case functional corpus | 12/12 supported incidents suspicious; benign 0/12 false suspicious, two decisive and ten abstained; 12/12 unknown preserved; 12/12 invalid rejected | Historical AI arm did not run. Public, largely observer-resolved regression. [Report](docs/lab/RESULTS.md), [raw](docs/lab/evidence/decision-comparison.json) |
+| Go authored rule consistency | 24/24 expected candidate/gap sets match. Harmful: seven candidates / five misses; benign: two candidates / three none; unknown: two candidates / five none | Selected counterexamples, not population accuracy. Some benign/harmful inputs are identical. [Report](docs/lab/GO_CORRELATION_RESULTS.md), [raw](docs/lab/evidence/go-correlation.json) |
+| Go end-to-end local latency | 30 serial fresh-process trials × 1,000 events: median **43.624 ms**, p95 **46.933 ms**, min 40.959 ms, max 47.543 ms | go1.26.4 windows/amd64; warm OS cache, pipes and Python validation included. No sustained throughput, SLO or equivalent Python speedup comparison. [Samples and microbenchmarks](docs/lab/evidence/go-correlation.json) |
+| Go `Analyze` microbenchmark, three samples | 20,484,533 / 19,321,400 / 20,339,967 ns/op; 8,528,148 / 8,541,986 / 8,535,444 B/op; 218,608 / 218,605 / 218,600 allocations/op | Analyze-only; excludes launch, pipes and Python. These allocations identify profiling work. [Raw samples](docs/lab/evidence/go-correlation.json) |
+| PM/BA coverage ledger | 24 cases: 11 newly exercised slices, three prior, three limited existing, **seven unsupported**: I3, I4, H1, H2, D1, C1, V2 | No full production acceptance. [Case-by-case ledger](docs/NEXT_WAVE.md) |
+| Validation at the recorded next-wave delivery | Local: 227 tests, 223 pass / four skips; Linux CI: 227 tests, 224 pass / three Docker skips. Go tests/vet and ten offline script checks pass. Historical Docker: 7/7 | Regression/build evidence is separate from defensive efficacy; Docker was not rerun for the next-wave delivery. [Validation record](docs/lab/NEXT_WAVE_RESULTS.md), [CI snapshot](https://github.com/LumosLab-Innovation/OpenShieldAI/actions/runs/40074232235) |
+
+The historical response's 5.532 s comprises collection 0.773 s, ingestion/investigation 0.144 s, proposal/scripted approval 0.865 s, dispatch/readback 1.793 s and independent checks 1.958 s (rounded components). Actual human approval time is unknown. The original 48-case baseline took 10.250 s with zero model calls. [Independent metric inventory and consistency audit](docs/lab/METRICS_AUDIT.md) records these boundaries, historical validation snapshots and the complete safe evidence trail.
 
 ## The four engineering questions
 
@@ -158,7 +238,7 @@ We do not claim that another project's paper scores belong to OpenShieldAI, that
 | Stage | Scope | Status |
 |---|---|---|
 | S0 | Research, architecture, strict rules and evaluation design | Foundation retained |
-| S1 | Offline replay, resident scheduling, deterministic ablation and typed proposals | Experimental implementation; real AI benefit unmeasured |
+| S1 | Offline replay, resident scheduling, deterministic ablation and typed proposals | Experimental implementation; real Codex comparison completed, operational benefit unproven |
 | S2 | One read-only telemetry adapter and operator shadow pilot | Planned |
 | S3 | One approved response adapter and isolated restore drill | Isolated fixture experiments; full production gates open |
 | S4 | Expand independently proven prevention, incident and AI-agent defense capabilities | Research roadmap |

@@ -75,7 +75,7 @@ The release policy has explicit gaps for unsupported containers, ambiguous synta
 
 The quote identities, grants, quotas and lock are in-memory within one lab process. Restart and multiple workers would reset or split state; real authentication, durable shared atomic accounting, TLS, revocation, XSS/stolen authorized sessions, distributed abuse and production availability are unpassed gates. A four-query budget is a test policy, not a calibrated production setting, and already exceeds the two queries needed to infer this simple function. The synthetic formula is also public in this repository: the claimed boundary is browser delivery and server authority, not secrecy from GitHub readers.
 
-AI receives no source or raw sessions from this module. Only an explicitly constructed synthetic `release_exposure` fact can enter the current synthetic runtime, where deterministic policy requests human review without claiming an attack. CLIProxyAPI/Codex remains unconfigured; incremental AI value is **not measured**. Removing a leaked release does not retract already downloaded information.
+AI receives no source or raw sessions from this module. Only an explicitly constructed synthetic `release_exposure` fact can enter the current synthetic runtime, where deterministic policy requests human review without claiming an attack. CLIProxyAPI/Codex was unconfigured at this historical capture. The later [actual Codex comparison](NEXT_WAVE_RESULTS.md) uses a separate corpus and does not establish AI benefit for this original REA/Chrome experiment. Removing a leaked release does not retract already downloaded information.
 
 ## Historical addendum: parallel defense increment, 2026-10-24
 

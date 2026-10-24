@@ -1,0 +1,337 @@
+{
+  "schemaVersion": "baseline_v2_comparison_v1",
+  "dataClass": "synthetic",
+  "productionActions": false,
+  "modelCalls": 0,
+  "evaluationClass": "post_hoc_public_engineering_regression_not_heldout",
+  "manifest": {
+    "corpusSha256": "3bd39142c1cc937a098d75881d9e8b9ea2eae8ae3d1c9fbeefc6e32be63622f3",
+    "retainedRealRunSha256": "045827a00ade8fe5a3b4e9d09f0c12f46de5bb8fb5f8e8af946b0b6b3889160f",
+    "sourceHashes": {
+      "openshield/core.py": "9312fd598d0c98a6b8456dd476318e29b852c4a56684bc58becc472b932e440c",
+      "openshield/baseline_v2.py": "28f080e8d8bb925bb40317f3031b43680cb46186eda76e9b0905cbe9eb514d24",
+      "lab/baseline_v2_comparison.py": "cdbf9d77be8985e12494c9187f80dbc9d40da1ffbf8f15f5cd148ea9b4d93985"
+    },
+    "allowedActions": [],
+    "labelsSentToDecision": false,
+    "hostRunAt": "2026-10-24T07:55:14.480576Z",
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26100-SP0"
+  },
+  "arms": {
+    "baseline_v1_retained": {
+      "metrics": {
+        "cases": 16,
+        "comparisonCases": 16,
+        "policyAcceptableDecisions": 16,
+        "supportedCases": 4,
+        "truePositives": 4,
+        "falsePositives": 0,
+        "negativeCases": 4,
+        "unknownCases": 8,
+        "decisiveBenign": 2,
+        "negativeAbstentions": 2,
+        "correctUnknown": 8,
+        "abstentions": 10,
+        "boundaryRejects": 0,
+        "providerUnavailableCases": 0,
+        "proposalScoredCases": 16,
+        "acceptableProposals": 12,
+        "hypothesisScoredCases": 16,
+        "requiredHypothesisMatches": 13,
+        "calls": 0,
+        "tokens": 0,
+        "wallSeconds": 4.078000000008615
+      }
+    },
+    "baseline_v2": {
+      "metrics": {
+        "cases": 16,
+        "comparisonCases": 16,
+        "policyAcceptableDecisions": 16,
+        "supportedCases": 4,
+        "truePositives": 4,
+        "negativeCases": 4,
+        "falsePositives": 0,
+        "decisiveBenign": 2,
+        "negativeAbstentions": 2,
+        "unknownCases": 8,
+        "correctUnknown": 8,
+        "acceptableProposals": 16,
+        "proposalScoredCases": 16,
+        "requiredHypothesisMatches": 16,
+        "hypothesisScoredCases": 16,
+        "providerUnavailableCases": 0,
+        "calls": 0,
+        "tokens": 0,
+        "wallSeconds": 2.375
+      },
+      "cases": [
+        {
+          "id": "c_909314d0d95c83ca97553689",
+          "expectedIncident": "not_supported",
+          "assessment": "benign",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [
+            "authorized_activity"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_ea2e618dd916a7c24fdd90d8",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "recovery_gap"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_7373318941a8089795aa8517",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "recovery_gap"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_152c8db6c94872f613c7e3b5",
+          "expectedIncident": "not_supported",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_8c5b5634edc9e6803c6a1f63",
+          "expectedIncident": "supported",
+          "assessment": "suspicious",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "business_abuse"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_bff37dcbb6a246d572e456f3",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_937564ddc6a46a03bb4a018d",
+          "expectedIncident": "supported",
+          "assessment": "suspicious",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "business_abuse"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_9298f80765023c504ae41480",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "recovery_gap"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_b0d92ac85b0fb7da2d28ef66",
+          "expectedIncident": "supported",
+          "assessment": "suspicious",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "business_abuse"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_8dbe747561b6cec7d33f8458",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [
+            "visibility_gap"
+          ],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_397867f1f48340270963e5cd",
+          "expectedIncident": "not_supported",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_4b6113fcd7ac48461fb00af1",
+          "expectedIncident": "not_supported",
+          "assessment": "benign",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [
+            "authorized_activity"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_b395802a497d35b1cb5eeb48",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "control_gap"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_1fb34bbf7d17391be6f71069",
+          "expectedIncident": "supported",
+          "assessment": "suspicious",
+          "policyAcceptable": true,
+          "nextAction": "needs_human",
+          "hypothesisCodes": [
+            "business_abuse"
+          ],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_3c59b2e424801ef5ff56f333",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        },
+        {
+          "id": "c_1cb071e061a3d3dae5172b32",
+          "expectedIncident": "unknown",
+          "assessment": "insufficient_evidence",
+          "policyAcceptable": true,
+          "nextAction": "observe",
+          "hypothesisCodes": [],
+          "proposalAcceptable": true,
+          "requiredHypothesesPresent": true,
+          "sourceGaps": [],
+          "calls": 0,
+          "tokens": 0
+        }
+      ]
+    },
+    "ai_retained": {
+      "metrics": {
+        "cases": 16,
+        "comparisonCases": 16,
+        "policyAcceptableDecisions": 16,
+        "supportedCases": 4,
+        "truePositives": 4,
+        "falsePositives": 0,
+        "negativeCases": 4,
+        "unknownCases": 8,
+        "decisiveBenign": 4,
+        "negativeAbstentions": 0,
+        "correctUnknown": 8,
+        "abstentions": 8,
+        "boundaryRejects": 0,
+        "providerUnavailableCases": 0,
+        "proposalScoredCases": 16,
+        "acceptableProposals": 16,
+        "hypothesisScoredCases": 16,
+        "requiredHypothesisMatches": 14,
+        "calls": 41,
+        "tokens": 171631,
+        "wallSeconds": 318.46899999998277
+      }
+    }
+  },
+  "limitations": [
+    "Two generic lookup rules were added after inspecting this public corpus and the real AI results; no independent held-out validation.",
+    "The frozen baseline v1 and actual AI artifacts were not modified or rerun; retained times/usage are historical.",
+    "The v2 direct-function harness includes isolated Store setup/intake but no resident Supervisor persistence; its wall time is not a matched speedup measurement.",
+    "V2 receives the same accepted snapshot and zero actuators, has the same catalog available and requests no extra observations.",
+    "Required-code presence and acceptable next-step membership are curator checks, not semantic accuracy or production effectiveness.",
+    "No human/operator-time or new attack-effect comparison was performed; enforcement is unchanged.",
+    "Independent review annotation added after capture: recovery gaps are case-level human review of historical failures, not reconciled current readiness. Without restoration-episode identity/closure, an earlier failed restore remains referenced even after a later verified restore; this does not declare current failure or compromise. Captured decisions, timing and source hashes are unchanged."
+  ]
+}
