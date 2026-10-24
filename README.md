@@ -43,15 +43,16 @@ The selected design separates immediate execution of approved controls from AI s
 
 ## Run the experimental slice
 
-Python 3.11+ is enough for local synthetic investigation and tests:
+Python 3.11+ runs local synthetic investigation:
 
 ```text
 python -m openshield --help
 python -m openshield benchmark --output output/comparison.json
-python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
 The real isolated control/recovery lab additionally requires Docker and Go; follow [lab setup](lab/README.md). Connect an operator-owned CLIProxyAPI/Codex route through the [gateway module](docs/RUNTIME.md#cliproxyapi--codex-adapter). No direct OpenAI API key is used, no proxy credentials are copied, and a missing provider stays explicitly unmeasured.
+
+Build the platform-specific [Go analysis worker](docs/GO_RUNTIME.md#build-and-run) before running the full suite with `python -m unittest discover -s tests -p "test_*.py" -v`. The independent Go module uses only its standard library; no tool is compiled or downloaded automatically at runtime.
 
 ## Anti-REA: reduce exposure, enforce authority
 
@@ -63,6 +64,12 @@ python -m openshield anti-rea-lab --output output/anti-rea-results.json
 ```
 
 Real REA parses both clients successfully. Real HTTP and Chrome checks verify the narrower improvement: less private material shipped and unauthorized operations denied. The [results](docs/lab/ANTI_REA_RESULTS.md) also demonstrate that two authorized outputs still reveal the simple synthetic formula. This is not universal resistance to reverse engineering. [Independent adversarial review](docs/research/ANTI_REA_CHALLENGE.md).
+
+## Security portfolio, methods and Go implementation
+
+PM and BA research now defines [24 concrete security scenarios](docs/research/SECURITY_PORTFOLIO.md), [13 methods and 16 falsifiable hypotheses](docs/research/DEFENSE_METHODS_AND_HYPOTHESES.md). Each experiment needs telemetry, a controllable effect, a baseline, an AI task, negative controls and an independent falsifier. Portfolio breadth is proposed coverage.
+
+The first [Go worker](docs/GO_RUNTIME.md) performs bounded temporal correlation of synthetic access decisions and source gaps. It integrates with the CLI and resident investigator's read catalog; Python/SQLite retains state, gateway and approval authority. [Local evidence](docs/lab/GO_CORRELATION_RESULTS.md) records 24/24 rule-regression cases, actual latency and deliberate false-candidate/missed-scenario counterexamples. [Independent review](docs/research/GO_RUST_EFFICACY_REVIEW.md) rejects broader protection or language-speedup claims. [ADR 0003](docs/adr/0003-bounded-go-analysis-workers.md) records where Go and a future justified Rust component belong.
 
 ## Why OpenShieldAI
 

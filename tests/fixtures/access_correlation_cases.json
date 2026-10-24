@@ -1,0 +1,2500 @@
+{
+  "schemaVersion": "access_correlation_cases_v1",
+  "dataClass": "synthetic",
+  "purpose": "Independent authored regression cases for rule semantics and business-interpretation counterexamples; not held-out attack efficacy data.",
+  "ruleVersion": "access_window_v1",
+  "asOf": "2026-10-24T03:01:00Z",
+  "evaluationPolicy": "Only each case.input is passed to the worker. truth is evaluator-only. expectedGaps is a minimal required subset, not an assertion of complete telemetry. businessGroundTruth is an authored scenario label, not detector-observed proof of damage.",
+  "cases": [
+    {
+      "id": "sc_001",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Scenario author declares unauthorized repeated object-access attempts. The observed five-denial pattern supports a candidate, not proof of compromise or an authentication mechanism."
+      }
+    },
+    {
+      "id": "sc_002",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "benign",
+        "interpretation": "The identical observed input is a legitimate user retrying a stale object selection five times. This is a false-positive counterexample if any candidate is interpreted as a harmful-incident verdict."
+      }
+    },
+    {
+      "id": "sc_003",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:20Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "denied_access_then_allow"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Scenario author declares three denied requests followed by an unauthorized allowance. The pattern does not itself establish why the allowance occurred or whether any harmful side effect followed."
+      }
+    },
+    {
+      "id": "sc_004",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:20Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "denied_access_then_allow"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "benign",
+        "interpretation": "The identical observed input is legitimate retry followed by an approved permission grant. This is a second false-positive counterexample to treating an access sequence as confirmed compromise."
+      }
+    },
+    {
+      "id": "sc_005",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Four unauthorized repeated attempts remain below the five-denial threshold. Absence of a candidate is a false-negative counterexample if scored as absence of harmful activity."
+      }
+    },
+    {
+      "id": "sc_006",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T02:59:45Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:02Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:20Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:38Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:56Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Five declared unauthorized attempts span more than the 60-second window; only four remain in-window. This low-and-slow scenario is a false-negative counterexample to broad harmful-activity detection."
+      }
+    },
+    {
+      "id": "sc_007",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:25Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "benign",
+        "interpretation": "A legitimate allowed object operation supplies no denial pattern. This observation does not prove the rest of the service is safe."
+      }
+    },
+    {
+      "id": "sc_008",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_1",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_2",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_3",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_4",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_5",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Five declared unauthorized attempts use five distinct subjects. No subject/object pair reaches the threshold; labels do not reveal attacker identity or login semantics."
+      }
+    },
+    {
+      "id": "sc_009",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_1"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_2"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_3"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_4"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_5"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "benign",
+        "interpretation": "A legitimate client checks five unavailable objects once each. Distinct objects must not be merged into a repeated same-object denial candidate."
+      }
+    },
+    {
+      "id": "sc_010",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:20Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_b"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Three declared unauthorized requests target one object, then another object is allowed. The allowance cannot complete a same-object sequence."
+      }
+    },
+    {
+      "id": "sc_011",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:20Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_b",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "benign",
+        "interpretation": "One subject is denied and a different subject is legitimately allowed. Cross-subject events must not create an access-change sequence."
+      }
+    },
+    {
+      "id": "sc_012",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:30Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [
+          "same_timestamp_order_unknown"
+        ],
+        "businessGroundTruth": "unknown",
+        "interpretation": "All decisions share one timestamp without trusted source sequence numbers. Identifier order must not manufacture causality."
+      }
+    },
+    {
+      "id": "sc_013",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:10Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:22Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:23Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:24Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "A declared unauthorized allowance precedes later denials. Reversing delivery order must not turn later denials into earlier evidence; the harmful allowance is not discovered by these two rules."
+      }
+    },
+    {
+      "id": "sc_014",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "The upper asOf endpoint is included. Five declared unauthorized attempts exactly at asOf form a repeated-denial candidate."
+      }
+    },
+    {
+      "id": "sc_015",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [
+          "empty_window",
+          "source_missing"
+        ],
+        "businessGroundTruth": "unknown",
+        "interpretation": "The lower asOf-minus-60-seconds endpoint is excluded. These records are outside the evaluated window; the empty window remains a visibility limitation."
+      }
+    },
+    {
+      "id": "sc_016",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "unknown",
+        "interpretation": "Exactly one denial is at the excluded lower boundary and four are one nanosecond inside. A nanosecond rounding or inclusive-boundary bug would incorrectly create a candidate."
+      }
+    },
+    {
+      "id": "sc_017",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:01:00.000000001Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [
+          "empty_window",
+          "future_event",
+          "source_missing"
+        ],
+        "businessGroundTruth": "unknown",
+        "interpretation": "All records are one nanosecond after asOf. Future records are excluded and must retain their clock/visibility gap."
+      }
+    },
+    {
+      "id": "sc_018",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [],
+        "expectedGaps": [],
+        "businessGroundTruth": "unknown",
+        "interpretation": "Four unique denials plus exact redelivery of one record do not reach five. Duplicate arrival is not a distinct access attempt."
+      }
+    },
+    {
+      "id": "sc_019",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Five unique declared unauthorized attempts plus an exact duplicate still produce one repeated-denial candidate. Redelivery must not create an additional event or candidate."
+      }
+    },
+    {
+      "id": "sc_020",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_090",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:40Z",
+            "kind": "source_health",
+            "facts": {
+              "available": false,
+              "dropped": 0
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_091",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:59Z",
+            "kind": "source_health",
+            "facts": {
+              "available": true,
+              "dropped": 0
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [
+          "source_unavailable"
+        ],
+        "businessGroundTruth": "harmful",
+        "interpretation": "A supported denial pattern coexists with an unavailable source record. A later healthy record cannot erase the earlier observation gap."
+      }
+    },
+    {
+      "id": "sc_021",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_090",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:40Z",
+            "kind": "source_health",
+            "facts": {
+              "available": true,
+              "dropped": 2
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [
+          "source_events_dropped"
+        ],
+        "businessGroundTruth": "harmful",
+        "interpretation": "The observed denial pattern survives while explicit source loss remains visible. Dropped events prevent an absence-of-harm conclusion."
+      }
+    },
+    {
+      "id": "sc_022",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [
+          "stale_evidence",
+          "source_clock_skew"
+        ],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [
+          "upstream_source_clock_skew",
+          "upstream_stale_evidence"
+        ],
+        "businessGroundTruth": "unknown",
+        "interpretation": "Upstream stale-evidence and clock-skew warnings survive candidate generation. Their presence prevents trustworthy causal or incident interpretation."
+      }
+    },
+    {
+      "id": "sc_023",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a",
+          "source_b"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [
+          "source_missing"
+        ],
+        "businessGroundTruth": "unknown",
+        "interpretation": "One declared collector supplies the observed pattern while another declared collector has no in-window record. Missing-source coverage cannot be cleared by the observed collector."
+      }
+    },
+    {
+      "id": "sc_024",
+      "input": {
+        "schemaVersion": "correlation_request_v1",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "runId": "run_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "asOf": "2026-10-24T03:01:00Z",
+        "sourceIds": [
+          "source_a"
+        ],
+        "upstreamGaps": [],
+        "events": [
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_009",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:45Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "allow",
+              "subjectLabel": "subject_b",
+              "objectLabel": "object_b"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_008",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:18Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_b",
+              "objectLabel": "object_b"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_007",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:17Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_b",
+              "objectLabel": "object_b"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_006",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:16Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_b",
+              "objectLabel": "object_b"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_005",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:15Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_004",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:14Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_003",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:13Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_002",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:12Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          },
+          {
+            "schemaVersion": "lab_event_v1",
+            "id": "event_001",
+            "projectId": "project_a",
+            "caseId": "case_a",
+            "assetId": "asset_a",
+            "sourceId": "source_a",
+            "observedAt": "2026-10-24T03:00:11Z",
+            "kind": "auth_decision",
+            "facts": {
+              "decision": "deny",
+              "subjectLabel": "subject_a",
+              "objectLabel": "object_a"
+            },
+            "dataClass": "synthetic"
+          }
+        ]
+      },
+      "truth": {
+        "expectedCandidateCodes": [
+          "denied_access_then_allow",
+          "repeated_access_denials"
+        ],
+        "expectedGaps": [],
+        "businessGroundTruth": "harmful",
+        "interpretation": "Two independently scoped declared unauthorized scenarios are delivered in reverse event-time order. Sorting must preserve each subject/object group and both supported candidate codes without cross-group evidence."
+      }
+    }
+  ]
+}

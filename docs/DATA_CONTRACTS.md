@@ -4,6 +4,8 @@ Status: broader normative contracts; the current runtime implements only strict 
 
 ## Common envelope
 
+The separate implemented `correlation_request_v1` / `correlation_result_v1` pair binds a bounded synthetic access-analysis job to run/project/case/asset, immutable scope, declared sources and UTC reference time. Output carries a request-byte digest, fixed rule version, in-window evidence references, counts, mandatory gaps and `isFinding: false`. It grants no authority and is not a generic incident/source API. See the [Go worker contract](GO_RUNTIME.md#worker-and-caller-contract).
+
 The implemented synthetic catalog includes `release_exposure` with exactly `status` (`pass | blocked | partial`), `observationCount` and `gapCount` (bounded integers). It carries the existing enrolled synthetic `lab_event_v1` envelope, never raw source or an arbitrary release report. This posture fact is not a validated vulnerability or proof of attack. The standalone `release_exposure_v1` audit report is a different read-only local command contract; it is not accepted wholesale as an incident event. See [runtime behavior](RUNTIME.md#release-exposure-and-the-anti-rea-lab).
 
 All records carry `schemaVersion`, stable `id`, `projectId`, `caseId` where relevant, `createdAt` (UTC), `producer`, and provenance. Use opaque case-scoped asset/evidence IDs, bounded arrays/strings, explicit enums, canonical serialization for hashes, and rejection of unknown fields at trust boundaries. References must resolve within the authorized project/case. Display times with explicit timezone; retain source/capture/receive timestamps and clock uncertainty separately.

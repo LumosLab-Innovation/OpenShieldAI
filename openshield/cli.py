@@ -79,6 +79,10 @@ def parser():
     exposure.add_argument("--output")
     anti_rea = commands.add_parser("anti-rea-lab", help="Owned synthetic HTTP authority and exposure experiment")
     anti_rea.add_argument("--output", default="output/anti-rea-results.json")
+    correlate = commands.add_parser("correlate", help="Bounded read-only Go access-decision correlation")
+    correlate.add_argument("case_id")
+    correlate.add_argument("--project", default="lab")
+    correlate.add_argument("--output")
     propose = commands.add_parser("propose", help="Print an exact fixed-lab ingress change for review")
     propose.add_argument("case_id")
     propose.add_argument("--mode", choices=("maintenance", "on"), default="maintenance")
@@ -143,6 +147,11 @@ def main(argv=None):
             output(getattr(lab, args.operation)())
         return 0
     state = Path(args.state)
+    if args.command == "correlate" and args.output:
+        protected = {Path(str(state) + suffix).resolve() for suffix in
+                     ("", "-journal", "-wal", "-shm", ".actions", ".actions-journal", ".actions-wal", ".actions-shm")}
+        if Path(args.output).resolve() in protected:
+            raise ValueError("Report output cannot replace runtime state")
     state.parent.mkdir(parents=True, exist_ok=True)
     store = Store(state)
     try:
@@ -165,6 +174,9 @@ def main(argv=None):
                 time.sleep(min(args.interval, remaining))
         elif args.command == "status":
             output({"cases": store.cases(), "health": store.health(), "profile": "synthetic_local_only"})
+        elif args.command == "correlate":
+            from .correlation import correlate
+            output(correlate(store, args.project, args.case_id), args.output)
         else:
             actions = ActionService(str(state) + ".actions", store, operator=operator_id(),
                                     allow_lab_mutations=args.command in ("propose", "approve", "execute"))
@@ -195,9 +207,10 @@ def main(argv=None):
 
 
 def entrypoint():
+    from .correlation import CorrelationError
     try:
         return main()
-    except (ActionDenied, GatewayError) as error:
+    except (ActionDenied, GatewayError, CorrelationError) as error:
         output({"status": "failed", "code": str(error)})
         return 1
     except (ValueError, OSError, RuntimeError) as error:

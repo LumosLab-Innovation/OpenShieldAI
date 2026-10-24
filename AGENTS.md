@@ -12,6 +12,7 @@ Conflict precedence: SECURITY_GUARDRAILS → ACCEPTANCE_CRITERIA → PRD → ARC
 
 - OpenShieldAI is an independent defensive incident investigation, response and recovery project. OpenHunterAI interoperability comes after standalone efficacy gates.
 - Current repository scope: experimental synthetic runtime plus isolated Caddy/Coraza/restic experiments. Read `docs/RUNTIME.md` and `docs/lab/RESULTS.md`; do not expand a fixture result into production support or measured AI benefit.
+- A dependency-free bounded Go analysis worker now joins the Python/SQLite application; read `docs/GO_RUNTIME.md` and ADR 0003. Build its fixed platform-specific binary before the full Python suite. PM/BA portfolio breadth is proposed research, not blanket authorization to add collectors or actuators. Go/Rust placement needs a concrete workload and evidence; preserve state/gateway/approval semantics.
 - First delivery is a local replay and read-only investigation slice. Live mutation requires the later acceptance gates; a new adapter never silently enables execution.
 - Defend only assets explicitly enrolled by their authorized operator. Private assets can be enrolled; this is not permission to scan private networks. Do not copy OpenHunterAI's public-target restriction into a different defensive authorization model.
 - No hack-back, retaliation, ransom negotiation/payment automation, offensive exploit execution, malware execution, unrestricted remote shell, or autonomous destructive recovery.

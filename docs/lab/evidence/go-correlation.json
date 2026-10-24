@@ -1,0 +1,1363 @@
+{
+  "schemaVersion": "go_correlation_trial_v1",
+  "synthetic": true,
+  "status": "pass",
+  "ruleVersion": "access_window_v1",
+  "toolchain": "go version go1.26.4 windows/amd64",
+  "host": {
+    "os": "Windows",
+    "architecture": "AMD64",
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "logicalCPUs": 12
+  },
+  "binarySha256": "9ed534887eb3fad285614e458ba81f2f3bb0465fdf8a9b5813ff132b02465467",
+  "sourceFingerprintEncoding": "UTF-8 with LF newlines",
+  "sourceSha256": {
+    "runtime-go/go.mod": "d81680b9ad90fa9665719dfc1af1898723f23f26e36753d444e39d504917bb3a",
+    "runtime-go/correlation.go": "5d933d112552b54551e018053c47df9eb99dc11c1a6c9bf392c1c0b93232c9fe",
+    "runtime-go/correlation_test.go": "5f9a82a9be9087c250e5886461c64494843c0fb56efe718a7fc2f06a7ecca34e",
+    "runtime-go/cmd/shield-correlate/main.go": "46c1e72efa2721db5a97a60ab14493589d0370f40f05eca6c1fe552f51d873fa",
+    "openshield/correlation.py": "65266237cebde209b9bd1cced6e51826e131fd7d882ff3ebb2e16f99a9cb133d",
+    "openshield/core.py": "e1f271f29de853447d0f113f681c14032b937a9eb5c17ffb1351ba81bb30f510",
+    "openshield/cli.py": "a01fb2b519ffdaa098b16a43dac3d7ffef2a52f6af9260e6562c6e6d5ff7b737",
+    "scripts/check_go_runtime.py": "7745bb7046a94421161e61e33dff23880297f1ee75aebc6cd510bdbf22a9c8be"
+  },
+  "corpusSha256": "0f68a513fcb2bd27f7bffe34c5436f2c38907b2cc404cd56568eab46b8526c39",
+  "corpusResults": [
+    {
+      "id": "sc_001",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "40a18c752e7d9bc8ee5565c89d18a8f077aa2de8711daef860e285f7917eb769",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_002",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "40a18c752e7d9bc8ee5565c89d18a8f077aa2de8711daef860e285f7917eb769",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_003",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "b4dcc2791ea908ce042ed113e1915f9b6f535c91e5914960c81053641866199a",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "denied_access_then_allow",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004"
+            ],
+            "observedCount": 4,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_004",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "b4dcc2791ea908ce042ed113e1915f9b6f535c91e5914960c81053641866199a",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "denied_access_then_allow",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004"
+            ],
+            "observedCount": 4,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_005",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "81a4c882c19d56a0e409d5bceb562c0ad88a8ab8d9f317c65df4f378edb8dff5",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_006",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "dc90bb91f7ce402ce3bc3230810dd1360e3e4cd43d9b034cad28d281fac802b7",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 1,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_007",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "d572762bf18e3b47238244d981a57bc8a8ea868f43d08791d4cc4775e1fe9b0b",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 1,
+          "uniqueEvents": 1,
+          "duplicateEvents": 0,
+          "windowEvents": 1,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_008",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "dd8d42bde1d45e4a71783574dc06bdede1280152ae323039e994d783d3e413e5",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_009",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "56a6da0bac0cb66f1e9143b21e4df7472e921987b2819df5251aefe9bf663be4",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_010",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "aadb8b1349f875395fb27c6c229987a6db6e86cdc348dee501ab8eb859615bc6",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_011",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "38d846444f73ed925746e441c951d2fb9eb04b0d01b6ad4130f636b4702fc160",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_012",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "a160ffdc1423efde53734c12e16e17f23bb497ea65022a580340b4005619d1ec",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "same_timestamp_order_unknown"
+          ],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_013",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "f016ad322600f82ec075e72223d8eeae540df5272dbb9d7249934942c12feed3",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 4,
+          "uniqueEvents": 4,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_014",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "034f5da28d0b3f7d05300e62b5ea0ac88b78b70daf52f34fbe53cdc0ea2247da",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_015",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "d9cc4c3c7906a328d87c5f085f6f96dd3a628a88cd4a5f2e59a853496d240816",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 0,
+          "oldEvents": 5,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "empty_window",
+            "source_missing"
+          ],
+          "sourcesObserved": []
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_016",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "3ce5cfbc7b7b9513771b96190f5d9e7d39b47627304d4e297f890c445eea62e5",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 4,
+          "oldEvents": 1,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_017",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "84eca8859e95180048b3c8873f1679a74e29bceaba6233a06c1717165c23a42f",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 0,
+          "oldEvents": 0,
+          "futureEvents": 5
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "empty_window",
+            "future_event",
+            "source_missing"
+          ],
+          "sourcesObserved": []
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_018",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "9b38d8104ddef4a7fc0c027783c4c3a71c9d7c27b4d7d227ad810f7fa05271be",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 4,
+          "duplicateEvents": 1,
+          "windowEvents": 4,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_019",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "c5b6daa549ed7697d345cfcdb014b84399de08c9b3c88a3b06aea2e491a1dd65",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 6,
+          "uniqueEvents": 5,
+          "duplicateEvents": 1,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_020",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "1cf232f35a313f937c1940055846b7cb429f4397bc16a9e302add350457e2c97",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 7,
+          "uniqueEvents": 7,
+          "duplicateEvents": 0,
+          "windowEvents": 7,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "source_unavailable"
+          ],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_021",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "4666d558e23d6804343143bf06e0b8fe42a75bd336232441d713cf0c99e4ebbd",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 6,
+          "uniqueEvents": 6,
+          "duplicateEvents": 0,
+          "windowEvents": 6,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "source_events_dropped"
+          ],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_022",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "b2151fe6a4508e598e507fe9046b3f0b15def3e8f4ce82f318f45c04145f8919",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "upstream_source_clock_skew",
+            "upstream_stale_evidence"
+          ],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_023",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "partial",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "6e9cf9a189824f7001ceba6601fc72698e3c0c4cc41f6d02d8ee70e23d00fe5e",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 5,
+          "uniqueEvents": 5,
+          "duplicateEvents": 0,
+          "windowEvents": 5,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [
+            "source_missing"
+          ],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    },
+    {
+      "id": "sc_024",
+      "passed": true,
+      "result": {
+        "schemaVersion": "correlation_result_v1",
+        "status": "succeeded",
+        "ruleVersion": "access_window_v1",
+        "runId": "run_a",
+        "projectId": "project_a",
+        "caseId": "case_a",
+        "assetId": "asset_a",
+        "scopeVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputSha256": "1d68238c72acd23750d21663ad00b4c68ccc323a643f4c89bf424548d3d6628a",
+        "asOf": "2026-10-24T03:01:00Z",
+        "windowSeconds": 60,
+        "counts": {
+          "inputEvents": 9,
+          "uniqueEvents": 9,
+          "duplicateEvents": 0,
+          "windowEvents": 9,
+          "oldEvents": 0,
+          "futureEvents": 0
+        },
+        "candidates": [
+          {
+            "code": "repeated_access_denials",
+            "subjectLabel": "subject_a",
+            "objectLabel": "object_a",
+            "evidenceIds": [
+              "event_001",
+              "event_002",
+              "event_003",
+              "event_004",
+              "event_005"
+            ],
+            "observedCount": 5,
+            "evidenceTruncated": false,
+            "isFinding": false
+          },
+          {
+            "code": "denied_access_then_allow",
+            "subjectLabel": "subject_b",
+            "objectLabel": "object_b",
+            "evidenceIds": [
+              "event_006",
+              "event_007",
+              "event_008",
+              "event_009"
+            ],
+            "observedCount": 4,
+            "evidenceTruncated": false,
+            "isFinding": false
+          }
+        ],
+        "coverage": {
+          "complete": false,
+          "gaps": [],
+          "sourcesObserved": [
+            "source_a"
+          ]
+        },
+        "limitations": [
+          "synthetic_lab_only",
+          "authorization_not_authentication",
+          "candidate_not_compromise",
+          "source_authentication_unverified",
+          "fixed_threshold_uncalibrated",
+          "bounded_window",
+          "no_actuator"
+        ],
+        "isFinding": false
+      }
+    }
+  ],
+  "authoredBusinessTable": {
+    "harmful": {
+      "candidate": 7,
+      "noCandidate": 5
+    },
+    "benign": {
+      "candidate": 2,
+      "noCandidate": 3
+    },
+    "unknown": {
+      "candidate": 2,
+      "noCandidate": 5
+    }
+  },
+  "identicalInputDifferentTruth": [
+    {
+      "inputSha256": "40a18c752e7d9bc8ee5565c89d18a8f077aa2de8711daef860e285f7917eb769",
+      "cases": [
+        {
+          "id": "sc_001",
+          "truth": "harmful"
+        },
+        {
+          "id": "sc_002",
+          "truth": "benign"
+        }
+      ]
+    },
+    {
+      "inputSha256": "b4dcc2791ea908ce042ed113e1915f9b6f535c91e5914960c81053641866199a",
+      "cases": [
+        {
+          "id": "sc_003",
+          "truth": "harmful"
+        },
+        {
+          "id": "sc_004",
+          "truth": "benign"
+        }
+      ]
+    }
+  ],
+  "latency": {
+    "scope": "Fresh Go process + Python strict reply validation; 1000 synthetic events; warm OS cache; serial local trials",
+    "samples": 30,
+    "samplesMs": [
+      40.95910000614822,
+      41.84930000337772,
+      42.67029999755323,
+      44.24179997295141,
+      43.71440000250004,
+      45.11090001324192,
+      43.23480001767166,
+      46.933499979786575,
+      41.153600002871826,
+      41.18280002148822,
+      43.459100008476526,
+      43.51789999054745,
+      44.096400000853464,
+      42.04000000027008,
+      43.62110001966357,
+      43.927299993811175,
+      41.94550000829622,
+      43.7128999910783,
+      43.07859999244101,
+      43.75599999912083,
+      47.542500018607825,
+      44.76360001717694,
+      43.62770001171157,
+      42.587900010403246,
+      43.288899993058294,
+      43.93650000565685,
+      46.15039998316206,
+      43.064900004537776,
+      43.67429998819716,
+      43.90099999727681
+    ],
+    "medianMs": 43.624,
+    "p95Ms": 46.933,
+    "minMs": 40.959,
+    "maxMs": 47.543
+  },
+  "goMicrobenchmark": {
+    "scope": "Analyze validates/parses/correlates and checks output size; excludes process launch, pipe transport, Python and real services",
+    "lines": [
+      "BenchmarkAnalyze1000-12    \t      12\t  20484533 ns/op\t  14.55 MB/s\t 8528148 B/op\t  218608 allocs/op",
+      "BenchmarkAnalyze1000-12    \t      12\t  19321400 ns/op\t  15.43 MB/s\t 8541986 B/op\t  218605 allocs/op",
+      "BenchmarkAnalyze1000-12    \t      12\t  20339967 ns/op\t  14.65 MB/s\t 8535444 B/op\t  218600 allocs/op"
+    ]
+  },
+  "aiBenefit": {
+    "status": "not_measured"
+  },
+  "limitations": [
+    "Selected synthetic regression cases; rule consistency is not representative attack accuracy",
+    "Authored intent labels remain outside worker input and are not observed proof of harm",
+    "Identical observations can correspond to opposite business truth",
+    "No equivalent Python implementation comparison or Go/Rust speedup claim",
+    "Local latency excludes real collection, queueing, model, operator and actuator time",
+    "No production source authentication, hard OS memory sandbox or live control effect accepted"
+  ]
+}

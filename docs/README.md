@@ -7,6 +7,10 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [Project README](../README.md) | Mission, current stage, research choices and delivery path |
 | [Public landing](WEBSITE.md) | GitHub Pages showcase, shared visual system and diagram authoring |
 | [Context](../CONTEXT.md) | Decisions, assumptions and open pilot inputs |
+| [PM security portfolio](research/SECURITY_PORTFOLIO.md) | 24 proposed scenarios, business priorities, control points and independent falsifiers |
+| [BA methods and hypotheses](research/DEFENSE_METHODS_AND_HYPOTHESES.md) | Method assumptions, math, confounders, costs and 16 testable hypotheses |
+| [Go analysis runtime](GO_RUNTIME.md) | Build, exact correlation contract, bounded caller and resident AI read integration |
+| [Go evidence](lab/GO_CORRELATION_RESULTS.md) | Actual regression failures/limits, performance and independent review |
 | [Anti-REA implementation](ANTI_REA.md) | Release exposure policy, server authority, AI boundary and post-exposure handling |
 | [Anti-REA measurements](lab/ANTI_REA_RESULTS.md) | Actual pinned REA, HTTP, Chrome and independent adversarial results |
 | [REA source research](research/REA_DEFENSE_RESEARCH.md) | Exact upstream mechanisms, immutable references and falsifiable defense choices |
@@ -31,5 +35,6 @@ Current executable slice: [runtime instructions](RUNTIME.md), [first-lab measure
 | [Hunter exchange](OPENHUNTER_COLLABORATION.md) | Later versioned report/manual-retest contract |
 | [ADR 0001](adr/0001-evidence-first-defense.md) | Why evidence-first defense and a modular monolith |
 | [ADR 0002](adr/0002-continuous-ai-and-enforcement-planes.md) | Continuous AI supervision and separate immediate enforcement |
+| [ADR 0003](adr/0003-bounded-go-analysis-workers.md) | Go worker placement, retained authority and criteria for future Rust |
 
 Public-repository policies: [security](../SECURITY.md), [contributing](../CONTRIBUTING.md), [conduct](../CODE_OF_CONDUCT.md), [licensing](../LICENSING.md).

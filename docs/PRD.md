@@ -12,6 +12,8 @@ AI-enabled attacks motivate faster and more adaptive defense, but the product mu
 
 ## Primary users and first environment
 
+The [PM portfolio](research/SECURITY_PORTFOLIO.md) specifies 24 proposed security scenarios and [BA research](research/DEFENSE_METHODS_AND_HYPOTHESES.md) defines methods, confounders and falsifiable hypotheses. The first resulting increment is a [bounded synthetic Go correlation worker](GO_RUNTIME.md), not support for that full portfolio. Each next control/observation/response family still earns its own acceptance and authority gates.
+
 First users are application/platform operators with authority over their service and an incident responder who can approve operational changes. The selected first lab is one isolated Linux web application behind Caddy + Coraza/CRS, a private origin, minimized app/ingress observations, independent effect probes and an isolated restic/application recovery target. An existing host-event collector can add visibility after separate source acceptance. Large-enterprise breadth is a roadmap objective; this lab does not demonstrate it.
 
 ## Capability stages

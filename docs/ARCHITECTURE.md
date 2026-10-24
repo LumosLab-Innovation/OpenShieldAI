@@ -29,6 +29,8 @@ In S1/S2 the broker is disabled; operator-managed receipts and evidence enter th
 
 ## Domains and interfaces
 
+[ADR 0003](adr/0003-bounded-go-analysis-workers.md) adds an independently built, dependency-free Go worker for one bounded synthetic analysis request. The Python application retains durable state, the gateway, policy and approval authority. Fixed typed stdin/stdout, scope/evidence checks, process/input/output limits and explicit gaps surround it; no message broker or network service is introduced. [Implementation](GO_RUNTIME.md) and [local evidence](lab/GO_CORRELATION_RESULTS.md) define its actual limits. Rust remains conditional on a concrete measured workload.
+
 | Module | Responsibility | Must not do |
 |---|---|---|
 | Enrollment | Assets, service dependencies, data class, operator roles and scope version | Infer authority from a hostname or alert |

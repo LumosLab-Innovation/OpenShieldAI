@@ -11,6 +11,9 @@ Review snapshot: 2026-10-24. Evidence favors bounded, measurable assistance and 
 - [Control-point research](research/CONTROL_POINT_RESEARCH.md): actual proxy/WAF integration tuple, bypasses, log exposure, response mechanics and recovery proof.
 - [Continuous AI research](research/CONTINUOUS_AI_RESEARCH.md): resident event-driven supervision, durable state, bounded reads and evidence for/against complex detectors.
 - [Architecture challenge](research/ARCHITECTURE_CHALLENGE.md): missing mechanisms, four-question tests and adversarial review of the deeper design.
+- [PM portfolio](research/SECURITY_PORTFOLIO.md): 24 security scenarios with business priorities, required observations, control points, AI roles and falsifiers.
+- [BA methods/hypotheses](research/DEFENSE_METHODS_AND_HYPOTHESES.md): primary-source methods, assumptions, calibration/evasion limits and proposed experiments.
+- [Go/Rust review](research/GO_RUST_EFFICACY_REVIEW.md): actual bounded Go implementation, language-placement evidence and rejected efficacy claims. This extends research and does not rewrite the historical 15-upstream registry.
 
 The selected [operating architecture](OPERATING_ARCHITECTURE.md) and [LLM specification](LLM_PROVIDER_SPEC.md) define the canonical pilot budget and actuator. Alternative timing/TTL proposals in research notes are experiments, not simultaneous guarantees or approved runtime behavior.
 

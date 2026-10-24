@@ -29,6 +29,12 @@ SQLite persists immutable enrollment, accepted evidence, source roles, case wate
 
 The exact `lab_event_v1` catalog additionally accepts `kind: release_exposure` with only `status: pass | blocked | partial`, integer `observationCount` and integer `gapCount` (0–1,000,000). A synthetic nonpass, observation or gap becomes `control_gap` and `needs_human` under the deterministic baseline; exposure alone keeps `insufficient_evidence` and never authorizes mutation or proves compromise. Resident supervision uses the same durable state, scope, deduplication and gateway policy. No raw source, path, literal, session or report is a permitted fact. A real release must not be mislabelled synthetic to bypass current intake restrictions.
 
+## Bounded Go access correlation
+
+The additional `correlate CASE_ID --project lab [--output FILE]` command analyzes only accepted synthetic access/source-health facts. Build the fixed platform-specific Go binary before using it or running the full test suite. It returns evidence-bound candidates, source/time gaps and `isFinding: false`; the command does not change case facts or enable an action. See [Go build and contract](GO_RUNTIME.md), [measurements](lab/GO_CORRELATION_RESULTS.md) and [independent challenge](research/GO_RUST_EFFICACY_REVIEW.md).
+
+Resident investigation can request `access_patterns` inside its existing read-round/episode budget. The caller uses the original frozen case snapshot and rechecks enrollment. Missing/failed/invalid worker output visibly becomes `degraded_tool` with `incomplete_evidence` and `degraded_observation` health; deterministic fallback remains available. A labelled gateway double exercises this integration. Real CLIProxyAPI/Codex benefit remains unmeasured.
+
 ## CLIProxyAPI / Codex adapter
 
 All reasoning passes through [gateway.py](../openshield/gateway.py). The selected transport is CLIProxyAPI's OpenAI-compatible, non-streaming `POST /v1/chat/completions`; Codex account authentication stays entirely in the operator's separate proxy. Shield does not read Codex OAuth files, launch Codex CLI, provision keys or inherit `OPENAI_API_KEY`.

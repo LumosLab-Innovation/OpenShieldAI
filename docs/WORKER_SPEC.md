@@ -57,4 +57,6 @@ Persist AI/source/control health separately from job completion: oldest unexamin
 
 ## Required tests
 
+The implemented S1 [Go correlation worker](GO_RUNTIME.md) uses narrower `correlation_request_v1` / `correlation_result_v1` offline contracts: a fixed enrolled synthetic snapshot, bounded exact parser, explicit source/time gaps and candidate-only output. The supervising Python caller enforces the process deadline and validates evidence support before a catalog observation is exposed. This is not the proposed general network-worker/production-adapter API above. [Measured limits and tests](lab/GO_CORRELATION_RESULTS.md) remain capability-specific.
+
 Malformed input, oversize/traversal payload, scope drift, deadline, cancellation, tool unavailable, source/LLM failure, duplicate callback, ambiguous mutation, stale approval, bypass by direct invocation, secret leakage and independent postcheck. A test double is labeled synthetic and cannot be selected in live mode.

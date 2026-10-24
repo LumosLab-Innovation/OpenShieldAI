@@ -34,6 +34,8 @@ The deterministic path is the evaluation baseline and supplies degraded rule tri
 
 ## Data, tools and budget
 
+The implemented `access_patterns` read catalog invokes the [bounded Go correlator](GO_RUNTIME.md) on the same frozen synthetic case. It supplies validated generic access candidates and visibility gaps, never credentials, raw source, executable paths or a new action. Existing read-round and episode limits apply; omitted candidates are stated. Missing or invalid worker output produces `degraded_tool` / `incomplete_evidence`, not an invented observation. This does not add a provider use case or establish an AI-benefit result.
+
 Prompts contain minimized sanitized facts with lineage. No raw original evidence, PII, credential, memory image, packet payload, private request/response, secret-broker reference dereference or provider-side tools. Models cannot browse, run code, access incident systems or write case authority. Retrieval is from a reviewed bounded catalog and treats all content as data.
 
 The operator chooses permitted data classes, locality, provider retention/training terms and remote egress before enabling a route. Unknown data classification fails closed. Local inference uses the same controls. Repeated use of sanitized data still needs access control and retention policy.

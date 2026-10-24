@@ -26,7 +26,7 @@ KINDS = {
 ACTIONS = {"set_site_ingress_mode", "restore_isolated"}
 HYPOTHESES = {"http_input_attack", "business_abuse", "suspicious_access", "unauthorized_change",
               "false_positive", "authorized_activity", "control_gap", "recovery_gap", "unknown"}
-READS = {"recent_waf_events", "recent_app_events", "control_posture", "backup_readiness"}
+READS = {"recent_waf_events", "recent_app_events", "control_posture", "backup_readiness", "access_patterns"}
 LIMITATIONS = {"synthetic_lab_only", "visibility_gap", "stale_evidence", "unverified_effect",
                "no_supported_actuator", "no_independent_observer", "model_unavailable",
                "budget_exhausted", "incomplete_evidence", "unknown_model_version",
@@ -426,12 +426,15 @@ class Supervisor:
             except Exception as error:
                 # Provider exceptions are untrusted and can echo credentials/content. Persist only safe codes.
                 from .gateway import GatewayError
-                status = "degraded_budget" if isinstance(error, GatewayError) and error.code == "BUDGET_EXHAUSTED" else "degraded_model"
+                from .correlation import CorrelationError
+                status = ("degraded_tool" if isinstance(error, CorrelationError) else
+                          "degraded_budget" if isinstance(error, GatewayError) and error.code == "BUDGET_EXHAUSTED" else "degraded_model")
                 analysis = base
         totals = self.store.db.execute("SELECT calls,tokens FROM shield_episodes WHERE dedup=?", (key,)).fetchone()
         limitations = set(analysis["limitations"]) | set(base["limitations"])
         if status.startswith("degraded"):
-            limitations.add("budget_exhausted" if status == "degraded_budget" else "model_unavailable")
+            limitations.add("incomplete_evidence" if status == "degraded_tool" else
+                            "budget_exhausted" if status == "degraded_budget" else "model_unavailable")
         result = {**analysis, "schemaVersion": "investigation_v1", "projectId": case["projectId"],
                   "caseId": case["caseId"], "assetId": case["assetId"], "caseVersion": case["version"],
                   "evidenceWatermark": case["watermark"], "mode": self.mode, "aiStatus": status,
@@ -444,7 +447,8 @@ class Supervisor:
         with self.store.db:
             self.store.db.execute("UPDATE shield_episodes SET status='completed',result=? WHERE dedup=?",
                                   (canonical(result), key))
-        self.store._health("supervisor", {"state": "degraded_model" if status.startswith("degraded") else "healthy_idle",
+        self.store._health("supervisor", {"state": "degraded_observation" if status == "degraded_tool" else
+                                           "degraded_model" if status.startswith("degraded") else "healthy_idle",
                                            "lastAnalysisAt": result["completedAt"], "lastWatermark": case["watermark"],
                                            "aiStatus": status})
         return result
@@ -463,7 +467,25 @@ class Supervisor:
     def _reads(self, case, requests):
         mapping = {"recent_waf_events": {"waf_decision"}, "recent_app_events": {"app_operation", "auth_decision"},
                    "control_posture": {"control_state", "deployment", "source_health"}, "backup_readiness": {"backup_state"}}
-        self.store.enrollment(case["projectId"], case["assetId"])
-        return [{"catalogId": request["catalogId"], "events": [e for e in case["timeline"]
-                if e["kind"] in mapping[request["catalogId"]]][-request["limit"]:],
-                 "origin": "same_episode_synthetic_store"} for request in requests]
+        scope = self.store.enrollment(case["projectId"], case["assetId"])
+        observations = []
+        for request in requests:
+            if request["catalogId"] == "access_patterns":
+                from .correlation import CorrelationError, request_for, run
+                try:
+                    result = run(request_for(case, scope, self.store._utc_now()))
+                except CorrelationError as error:
+                    self.store._health("correlation", {"state": "unavailable", "code": error.code})
+                    raise
+                self.store._health("correlation", {"state": result["status"], "gaps": result["coverage"]["gaps"]})
+                candidates = result["candidates"][:request["limit"]]
+                observations.append({"catalogId": "access_patterns", "status": result["status"],
+                                     "candidates": candidates, "omittedCandidates": len(result["candidates"])-len(candidates),
+                                     "coverage": result["coverage"], "limitations": result["limitations"],
+                                     "ruleVersion": result["ruleVersion"], "isFinding": False,
+                                     "origin": "same_episode_synthetic_store"})
+            else:
+                observations.append({"catalogId": request["catalogId"], "events": [e for e in case["timeline"]
+                                     if e["kind"] in mapping[request["catalogId"]]][-request["limit"]:],
+                                     "origin": "same_episode_synthetic_store"})
+        return observations
